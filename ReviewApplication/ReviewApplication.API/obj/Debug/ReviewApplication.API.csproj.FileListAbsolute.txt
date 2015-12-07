@@ -1,0 +1,1 @@
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\obj\Debug\ReviewApplication.API.csprojResolveAssemblyReference.cache

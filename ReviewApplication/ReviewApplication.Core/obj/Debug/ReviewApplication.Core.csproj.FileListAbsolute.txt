@@ -1,0 +1,7 @@
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\obj\Debug\ReviewApplication.Core.csprojResolveAssemblyReference.cache
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\ReviewApplication.Core.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\ReviewApplication.Core.pdb
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\obj\Debug\ReviewApplication.Core.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\obj\Debug\ReviewApplication.Core.pdb
