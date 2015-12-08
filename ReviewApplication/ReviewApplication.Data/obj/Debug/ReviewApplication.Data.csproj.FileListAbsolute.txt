@@ -1,1 +1,14 @@
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\obj\Debug\ReviewApplication.Data.csprojResolveAssemblyReference.cache
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\ReviewApplication.Data.dll.config
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\ReviewApplication.Data.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\ReviewApplication.Data.pdb
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\EntityFramework.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\ReviewApplication.Core.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\ReviewApplication.Core.pdb
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\EntityFramework.xml
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\obj\Debug\ReviewApplication.Data.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\obj\Debug\ReviewApplication.Data.pdb

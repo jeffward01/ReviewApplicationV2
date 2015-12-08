@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNet.Identity;
 using ReviewApplication.API.Models;
-using ReviewApplication.CORE.Infrastructure;
-using ReviewApplication.CORE.Repository;
-using ReviewApplication.CORE.Models;
-using ReviewApplication.CORE.Domain;
+using ReviewApplication.Core.Infrastructure;
+using ReviewApplication.Core.Repository;
+using ReviewApplication.Core.Models;
+using ReviewApplication.Core.Domain;
 using ReviewApplication.Data.Infrastructure;
-using ReviewApplication.CORE.Repository;
+using ReviewApplication.Core.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ReviewApplication.DATA.Infrastructure;
+using ReviewApplication.Data.Infrastructure;
 
 namespace ReviewApplication.Data.Repository
 {

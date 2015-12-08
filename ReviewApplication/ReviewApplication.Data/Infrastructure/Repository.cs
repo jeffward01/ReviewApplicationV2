@@ -1,4 +1,4 @@
-﻿using ReviewApplication.CORE.Infrastructure;
+﻿using ReviewApplication.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using ReviewApplication.Data.Infrastructure;
 using System.Data.Entity;
 
-namespace ReviewApplication.DATA.Infrastructure
+namespace ReviewApplication.Data.Infrastructure
 {
     public class Repository<T> : IRepository<T> where T : class
     {

@@ -64,6 +64,7 @@
     <Compile Include="Repository\CommentRepository.cs" />
     <Compile Include="Repository\CompanyProfileRepository.cs" />
     <Compile Include="Repository\ExternalLoginRepository.cs" />
+    <Compile Include="Repository\IndustryReposity.cs" />
     <Compile Include="Repository\InsuranceAgentRepository.cs" />
     <Compile Include="Repository\LeadProductRepository.cs" />
     <Compile Include="Repository\LeadTransactionRepository.cs" />
@@ -73,6 +74,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReviewApplication.Core\ReviewApplication.Core.csproj">
+      <Project>{de29baa0-5678-46c4-8a98-83699ab765d0}</Project>
+      <Name>ReviewApplication.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-﻿using ReviewApplication.CORE.Domain;
+﻿using ReviewApplication.Core.Domain;
 using System.Data.Entity;
 
 namespace ReviewApplication.Data.Infrastructure

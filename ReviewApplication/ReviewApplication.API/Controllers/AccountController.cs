@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using ReviewApplication.API.Models;
+using ReviewApplication.Core.Communication;
 using ReviewApplication.Core.Infrastructure;
 using ReviewApplication.Core.Models;
 using ReviewApplication.Core.Repository;
@@ -17,10 +18,12 @@ namespace ReviewApplication.API.Controllers
     public class AccountController : ApiController
     {
         private IAuthRepository _authRepository = null;
+        private ISmsClient _smsClient;
 
-        public AccountController(IAuthRepository authRepository)
+        public AccountController(IAuthRepository authRepository, ISmsClient smsClient)
         {
             _authRepository = authRepository;
+            _smsClient = smsClient;
         }
 
         // POST api/Account/Register
@@ -41,6 +44,8 @@ namespace ReviewApplication.API.Controllers
             {
                 return errorResult;
             }
+
+            _smsClient.SendText("9092247557", "9098108106", "Your account has been created");
 
             return Ok();
         }

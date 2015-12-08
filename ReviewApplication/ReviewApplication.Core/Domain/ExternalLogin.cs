@@ -17,5 +17,9 @@ namespace ReviewApplication.Core.Domain
         public string ProviderKey { get; set; }
 
         public virtual User User { get; set; }
+
+        //Add Virtuals
+
+        //Add Methods (update)
     }
 }

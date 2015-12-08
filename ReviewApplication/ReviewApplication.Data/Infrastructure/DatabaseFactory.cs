@@ -1,5 +1,5 @@
-﻿using ReviewApplication.CORE.Domain;
-using ReviewApplication.CORE.Infrastructure;
+﻿using ReviewApplication.Core.Domain;
+using ReviewApplication.Core.Infrastructure;
 using ReviewApplication.Data.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReviewApplication.DATA.Infrastructure
+namespace ReviewApplication.Data.Infrastructure
 {
     /// <summary>
     /// Responsible for creating a DataContext that will live for a certain amount time.

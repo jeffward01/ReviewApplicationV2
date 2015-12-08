@@ -33,6 +33,5 @@ namespace ReviewApplication.Core.Models
         public string ProductNotes { get; set; }
    
 
-        //Add methods if any (update)
     }
 }

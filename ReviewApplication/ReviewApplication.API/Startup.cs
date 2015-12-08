@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Owin;
+using ReviewApplication.Core.Communication;
 using ReviewApplication.Core.Domain;
 using ReviewApplication.Core.Infrastructure;
 using ReviewApplication.Core.Repository;
+using ReviewApplication.Data.Infrastructure;
+using ReviewApplication.Data.Repository;
 using SimpleInjector;
 using SimpleInjector.Extensions.ExecutionContextScoping;
 using SimpleInjector.Integration.WebApi;
@@ -49,6 +52,10 @@ namespace ReviewApplication.API
             container.Register<ILeadProductRepository, LeadProductRepository>();
             container.Register<ILeadTransactionRepository, LeadTransactionRepository>();
             container.Register<IReviewPostRepository, ReviewPostRepository>();
+            container.Register<IIndustryRepository, IndustryRepository>();
+            container.Register<IExternalLoginRepository, ExternalLoginRepository>();
+            container.Register<ISmsClient, TwilioSmsClient>();
+            //TODO: Add Industry and External Login bindings
 
 
             app.Use(async (context, next) => {

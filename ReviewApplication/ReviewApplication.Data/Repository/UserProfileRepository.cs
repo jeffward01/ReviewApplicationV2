@@ -1,18 +1,18 @@
-﻿using ReviewApplication.DATA.Infrastructure;
-using ReviewApplication.CORE.Domain;
-using ReviewApplication.CORE.Repository;
-using ReviewApplication.CORE.Infrastructure;
+﻿using ReviewApplication.Data.Infrastructure;
+using ReviewApplication.Core.Domain;
+using ReviewApplication.Core.Repository;
+using ReviewApplication.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReviewApplication.DATA.Repository
+namespace ReviewApplication.Data.Repository
 {
-    public class UserProfileRepository : Repository<User>, IUserRepository
+    public class UserRepository : Repository<User>, IUserRepository
     {
-        public UserProfileRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
+        public UserRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
         { }
 
     }

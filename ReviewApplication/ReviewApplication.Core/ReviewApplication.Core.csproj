@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Communication\ISmsClient.cs" />
+    <Compile Include="Communication\TwilioSmsClient.cs" />
     <Compile Include="Domain\Comment.cs" />
     <Compile Include="Domain\CompanyProfile.cs" />
     <Compile Include="Domain\ExternalLogin.cs" />
@@ -59,6 +61,8 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\CompanyProfileModel.cs" />
+    <Compile Include="Models\ExternalLoginModel.cs" />
+    <Compile Include="Models\IndustryModel.cs" />
     <Compile Include="Models\InsuranceAgentProfileModel.cs" />
     <Compile Include="Models\LeadProductModel.cs" />
     <Compile Include="Models\LeadTransactionModel.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="Repository\ICommentRepository.cs" />
     <Compile Include="Repository\ICompanyProfileRepository.cs" />
     <Compile Include="Repository\IExternalLoginRepository.cs" />
+    <Compile Include="Repository\IIndustryRepository.cs" />
     <Compile Include="Repository\IInsuranceAgentProfileRepository.cs" />
     <Compile Include="Repository\ILeadProductRepository.cs" />
     <Compile Include="Repository\ILeadTransactionRepository.cs" />
