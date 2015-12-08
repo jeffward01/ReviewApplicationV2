@@ -27,8 +27,9 @@ namespace ReviewApplication.Core.Domain
         //Add Vitrual Varibles
         public virtual CompanyProfile CompanyProfile { get; set; }
         public virtual InsuranceAgentProfile InsuranceAgentProfile { get; set; }
+        public virtual ICollection<ExternalLogin> ExternalLogins { get; set; }
 
-         
+
         //Add methods if any (update)
         public void Update(UserModel UserProfile)
         {

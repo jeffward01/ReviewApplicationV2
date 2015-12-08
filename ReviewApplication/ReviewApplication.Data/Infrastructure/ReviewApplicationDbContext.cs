@@ -101,8 +101,10 @@ namespace ReviewApplication.Data.Infrastructure
             //Map External Login
             modelBuilder.Entity<ExternalLogin>().HasKey(u => u.ExternalLoginID);
 
-            //TODO: Map user to externalLogin
-
+            //Map user to externalLogin
+            modelBuilder.Entity<User>().HasMany(b => b.ExternalLogins)
+                                      .WithRequired(el => el.User)
+                                      .HasForeignKey(el => el.UserID);
 
             base.OnModelCreating(modelBuilder);
         }
