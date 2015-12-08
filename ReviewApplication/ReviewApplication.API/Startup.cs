@@ -55,7 +55,6 @@ namespace ReviewApplication.API
             container.Register<IIndustryRepository, IndustryRepository>();
             container.Register<IExternalLoginRepository, ExternalLoginRepository>();
             container.Register<ISmsClient, TwilioSmsClient>();
-            //TODO: Add Industry and External Login bindings
 
 
             app.Use(async (context, next) => {

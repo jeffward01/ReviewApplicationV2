@@ -65,6 +65,7 @@ namespace ReviewApplication.Core.Domain
         public virtual ICollection<ReviewPost> ReviewPosts { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<LeadTransaction> Transactions { get; set; }
+        public virtual Industry Industry { get; set; }
 
         //Can only have one userProfile
         public virtual User UserProfile { get; set; }

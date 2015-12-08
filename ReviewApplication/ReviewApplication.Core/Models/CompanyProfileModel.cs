@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ReviewApplication.Core.Domain;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,9 @@ namespace ReviewApplication.Core.Models
     {
         public int CompanyID { get; set; } //Primary Key
         public int UserID { get; set; }  // Foreign Key
+
+        [Required]
+        public Industry Industry { get; set; }
 
         public string CompanyName { get; set; }
         public string Address1 { get; set; }

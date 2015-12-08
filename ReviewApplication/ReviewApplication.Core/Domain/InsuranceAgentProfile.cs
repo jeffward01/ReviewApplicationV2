@@ -26,6 +26,9 @@ namespace ReviewApplication.Core.Domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        [Required]
+        public Industry Insustry { get; set; }
+
         //Set Full Name
         public string FullName
         {
@@ -72,6 +75,7 @@ namespace ReviewApplication.Core.Domain
         public virtual ICollection<ReviewPost> ReviewPosts { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<LeadTransaction> Transactions { get; set; }
+        public virtual Industry Industry { get; set; }
 
         //Can only have 1 userProfile
         public virtual User UserProfile { get; set; }

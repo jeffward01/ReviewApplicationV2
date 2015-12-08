@@ -19,5 +19,7 @@ namespace ReviewApplication.Core.Models
         public CompanyProfileModel Company { get; set; }
         public LeadProductModel LeadProduct {get;set;}
         public InsuranceAgentProfileModel InsuranceAgent { get; set; }
+
+        //TODO: Add annotations to this entire folder
     }
 }

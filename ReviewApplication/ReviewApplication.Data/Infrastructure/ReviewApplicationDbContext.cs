@@ -17,6 +17,8 @@ namespace ReviewApplication.Data.Infrastructure
         public IDbSet<LeadTransaction> LeadTransactions { get; set; }
         public IDbSet<ReviewPost> ReviewPosts { get; set; }
         public IDbSet<User> UserProfiles { get; set; }
+        public IDbSet<ExternalLogin> ExternalLigins { get; set; }
+        public IDbSet<Industry> Industries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -87,8 +89,19 @@ namespace ReviewApplication.Data.Infrastructure
                                             .WithOptional(c => c.InsuranceAgentProfile)
                                             .HasForeignKey(c => c.CommentID);
 
+            //Map InsuranceAgentProfile to Industy
+            modelBuilder.Entity<InsuranceAgentProfile>().HasRequired(i => i.Industry)
+                                            .WithMany(ia => ia.InsuranceAgentProfiles)
+                                            .HasForeignKey(ia => ia.InsuranceAgentID);
 
+            //Map CompanyProfile to Industry
+            modelBuilder.Entity<CompanyProfile>().HasRequired(i => i.Industry)
+                                        .WithMany(cp => cp.CompanyProfiles)
+                                        .HasForeignKey(cp => cp.CompanyID);
+            //Map External Login
+            modelBuilder.Entity<ExternalLogin>().HasKey(u => u.ExternalLoginID);
 
+            //TODO: Map user to externalLogin
 
 
             base.OnModelCreating(modelBuilder);

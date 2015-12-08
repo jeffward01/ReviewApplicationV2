@@ -21,3 +21,5 @@ namespace ReviewApplication.Core.Models
 
     }
 }
+
+//TODO: Add annotations to this entire folder
