@@ -11,8 +11,6 @@ namespace ReviewApplication.Core.Domain
 {
    public class LeadTransaction
     {
-
-        [Key, ForeignKey("CompanyProfile")]
         public int CompanyID { get; set; } //Forign Key
 
         public DateTime TransactionDate { get; set; }
@@ -22,8 +20,8 @@ namespace ReviewApplication.Core.Domain
         public int TransactionPrice { get; set; }
         public string TransactionNotes { get; set; }
        
-        public virtual InsuranceAgentProfile Agent { get; set; }
-        public virtual CompanyProfile Company { get; set; }
+        public virtual InsuranceAgent Agent { get; set; }
+        public virtual Company Company { get; set; }
         public virtual LeadProduct LeadProduct { get; set; }
              
         public void Update(LeadTransactionModel leadTransactionModel)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReviewApplication.Core.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace ReviewApplication.Core.Models
         public int UserID { get; set; } // Forign Key
 
         [Required]
-        public string Industry { get; set; }
+        public Industry Industry { get; set; }
 
         public string ProfileName { get; set; }
 

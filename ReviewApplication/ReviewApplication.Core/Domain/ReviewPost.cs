@@ -21,8 +21,8 @@ namespace ReviewApplication.Core.Domain
         public int NumberOfLikes { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual CompanyProfile Company { get; set; }
-        public virtual InsuranceAgentProfile InsuranceAgent { get; set; }
+        public virtual Company Company { get; set; }
+        public virtual InsuranceAgent InsuranceAgent { get; set; }
 
         public void Update(ReviewPostModel reviewPost)
         {

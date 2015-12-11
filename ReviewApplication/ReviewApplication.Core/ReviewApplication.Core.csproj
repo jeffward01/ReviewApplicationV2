@@ -48,10 +48,10 @@
     <Compile Include="Communication\ISmsClient.cs" />
     <Compile Include="Communication\TwilioSmsClient.cs" />
     <Compile Include="Domain\Comment.cs" />
-    <Compile Include="Domain\CompanyProfile.cs" />
+    <Compile Include="Domain\Company.cs" />
     <Compile Include="Domain\ExternalLogin.cs" />
     <Compile Include="Domain\Industry.cs" />
-    <Compile Include="Domain\InsuranceAgentProfile.cs" />
+    <Compile Include="Domain\InsuranceAgent.cs" />
     <Compile Include="Domain\LeadProduct.cs" />
     <Compile Include="Domain\LeadTransaction.cs" />
     <Compile Include="Domain\ReviewPost.cs" />

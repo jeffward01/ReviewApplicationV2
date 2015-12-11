@@ -8,6 +8,6 @@ using ReviewApplication.Core.Infrastructure;
 
 namespace ReviewApplication.Core.Repository
 {
-    public interface IInsuranceAgentProfileRepository : IRepository<InsuranceAgentProfile>
+    public interface IInsuranceAgentProfileRepository : IRepository<InsuranceAgent>
     { }
 }

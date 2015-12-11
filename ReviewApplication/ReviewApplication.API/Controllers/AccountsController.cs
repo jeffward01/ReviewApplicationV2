@@ -15,12 +15,12 @@ using System.Web.Http;
 namespace ReviewApplication.API.Controllers
 {
     [RoutePrefix("api/Account")]
-    public class AccountController : ApiController
+    public class AccountsController : ApiController
     {
         private IAuthRepository _authRepository = null;
         private ISmsClient _smsClient;
 
-        public AccountController(IAuthRepository authRepository, ISmsClient smsClient)
+        public AccountsController(IAuthRepository authRepository, ISmsClient smsClient)
         {
             _authRepository = authRepository;
             _smsClient = smsClient;

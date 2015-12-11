@@ -25,8 +25,8 @@ namespace ReviewApplication.Core.Domain
         public DateTime CreatedDate { get; set; }
 
         //Add Vitrual Varibles
-        public virtual CompanyProfile CompanyProfile { get; set; }
-        public virtual InsuranceAgentProfile InsuranceAgentProfile { get; set; }
+        public virtual Company CompanyProfile { get; set; }
+        public virtual InsuranceAgent InsuranceAgentProfile { get; set; }
         public virtual ICollection<ExternalLogin> ExternalLogins { get; set; }
 
 

@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 
 namespace ReviewApplication.Core.Domain
 {
-    public class CompanyProfile
+    public class Company
     {
-        [Key, ForeignKey("UserProfile")]
-        public int UserID { get; set; }  // Foreign Key
-
         public int CompanyID { get; set; } //Primary Key
+        public int UserID { get; set; }  // Foreign Key
+        public int IndustryID { get; set; }
 
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
@@ -69,6 +68,7 @@ namespace ReviewApplication.Core.Domain
 
         //Can only have one userProfile
         public virtual User UserProfile { get; set; }
+
 
 
         //Add methods (update)

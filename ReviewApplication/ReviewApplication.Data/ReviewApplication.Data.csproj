@@ -59,6 +59,11 @@
     <Compile Include="Infrastructure\ReviewApplicationDbContext.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Infrastructure\UserStore.cs" />
+    <Compile Include="Migrations\201512110115200_InitialCreate.cs" />
+    <Compile Include="Migrations\201512110115200_InitialCreate.Designer.cs">
+      <DependentUpon>201512110115200_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AuthRepository.cs" />
     <Compile Include="Repository\CommentRepository.cs" />
@@ -80,6 +85,11 @@
       <Project>{de29baa0-5678-46c4-8a98-83699ab765d0}</Project>
       <Name>ReviewApplication.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512110115200_InitialCreate.resx">
+      <DependentUpon>201512110115200_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

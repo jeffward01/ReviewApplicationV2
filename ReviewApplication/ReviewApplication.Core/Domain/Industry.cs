@@ -12,8 +12,8 @@ namespace ReviewApplication.Core.Domain
         public string Description { get; set; }
 
         //Add Virtuals
-        public ICollection<InsuranceAgentProfile> InsuranceAgentProfiles { get; set; }
-        public ICollection<CompanyProfile> CompanyProfiles { get; set; }
+        public ICollection<InsuranceAgent> InsuranceAgentProfiles { get; set; }
+        public ICollection<Company> CompanyProfiles { get; set; }
 
         //Add Methods (update)
     }

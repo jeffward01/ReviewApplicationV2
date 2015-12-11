@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ReviewApplication.Data.Repository
 {
-     public class CompanyProfileRepository : Repository<CompanyProfile>, ICompanyProfileRepository
+     public class CompanyProfileRepository : Repository<Company>, ICompanyProfileRepository
     {
         public CompanyProfileRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
         { }

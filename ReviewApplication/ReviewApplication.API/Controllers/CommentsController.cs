@@ -17,14 +17,14 @@ using System.Web.Http.OData;
 
 namespace ReviewApplication.API.Controllers
 {
-    public class CommentController : ApiController
+    public class CommentsController : ApiController
     {
         private readonly ICommentRepository _commentRepository;
         private readonly IUnitOfWork _unitOfWork;
         
 
         //Constructor
-        public CommentController(ICommentRepository commentRepository, IUnitOfWork unitOfWork)
+        public CommentsController(ICommentRepository commentRepository, IUnitOfWork unitOfWork)
         {
             _commentRepository = commentRepository;
             _unitOfWork = unitOfWork;
@@ -159,10 +159,6 @@ namespace ReviewApplication.API.Controllers
 
             return Ok(Mapper.Map<CommentModel>(dbComment));
         }
-
-
-
-
 
 
 

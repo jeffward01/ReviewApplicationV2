@@ -10,12 +10,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ReviewApplication.Core.Domain
 {
-    public class InsuranceAgentProfile
+    public class InsuranceAgent
     {
-        [Key, ForeignKey("UserProfile")]
         public int UserID { get; set; } // Forign Key
 
         public int InsuranceAgentID { get; set; } // Primary Key
+        public int IndustryID { get; set; }
 
         public string ProfileName { get; set; }
 
@@ -26,7 +26,6 @@ namespace ReviewApplication.Core.Domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        [Required]
         public Industry Insustry { get; set; }
 
         //Set Full Name

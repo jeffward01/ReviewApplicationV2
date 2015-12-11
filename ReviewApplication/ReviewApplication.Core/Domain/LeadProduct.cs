@@ -11,10 +11,9 @@ namespace ReviewApplication.Core.Domain
 {
     public class LeadProduct
     {
-        [Key, ForeignKey("CompanyProfile")]
+        public int LeadProductID { get; set; } //Primary Key
         public int CompanyID { get; set; } //Forign Key
 
-        public int LeadProductID { get; set; } //Primary Key
 
 
         public string Price { get; set; }
@@ -40,7 +39,7 @@ namespace ReviewApplication.Core.Domain
         
 
         //Add Virtual Varibles
-        public virtual CompanyProfile CompanyProfile { get; set; }
+        public virtual Company Company { get; set; }
 
         //Add methods if any (update)
         public void Update(LeadProductModel leadProduct)

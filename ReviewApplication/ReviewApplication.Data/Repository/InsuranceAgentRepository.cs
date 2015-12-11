@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ReviewApplication.Data.Repository
 {
-    public class InsuranceAgentProfileRepository : Repository<InsuranceAgentProfile>, IInsuranceAgentProfileRepository
+    public class InsuranceAgentProfileRepository : Repository<InsuranceAgent>, IInsuranceAgentProfileRepository
     {
         public InsuranceAgentProfileRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
         { }
