@@ -12,6 +12,8 @@ namespace ReviewApplication.Core.Domain
         public int ReviewPostID { get; set; } //Primary Key
         public int CompanyID { get; set; } // Foriegn Key
         public int InsuranceAgentID { get; set; } // Foriegn Key
+        public bool IsArchived { get; set; } //Archived State
+
         public DateTime ReviewPostDate { get; set; }
 
         public int CompanyRating { get; set; }
@@ -19,6 +21,7 @@ namespace ReviewApplication.Core.Domain
         public string PostTitle { get; set; }
         public string PostBody { get; set; }
         public int NumberOfLikes { get; set; }
+
 
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual Company Company { get; set; }
@@ -35,6 +38,7 @@ namespace ReviewApplication.Core.Domain
             PostBody = reviewPost.PostBody;
             PostTitle = reviewPost.PostTitle;
             NumberOfLikes = reviewPost.NumberOfLikes;
+            IsArchived = reviewPost.IsArchived;
         }
     }
 }

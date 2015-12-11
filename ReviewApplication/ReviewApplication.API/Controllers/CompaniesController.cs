@@ -99,7 +99,7 @@ namespace ReviewApplication.API.Controllers
 
 
         // POST: api/Companies/5 || [3] 
-        [ResponseType(typeof(CompanyModel]
+        [ResponseType(typeof(CompanyModel))]
         public IHttpActionResult PostCompany(CompanyModel company)
         {
             //Check Model State
@@ -147,5 +147,13 @@ namespace ReviewApplication.API.Controllers
         //deletes related objects 
         //TODO: Write delete cascade
         private void DeleteCompany(int companyID)
+        {
+
+
+
+
+
+
+        }
     }
 }

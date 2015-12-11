@@ -42,6 +42,7 @@ namespace ReviewApplication.Core.Domain
             InsuranceAgentProfileID = leadTransactionModel.InsuranceAgentProfileID;
             TransactionPrice = leadTransactionModel.TransactionPrice;
             TransactionNotes = leadTransactionModel.TransactionNotes;
+            IsArchived = leadTransactionModel.IsArchived;
 
         }
 
