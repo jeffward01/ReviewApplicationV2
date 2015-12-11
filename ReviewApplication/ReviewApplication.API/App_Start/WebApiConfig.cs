@@ -43,8 +43,8 @@ namespace ReviewApplication.API
         private static void SetupAutomapper()
         {   
             Mapper.CreateMap<Comment, CommentModel>();
-            Mapper.CreateMap<Company, CompanyProfileModel>();
-            Mapper.CreateMap<InsuranceAgent, InsuranceAgentProfileModel>();
+            Mapper.CreateMap<Company, CompanyModel>();
+            Mapper.CreateMap<InsuranceAgent, InsuranceAgentModel>();
             Mapper.CreateMap<LeadProduct, LeadProductModel>();
             Mapper.CreateMap<LeadTransaction, LeadTransactionModel>();
             Mapper.CreateMap<ReviewPost, ReviewPostModel>();

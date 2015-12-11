@@ -10,6 +10,7 @@ namespace ReviewApplication.Core.Models
     {
 
         public int UserID { get; set; } // Primary Key
+        public bool IsArchived { get; set; } //Archived State
 
         public string Email { get; set; }
         public string ResetEmail { get; set; }
@@ -22,8 +23,8 @@ namespace ReviewApplication.Core.Models
 
        
         //Add Either?
-        public InsuranceAgentProfileModel InsuranceAgentProfile { get; set; }
-        public CompanyProfileModel CompanyProfile { get; set; }
+        public InsuranceAgentModel InsuranceAgentProfile { get; set; }
+        public CompanyModel CompanyProfile { get; set; }
 
         //Add methods if any (update)
 

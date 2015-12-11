@@ -14,6 +14,7 @@ namespace ReviewApplication.Core.Domain
    public class User : IUser<int>
     {
         public int Id { get; set; } // Primary Key
+        public bool IsArchived { get; set; } //Archived State
 
         public string Email { get; set; }
         public string ResetEmail { get; set; }
@@ -47,6 +48,7 @@ namespace ReviewApplication.Core.Domain
             AccountType = UserProfile.AccountType;
             Industry = UserProfile.Industry;
             CreatedDate = UserProfile.CreatedDate;
+            IsArchived = UserProfile.IsArchived;
         }
     }
 }

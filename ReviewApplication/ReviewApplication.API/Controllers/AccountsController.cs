@@ -45,7 +45,9 @@ namespace ReviewApplication.API.Controllers
                 return errorResult;
             }
 
-            _smsClient.SendText("9092247557", "9098108106", "Your account has been created");
+            //Insert Registration Logic here
+
+           // _smsClient.SendText("9092247557", "9098108106", "Your account has been created");
 
             return Ok();
         }

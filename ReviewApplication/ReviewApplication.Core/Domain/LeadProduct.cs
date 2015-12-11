@@ -14,7 +14,7 @@ namespace ReviewApplication.Core.Domain
         public int LeadProductID { get; set; } //Primary Key
         public int CompanyID { get; set; } //Forign Key
 
-
+        public bool IsArchived { get; set; } //Archived State
 
         public string Price { get; set; }
         public string ProductNotes { get; set; }
@@ -59,6 +59,7 @@ namespace ReviewApplication.Core.Domain
             InternetLeadNotes = leadProduct.InternetLeadNotes;
             ColdCallPhoneNumberList = leadProduct.ColdCallPhoneNumberList;
             ColdCallPhoneNumberListLeadNotes = leadProduct.ColdCallPhoneNumberListLeadNotes;
+            IsArchived = leadProduct.IsArchived;
         }
     }
 }

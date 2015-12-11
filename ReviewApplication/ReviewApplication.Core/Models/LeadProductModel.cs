@@ -11,6 +11,8 @@ namespace ReviewApplication.Core.Models
         public int LeadProductID { get; set; } //Primary Key
         public int CompanyID { get; set; } //Forign Key
 
+        public bool IsArchived { get; set; } //Archived State
+
         public string OrderLink { get; set; }
 
         //Lead Type

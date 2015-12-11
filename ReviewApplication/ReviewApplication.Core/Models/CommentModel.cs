@@ -10,6 +10,8 @@ namespace ReviewApplication.Core.Models
     {
         public int CommentID { get; set; } //Primary Key
         public int ReviewID { get; set; } //Foriegn Key
+        public bool IsArchived { get; set; } //Archived State
+
         public int? InsuranceAgentID { get; set; }
         public int? CompanyID { get; set; }
         public DateTime CommentDate { get; set; }

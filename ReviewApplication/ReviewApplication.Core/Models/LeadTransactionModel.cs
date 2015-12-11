@@ -16,9 +16,11 @@ namespace ReviewApplication.Core.Models
         public int TransactionPrice { get; set; }
         public string TransactionNotes { get; set; }
 
-        public CompanyProfileModel Company { get; set; }
+        public bool IsArchived { get; set; } //Archived State
+
+        public CompanyModel Company { get; set; }
         public LeadProductModel LeadProduct {get;set;}
-        public InsuranceAgentProfileModel InsuranceAgent { get; set; }
+        public InsuranceAgentModel InsuranceAgent { get; set; }
 
         //TODO: Add annotations to this entire folder
     }

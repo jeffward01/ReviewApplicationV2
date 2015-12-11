@@ -6,11 +6,14 @@ namespace ReviewApplication.Core.Domain
 {
     public class Comment
     {
-        public int CommentID { get; set; }
-        public int? ParentCommentID { get; set; }
+        public int CommentID { get; set; } //Primary Key
+        public int? ParentCommentID { get; set; } // Optional Foriegn Key
+        public int ReviewID { get; set; } // Foriegn Key 
+
+        public bool IsArchived { get; set; } // Archived State
+
         public DateTime CommentDate { get; set; }
 
-        public int ReviewID { get; set; } // Foriegn Key 
         public int? InsuranceAgentProfileID { get; set; }
         public int? CompanyID { get; set; }
         public string PostBody { get; set; }
@@ -41,7 +44,7 @@ namespace ReviewApplication.Core.Domain
             CompanyID = comment.CompanyID;
             PostBody = comment.PostBody;
             NumberOfLikes = comment.NumberOfLikes;
-
+            IsArchived = comment.IsArchived;
         }
 
     }

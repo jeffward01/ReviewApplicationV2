@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ReviewApplication.Core.Models
 {
-   public class CompanyProfileModel
+   public class CompanyModel
     {
         public int CompanyID { get; set; } //Primary Key
         public int UserID { get; set; }  // Foreign Key
+        public bool IsArchived { get; set; } //Archived State
 
-        [Required]
         public Industry Industry { get; set; }
 
         public string CompanyName { get; set; }

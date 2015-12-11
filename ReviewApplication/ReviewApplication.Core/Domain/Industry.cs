@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReviewApplication.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ namespace ReviewApplication.Core.Domain
 {
    public class Industry
     {
-        public int Id { get; set; }
+        public int Id { get; set; } //Primary Key
+        public bool IsArchived { get; set; } //Archived State
         public string Description { get; set; }
 
         //Add Virtuals
@@ -16,5 +18,11 @@ namespace ReviewApplication.Core.Domain
         public ICollection<Company> CompanyProfiles { get; set; }
 
         //Add Methods (update)
+        public void Update(IndustryModel industry)
+        {
+            Id = industry.Id;
+            IsArchived = industry.IsArchived;
+            Description = industry.Description;
+        }
     }
 }

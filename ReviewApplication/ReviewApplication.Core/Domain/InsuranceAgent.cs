@@ -12,10 +12,13 @@ namespace ReviewApplication.Core.Domain
 {
     public class InsuranceAgent
     {
+        public int InsuranceAgentID { get; set; } // Primary Key
+
         public int UserID { get; set; } // Forign Key
 
-        public int InsuranceAgentID { get; set; } // Primary Key
-        public int IndustryID { get; set; }
+        public int IndustryID { get; set; } //Forign Key
+
+        public bool IsArchived { get; set; } //Archived State
 
         public string ProfileName { get; set; }
 
@@ -80,7 +83,7 @@ namespace ReviewApplication.Core.Domain
         public virtual User UserProfile { get; set; }
 
         //Add methods if any (update)
-        public void Update(InsuranceAgentProfileModel insuranceProfileAgent)
+        public void Update(InsuranceAgentModel insuranceProfileAgent)
         {
 
             InsuranceAgentID = insuranceProfileAgent.InsuranceAgentID;
@@ -126,6 +129,8 @@ namespace ReviewApplication.Core.Domain
 
             ColdCallPhoneNumberLists = insuranceProfileAgent.ColdCallPhoneNumberLists;
             ColdCallPhoneNumberListLeadNotes = insuranceProfileAgent.ColdCallPhoneNumberListLeadNotes;
+
+            IsArchived = insuranceProfileAgent.IsArchived;
         }
             
         

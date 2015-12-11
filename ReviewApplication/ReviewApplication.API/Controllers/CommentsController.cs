@@ -30,14 +30,14 @@ namespace ReviewApplication.API.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // GET: api/Comment
+        // GET: api/Comment || [0]
         [EnableQuery]
-        public IQueryable<CommentModel> Get()
+        public IQueryable<CommentModel> GetComments()
         {
             return _commentRepository.GetAll().ProjectTo<CommentModel>();
         }
 
-        // GET: api/Comment/5
+        // GET: api/Comment/5 || [1]
         [ResponseType(typeof(CommentModel))]
         public IHttpActionResult GetComment(int id)
         {
@@ -50,7 +50,7 @@ namespace ReviewApplication.API.Controllers
         }
 
 
-        // PUT: api/Comment/5
+        // PUT: api/Comment/5 || [2]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutComment(int id, CommentModel comment)
         {
@@ -97,9 +97,9 @@ namespace ReviewApplication.API.Controllers
         }
 
 
-        // POST: api/Comment
+        // POST: api/Comment || [3]
         [ResponseType(typeof(CommentModel))]
-        public IHttpActionResult PostCOmment(CommentModel comment)
+        public IHttpActionResult PostComment(CommentModel comment)
         {
           //Check ModelState
           if(!ModelState.IsValid)
@@ -130,7 +130,7 @@ namespace ReviewApplication.API.Controllers
 
      
        
-        // DELETE: api/Comment/5
+        // DELETE: api/Comment/5 || [4]
         [ResponseType(typeof(CommentModel))]
         public IHttpActionResult DeleteComment(int id)
         {

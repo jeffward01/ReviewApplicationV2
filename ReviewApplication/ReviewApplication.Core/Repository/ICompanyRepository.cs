@@ -8,6 +8,6 @@ using ReviewApplication.Core.Infrastructure;
 
 namespace ReviewApplication.Core.Repository
 {
-    public interface ICompanyProfileRepository : IRepository<Company>
+    public interface ICompanyRepository : IRepository<Company>
     { }
 }

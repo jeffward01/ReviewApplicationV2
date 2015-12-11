@@ -12,7 +12,10 @@ namespace ReviewApplication.Core.Domain
     public class Company
     {
         public int CompanyID { get; set; } //Primary Key
-        public int UserID { get; set; }  // Foreign Key
+        public int UserID { get; set; }  // Foreign 
+
+        public bool IsArchived { get; set; } //Archived State
+
         public int IndustryID { get; set; }
 
         public string CompanyName { get; set; }
@@ -72,7 +75,7 @@ namespace ReviewApplication.Core.Domain
 
 
         //Add methods (update)
-        public void Update(CompanyProfileModel companyProfile)
+        public void Update(CompanyModel companyProfile)
         {
             CompanyID = companyProfile.CompanyID;
             UserID = companyProfile.UserID;
@@ -107,7 +110,7 @@ namespace ReviewApplication.Core.Domain
             AcceptsVenmo = companyProfile.AcceptsVenmo;
             VenmoComments = companyProfile.VenmoComments;
             VenmoHandle = companyProfile.VenmoHandle;
-
+            IsArchived = companyProfile.IsArchived;
             
         }
         

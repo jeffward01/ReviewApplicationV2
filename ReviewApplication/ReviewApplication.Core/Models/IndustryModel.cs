@@ -10,5 +10,6 @@ namespace ReviewApplication.Core.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
+        public bool IsArchived { get; set; } //Archived State
     }
 }

@@ -11,12 +11,16 @@ namespace ReviewApplication.Core.Domain
 {
    public class LeadTransaction
     {
-        public int CompanyID { get; set; } //Forign Key
+        public int LeadTransactionID { get; set; } // Primary Key
+        public int CompanyID { get; set; } //Foreign Key
+        public int LeadProductID { get; set; } //Foreign Key
+        public int InsuranceAgentProfileID { get; set; } //Foreign Key
+        public bool IsArchived { get; set; } //Archived State
+
 
         public DateTime TransactionDate { get; set; }
-        public int LeadTransactionID { get; set; } // Primary Key
-        public int LeadProductID { get; set; }
-        public int InsuranceAgentProfileID { get; set; }
+        
+       
         public int TransactionPrice { get; set; }
         public string TransactionNotes { get; set; }
        
@@ -38,6 +42,7 @@ namespace ReviewApplication.Core.Domain
             InsuranceAgentProfileID = leadTransactionModel.InsuranceAgentProfileID;
             TransactionPrice = leadTransactionModel.TransactionPrice;
             TransactionNotes = leadTransactionModel.TransactionNotes;
+
         }
 
     }

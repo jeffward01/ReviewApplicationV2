@@ -11,6 +11,8 @@ namespace ReviewApplication.Core.Models
     {
         public int ExternalLoginID { get; set; }
 
+        public bool IsArchived { get; set; } //Archived State
+
         public int UserID { get; set; }
 
         public string LoginProvider { get; set; }
