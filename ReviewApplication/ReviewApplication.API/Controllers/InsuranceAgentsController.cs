@@ -61,12 +61,12 @@ namespace ReviewApplication.API.Controllers
         }
 
        
-        //PUT: api/InsuranceAgents
-        [ResponseType(typeof(void))]
+        //PUT: api/InsuranceAgents  || [3]
+        [ResponseType(typeof(void))]  
         public IHttpActionResult PutInsuranceAgent(int id, InsuranceAgentModel insuranceAgent)
         {
             //Validate the request
-            if(!ModelState)
+            if(!ModelState.IsValid)
             {
                 return BadRequest();
             }
@@ -102,13 +102,43 @@ namespace ReviewApplication.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        //Delete: api/InsuranceAgents || [4]
+        [ResponseType(typeof(InsuranceAgentModel))]
+        public IHttpActionResult DeleteInsuranceAgent(int id)
+        {
+            //Get the dbInsurance Agent corresponding to the InsuranceAgentID
+            InsuranceAgent dbInsuranceAgent = _insuranceAgentRepository.GetByID(id);
+            if(dbInsuranceAgent == null)
+            {
+                return NotFound();
+            }
+
+            //Delete the Insurance Agent
+            try
+            {
+                //Set to archived
+                dbInsuranceAgent.IsArchived = true;
+
+                //Update the InsuranceAgent
+                _insuranceAgentRepository.Update(dbInsuranceAgent);
+
+                //save the changes
+                _unitOfWork.Commit();
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Unable to archive the InsuranceAgent to the Database");
+            }
+            return Ok(Mapper.Map<InsuranceAgentModel>(dbInsuranceAgent));
+        }
+
+
         private bool InsuranceAgentExists(int id)
         {
             return _insuranceAgentRepository.Count(ia => ia.InsuranceAgentID == id) > 0;
-
         }
 
-        public override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
         }

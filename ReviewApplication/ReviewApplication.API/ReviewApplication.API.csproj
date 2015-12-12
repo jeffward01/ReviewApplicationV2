@@ -174,6 +174,8 @@
     <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\IndustriesController.cs" />
     <Compile Include="Controllers\InsuranceAgentsController.cs" />
+    <Compile Include="Controllers\LeadProductsController.cs" />
+    <Compile Include="Controllers\ReviewPostsController.cs" />
     <Compile Include="OAuth\ReviewApplicationAuthorizationServiceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
