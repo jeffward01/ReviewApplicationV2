@@ -161,7 +161,13 @@ namespace ReviewApplication.API.Controllers
             return Ok(Mapper.Map<CompanyModel>(dbCompany));
         }
 
+        //GET: api/Companies/5
+        [EnableQuery]
+        public IQueryable<CompanyModel> GetCompaniesByIndustry(int industryID)
+        {
+            return _companyRepository.Where(ia => ia.IsArchived == false && ia.IndustryID == industryID).ProjectTo<CompanyModel>();
 
+        }
 
 
         //-------------------------------------------------------------
