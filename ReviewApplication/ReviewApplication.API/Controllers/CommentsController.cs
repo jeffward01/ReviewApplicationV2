@@ -144,13 +144,13 @@ namespace ReviewApplication.API.Controllers
                 return NotFound();
             }
             
-            //Delete Post
+            //Delete Comment
             try
             {
                 //Set to archived
                 dbComment.IsArchived = true;
 
-                //Remove the comment
+                //update the comment
                 _commentRepository.Update(dbComment);
 
                 //Save Changes
@@ -158,7 +158,7 @@ namespace ReviewApplication.API.Controllers
             }
             catch(Exception e)
             {
-                throw new Exception("Unable to delete the comment from the database", e);
+                throw new Exception("Unable to archive the comment to the database", e);
             }
 
             return Ok(Mapper.Map<CommentModel>(dbComment));

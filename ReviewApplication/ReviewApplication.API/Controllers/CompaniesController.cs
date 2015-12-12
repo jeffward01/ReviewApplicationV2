@@ -33,7 +33,7 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery] 
         public IQueryable<CompanyModel> GetCompanies()
         {
-            return _companyRepository.GetAll().ProjectTo<CompanyModel>();
+            return _companyRepository.Where(c => c.IsArchived == false).ProjectTo<CompanyModel>();
         }
 
         // GET: api/Companies/5 || [1]
@@ -41,11 +41,15 @@ namespace ReviewApplication.API.Controllers
         public IHttpActionResult GetCompany(int id)
         {
             Company dbCompany = _companyRepository.GetByID(id);
-            if(dbCompany == null)
+            if(dbCompany != null && !dbCompany.IsArchived)
+            {
+                return Ok(Mapper.Map<CompanyModel>(dbCompany));
+            }
+            else
             {
                 return NotFound();
             }
-            return Ok(Mapper.Map<CompanyModel>(dbCompany));
+           
         }
 
         // PUT: api/Companies || [2] 
@@ -127,8 +131,34 @@ namespace ReviewApplication.API.Controllers
         }
 
         // DELETE: api/Companies/5 || [4]
-        public void Delete(int id)
+        [ResponseType(typeof(CompanyModel))]
+        public IHttpActionResult DeleteCompany(int id)
         {
+            //Get the DbComment corresponding to the comment ID
+            Company dbCompany = _companyRepository.GetByID(id);
+            if(dbCompany == null)
+            {
+                return NotFound();
+            }
+
+            //Delete Company
+            try
+            {
+                //set to archived
+                dbCompany.IsArchived = true;
+
+                //update the comment
+                _companyRepository.Update(dbCompany);
+
+                //Save changes
+                _unitOfWork.Commit();
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Unable to mark the company as archived");
+            }
+
+            return Ok(Mapper.Map<CompanyModel>(dbCompany));
         }
 
 
@@ -144,16 +174,6 @@ namespace ReviewApplication.API.Controllers
             return _companyRepository.Count(c => c.CompanyID == id) > 0;
         }
 
-        //deletes related objects 
-        //TODO: Write delete cascade
-        private void DeleteCompany(int companyID)
-        {
-
-
-
-
-
-
-        }
+      
     }
 }
