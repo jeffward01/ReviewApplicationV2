@@ -13,7 +13,7 @@ namespace ReviewApplication.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201512110115200_InitialCreate"; }
+            get { return "201512122211571_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

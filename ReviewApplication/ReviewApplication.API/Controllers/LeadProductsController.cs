@@ -37,7 +37,7 @@ namespace ReviewApplication.API.Controllers
         }
 
         //GET : api/LeadProduct || [1]
-        [ResponseType(typeof(LeadProductModel)]
+        [ResponseType(typeof(LeadProductModel))]
         public IHttpActionResult GetLeadProduct(int id)
         {
             LeadProduct dbLeadProduct = _leadProductRepository.GetByID(id);

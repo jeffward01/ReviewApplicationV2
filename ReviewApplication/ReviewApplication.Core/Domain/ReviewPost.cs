@@ -12,6 +12,7 @@ namespace ReviewApplication.Core.Domain
         public int ReviewPostID { get; set; } //Primary Key
         public int CompanyID { get; set; } // Foriegn Key
         public int InsuranceAgentID { get; set; } // Foriegn Key
+        public int LeadProductID { get; set; } //Foriegn Key
         public bool IsArchived { get; set; } //Archived State
 
         public DateTime ReviewPostDate { get; set; }
@@ -26,12 +27,14 @@ namespace ReviewApplication.Core.Domain
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual Company Company { get; set; }
         public virtual InsuranceAgent InsuranceAgent { get; set; }
+        public virtual LeadProduct LeadProduct { get; set; }
 
         public void Update(ReviewPostModel reviewPost)
         {
             ReviewPostID = reviewPost.ReviewPostID;
             CompanyID = reviewPost.CompanyID;
             InsuranceAgentID = reviewPost.InsuranceAgentID;
+            LeadProductID = reviewPost.LeadProductID;
             ReviewPostDate = reviewPost.ReviewPostDate;
             CompanyRating = reviewPost.CompanyRating;
             AgentRating = reviewPost.AgentRating;

@@ -11,6 +11,7 @@ namespace ReviewApplication.Core.Models
         public int ReviewPostID { get; set; } //Primary Key
         public int CompanyID { get; set; } // Foriegn Key
         public int InsuranceAgentID { get; set; } // Foriegn Key
+        public int LeadProductID { get; set; }
         public bool IsArchived { get; set; } //Archived State
         public DateTime ReviewPostDate { get; set; }
 
