@@ -34,7 +34,7 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery]
         public IQueryable<CommentModel> GetComments()
         {
-            return _commentRepository.GetAll().ProjectTo<CommentModel>();
+            return _commentRepository.Where(c => c.IsArchived == false).ProjectTo<CommentModel>();
         }
 
         // GET: api/Comment/5 || [1]
@@ -42,13 +42,16 @@ namespace ReviewApplication.API.Controllers
         public IHttpActionResult GetComment(int id)
         {
             Comment dbComment = _commentRepository.GetByID(id);
-            if(dbComment == null)
+
+            if (dbComment != null && !dbComment.IsArchived)
             {
+                return Ok(Mapper.Map<CommentModel>(dbComment));
+            }
+            else
+            { 
                 return NotFound();
             }
-            return Ok(Mapper.Map<CommentModel>(dbComment));
         }
-
 
         // PUT: api/Comment/5 || [2]
         [ResponseType(typeof(void))]
@@ -144,10 +147,11 @@ namespace ReviewApplication.API.Controllers
             //Delete Post
             try
             {
-                DeleteComments(id);
+                //Set to archived
+                dbComment.IsArchived = true;
 
                 //Remove the comment
-                _commentRepository.Delete(dbComment);
+                _commentRepository.Update(dbComment);
 
                 //Save Changes
                 _unitOfWork.Commit();
@@ -176,20 +180,6 @@ namespace ReviewApplication.API.Controllers
         private bool CommentExists(int id)
         {
             return _commentRepository.Count(c => c.CommentID == id) > 0;
-        }
-
-        //Remove Comments corresponding to comment
-        private void DeleteComments (int commentID)
-        {
-            var dbComments = _commentRepository.Where(c => c.CommentID == commentID);
-
-            if(dbComments.Count() > 0)
-            {
-                foreach (var dbComment in dbComments)
-                {
-                    _commentRepository.Delete(dbComment);
-                }
-            }
         }
     }
 }
