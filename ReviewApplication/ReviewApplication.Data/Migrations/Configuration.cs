@@ -1,4 +1,4 @@
-namespace ReviewApplication.Data.Migrations
+ namespace ReviewApplication.Data.Migrations
 {
     using System;
     using System.Data.Entity;

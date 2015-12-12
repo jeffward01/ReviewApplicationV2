@@ -6,6 +6,7 @@ using ReviewApplication.Core.Models;
 using ReviewApplication.Core.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -61,6 +62,55 @@ namespace ReviewApplication.API.Controllers
 
        
         //PUT: api/InsuranceAgents
-        //TODO: working on building insurance agents controller
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutInsuranceAgent(int id, InsuranceAgentModel insuranceAgent)
+        {
+            //Validate the request
+            if(!ModelState)
+            {
+                return BadRequest();
+            }
+
+            //Get the DB Industry
+            var dbIndustry = _insuranceAgentRepository.GetByID(id);
+            if(dbIndustry == null)
+            {
+                return NotFound();
+            }
+
+            //Update the DBInsuranceagent According to the input InsuranceAgentModel Object
+            // and update the industry in the database
+            dbIndustry.Update(insuranceAgent);
+            _insuranceAgentRepository.Update(dbIndustry);
+
+            //Save the Database Changes
+            try
+            {
+                _unitOfWork.Commit();
+            }
+            catch(DBConcurrencyException e)
+            {
+                if(!InsuranceAgentExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw new Exception("Unable tp update the industry in the database");
+                }
+            }
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        private bool InsuranceAgentExists(int id)
+        {
+            return _insuranceAgentRepository.Count(ia => ia.InsuranceAgentID == id) > 0;
+
+        }
+
+        public override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
     }
 }
