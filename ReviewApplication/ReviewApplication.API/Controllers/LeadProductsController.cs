@@ -61,6 +61,7 @@ namespace ReviewApplication.API.Controllers
         }
 
         //PUT: api/LeadProducts || [3]
+        [ResponseType(typeof(LeadProductModel))]
         public IHttpActionResult PutLeadProduct(int id, LeadProductModel leadProduct)
         {
             //Validate the Request
@@ -76,7 +77,7 @@ namespace ReviewApplication.API.Controllers
                 return NotFound();
             }
 
-            //Update the DbLeadProduct ACcodfint to the Input LeadProductMOdel Object
+            //Update the DbLeadProduct According to the Input LeadProductMOdel Object
             // and update the leadProduct in the database
             dbLeadProduct.Update(leadProduct);
             _leadProductRepository.Update(dbLeadProduct);
@@ -101,6 +102,7 @@ namespace ReviewApplication.API.Controllers
         }
 
         //Delete: api/LeadProducts || [4]
+        [ResponseType(typeof(ReviewPostModel))]
         public IHttpActionResult DeleteLeadProduct(int id)
         {
             //Get the dbLeadProduct corresponding to the insuranceAgentID

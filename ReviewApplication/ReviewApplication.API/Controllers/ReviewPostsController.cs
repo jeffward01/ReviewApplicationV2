@@ -73,6 +73,89 @@ namespace ReviewApplication.API.Controllers
             return _reviewPostRepository.Where(rp => rp.IsArchived == false && rp.LeadProductID == leadProductID).ProjectTo<ReviewPostModel>();
         }
 
+        //PUT: api/ReviewPosts || [5]
+        [ResponseType(typeof(ReviewPostModel))]
+        public IHttpActionResult PutReviewPost(int id, ReviewPostModel reviewPost)
+        {
+            //validate the Request
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            //Get the DbReviewPost
+            var dbReviewPost = _reviewPostRepository.GetByID(id);
+            if(dbReviewPost == null)
+                {
+                return NotFound();
+            }
+
+            //Update the dbReviewPost According to the input ReviewPostModel Object
+            // and update the reviewPost in the database
+            dbReviewPost.Update(reviewPost);
+            _reviewPostRepository.Update(dbReviewPost);
+
+            //Save the changes in the Database
+            try
+            {
+                _unitOfWork.Commit();
+            }
+            catch(DBConcurrencyException e)
+            {
+
+                if (!ReviewPostExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw new Exception("Unable to update ReviewProduct in the Database");
+                }
+            }
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        //Delete: api/ReviewPosts || [6]
+        [ResponseType(typeof(ReviewPostModel))]
+        public IHttpActionResult DeleteReviewPost(int id)
+        {
+            //Get the dbLeadProduct corresponding to the insuranceAgentID
+            ReviewPost dbReviewPost = _reviewPostRepository.GetByID(id);
+            if (dbReviewPost == null)
+            {
+                return NotFound();
+            }
+
+            //Delete the LeadProduct
+            try
+            {
+                //set to archived
+                dbReviewPost.IsArchived = true;
+
+                //Update the leadProduct 
+                _reviewPostRepository.Update(dbReviewPost);
+
+                //save the changes
+                _unitOfWork.Commit();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Unable to archive the ReviewPost to the Database");
+            }
+            return Ok(Mapper.Map<ReviewPostModel>(dbReviewPost));
+        }
+
+
+        public bool ReviewPostExists(int id)
+        {
+            return _reviewPostRepository.Count(rp => rp.ReviewPostID == id) > 0;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
 
     }
 }
