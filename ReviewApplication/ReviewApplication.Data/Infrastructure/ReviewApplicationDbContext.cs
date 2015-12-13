@@ -44,6 +44,12 @@ namespace ReviewApplication.Data.Infrastructure
                                              .HasForeignKey(rp => rp.ReviewID)
                                              .WillCascadeOnDelete(false);
 
+            //Map ReviewPost to LeadProduct
+            modelBuilder.Entity<ReviewPost>().HasRequired(a => a.LeadProduct)
+                                              .WithMany(lp => lp.ReviewPosts)
+                                              .HasForeignKey(rp => rp.LeadProductID)
+                                              .WillCascadeOnDelete(false);
+
             //Map Comments to Comments
             modelBuilder.Entity<Comment>().HasKey(c => c.CommentID);
             modelBuilder.Entity<Comment>().HasMany(c => c.Comments)
@@ -106,17 +112,29 @@ namespace ReviewApplication.Data.Infrastructure
                                                         .HasForeignKey(c => c.InsuranceAgentProfileID)
                                                         .WillCascadeOnDelete(false);
 
-            //Map InsuranceAgentProfile to Industy
-            modelBuilder.Entity<InsuranceAgent>().HasRequired(i => i.Industry)
-                                                .WithMany(ia => ia.InsuranceAgentProfiles)
-                                                .HasForeignKey(ia => ia.IndustryID)
-                                                .WillCascadeOnDelete(false);
+            //Map InsuranceAgentProfile to Industy        
+            modelBuilder.Entity<InsuranceAgent>().HasMany(ia => ia.Industries)
+                                     .WithRequired(iai => iai.InsuranceAgent)
+                                     .HasForeignKey(iai => iai.InsuranceAgentID)
+                                     .WillCascadeOnDelete(false);
 
             //Map CompanyProfile to Industry
-            modelBuilder.Entity<Company>().HasRequired(cp => cp.Industry)
-                                                    .WithMany(i => i.CompanyProfiles)
-                                                    .HasForeignKey(cp => cp.IndustryID)
-                                                    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Company>().HasMany(ia => ia.Industries)
+                                    .WithRequired(iai => iai.Company)
+                                    .HasForeignKey(iai => iai.CompanyID)
+                                    .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Industry>().HasMany(i => i.InsuranceAgents)
+                               .WithRequired(iai => iai.Industry)
+                               .HasForeignKey(iai => iai.IndustryID)
+                               .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Industry>().HasMany(c => c.Companies)
+                                            .WithRequired(ci => ci.Industry)
+                                            .HasForeignKey(ci => ci.IndustryID)
+                                            .WillCascadeOnDelete(false);
+
+
             //Map External Login
             modelBuilder.Entity<ExternalLogin>().HasKey(u => u.ExternalLoginID);
 

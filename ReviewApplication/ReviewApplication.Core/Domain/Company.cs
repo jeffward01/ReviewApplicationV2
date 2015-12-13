@@ -12,11 +12,11 @@ namespace ReviewApplication.Core.Domain
     public class Company
     {
         public int CompanyID { get; set; } //Primary Key
-        public int UserID { get; set; }  // Foreign 
+        public int UserID { get; set; }  // Foreign Key
 
         public bool IsArchived { get; set; } //Archived State
 
-        public int IndustryID { get; set; }
+        public int IndustryID { get; set; }  // Foreign Key
 
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
@@ -67,7 +67,7 @@ namespace ReviewApplication.Core.Domain
         public virtual ICollection<ReviewPost> ReviewPosts { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<LeadTransaction> Transactions { get; set; }
-        public virtual Industry Industry { get; set; }
+        public virtual ICollection<CompanyIndustry> Industries { get; set; }
 
         //Can only have one userProfile
         public virtual User UserProfile { get; set; }
@@ -80,6 +80,7 @@ namespace ReviewApplication.Core.Domain
             CompanyID = companyProfile.CompanyID;
             UserID = companyProfile.UserID;
             CompanyName = companyProfile.CompanyName;
+            IndustriesIDs = companyProfile.IndustryIDs;
             Address1 = companyProfile.Address1;
             Address2 = companyProfile.Address2;
             State = companyProfile.State;

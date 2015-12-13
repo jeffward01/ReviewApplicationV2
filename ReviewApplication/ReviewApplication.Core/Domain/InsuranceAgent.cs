@@ -77,11 +77,11 @@ namespace ReviewApplication.Core.Domain
         public virtual ICollection<ReviewPost> ReviewPosts { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<LeadTransaction> Transactions { get; set; }
-        public virtual Industry Industry { get; set; }
+        public virtual ICollection<InsuranceAgentIndustry> Industries { get; set; }
 
         //Can only have 1 userProfile
         public virtual User UserProfile { get; set; }
-
+    
         //Add methods if any (update)
         public void Update(InsuranceAgentModel insuranceProfileAgent)
         {
@@ -131,6 +131,8 @@ namespace ReviewApplication.Core.Domain
             ColdCallPhoneNumberListLeadNotes = insuranceProfileAgent.ColdCallPhoneNumberListLeadNotes;
 
             IsArchived = insuranceProfileAgent.IsArchived;
+
+            IndustryID = insuranceProfileAgent.IndustryID;
         }
             
         

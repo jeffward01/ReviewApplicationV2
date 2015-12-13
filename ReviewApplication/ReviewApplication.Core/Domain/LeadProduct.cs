@@ -13,6 +13,7 @@ namespace ReviewApplication.Core.Domain
     {
         public int LeadProductID { get; set; } //Primary Key
         public int CompanyID { get; set; } //Forign Key
+        public List<int> ReviewPostID { get; set; } //Forign Key
 
         public bool IsArchived { get; set; } //Archived State
 
@@ -40,6 +41,7 @@ namespace ReviewApplication.Core.Domain
 
         //Add Virtual Varibles
         public virtual Company Company { get; set; }
+        public virtual ICollection<ReviewPost> ReviewPosts { get; set; }
 
         //Add methods if any (update)
         public void Update(LeadProductModel leadProduct)
@@ -47,6 +49,7 @@ namespace ReviewApplication.Core.Domain
             LeadProductID = leadProduct.LeadProductID;
             CompanyID = leadProduct.CompanyID;
             Price = leadProduct.Price;
+            ReviewPostID = leadProduct.ReviewPostID;
             ProductNotes = leadProduct.ProductNotes;
             OrderLink = leadProduct.OrderLink;
             TelemarketingLead = leadProduct.TelemarketingLead;

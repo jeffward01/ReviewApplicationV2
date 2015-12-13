@@ -14,7 +14,7 @@ namespace ReviewApplication.Core.Models
         public int UserID { get; set; }  // Foreign Key
         public bool IsArchived { get; set; } //Archived State
 
-        public Industry Industry { get; set; }
+        public int IndustryID { get; set; } // ForignKey
 
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
@@ -52,7 +52,7 @@ namespace ReviewApplication.Core.Models
         public List<LeadProductModel> LeadProducts { get; set; }
         public List<ReviewPostModel> ReviewPosts { get; set; }
         public List<CommentModel> Comments { get; set; }
-
+        public List<CompanyIndustryModel> Industries { get; set; }
         public List<LeadTransactionModel> Transactions { get; set; }
 
      

@@ -19,6 +19,6 @@ namespace ReviewApplication.Core.Models
 
         public string ProviderKey { get; set; }
 
-        public virtual User User { get; set; }
+        public User User { get; set; }
     }
 }

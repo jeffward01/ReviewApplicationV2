@@ -14,7 +14,7 @@ namespace ReviewApplication.Core.Models
         public int UserID { get; set; } // Forign Key
         public bool IsArchived { get; set; } //Archived State
 
-        public Industry Industry { get; set; }
+        public int IndustryID { get; set; }// Foriegn Key
 
         public string ProfileName { get; set; }
 
@@ -59,7 +59,7 @@ namespace ReviewApplication.Core.Models
 
         public List<CommentModel> Comments { get; set; }
         public List<ReviewPostModel> ReviewPosts { get; set; }
-
+        public List<InsuranceAgentIndustryModel> Industries { get; set; }
         public List<LeadTransactionModel> Transations { get; set; }
 
 
