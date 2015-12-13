@@ -172,12 +172,10 @@
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
-    <Compile Include="Controllers\ExternalLoginsController.cs" />
     <Compile Include="Controllers\IndustriesController.cs" />
     <Compile Include="Controllers\InsuranceAgentsController.cs" />
     <Compile Include="Controllers\LeadProductsController.cs" />
     <Compile Include="Controllers\ReviewPostsController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="OAuth\ReviewApplicationAuthorizationServiceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />

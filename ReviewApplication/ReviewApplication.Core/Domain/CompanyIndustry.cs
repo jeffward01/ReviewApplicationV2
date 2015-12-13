@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
+using ReviewApplication.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

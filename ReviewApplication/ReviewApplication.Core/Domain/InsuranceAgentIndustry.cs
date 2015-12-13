@@ -1,5 +1,4 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
-using Microsoft.SCP;
 using ReviewApplication.Core.Models;
 using System;
 using System.Collections.Generic;

@@ -5,3 +5,7 @@ C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\obj\Debug\ReviewApplication.Core.dll
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\obj\Debug\ReviewApplication.Core.pdb
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Core\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml

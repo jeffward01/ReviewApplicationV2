@@ -80,7 +80,7 @@ namespace ReviewApplication.Core.Domain
             CompanyID = companyProfile.CompanyID;
             UserID = companyProfile.UserID;
             CompanyName = companyProfile.CompanyName;
-            IndustriesIDs = companyProfile.IndustryIDs;
+            IndustryID = companyProfile.IndustryID;
             Address1 = companyProfile.Address1;
             Address2 = companyProfile.Address2;
             State = companyProfile.State;
