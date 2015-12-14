@@ -40,7 +40,7 @@ namespace ReviewApplication.API
         }
 
 
-        private static void SetupAutomapper()
+        public static void SetupAutomapper()
         {   
             Mapper.CreateMap<Comment, CommentModel>();
             Mapper.CreateMap<Company, CompanyModel>();

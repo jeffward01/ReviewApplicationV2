@@ -134,6 +134,10 @@ namespace ReviewApplication.Data.Infrastructure
                                             .HasForeignKey(ci => ci.IndustryID)
                                             .WillCascadeOnDelete(false);
 
+            //TODO: fix dependency errors here
+
+            modelBuilder.Entity<CompanyIndustry>().HasKey(ci => ci.CompanyID);
+            modelBuilder.Entity<InsuranceAgentIndustry>().HasKey(iai => iai.InsuranceAgentID);
 
             //Map External Login
             modelBuilder.Entity<ExternalLogin>().HasKey(u => u.ExternalLoginID);
