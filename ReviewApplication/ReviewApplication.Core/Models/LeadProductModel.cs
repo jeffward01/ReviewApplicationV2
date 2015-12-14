@@ -32,7 +32,7 @@ namespace ReviewApplication.Core.Models
         public bool ColdCallPhoneNumberList { get; set; }
         public string ColdCallPhoneNumberListLeadNotes { get; set; }
 
-        public string Price { get; set; }
+        public int Price { get; set; }
         public string ProductNotes { get; set; }
 
         public List<ReviewPostModel> ReviewPosts { get; set; }

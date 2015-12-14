@@ -15,6 +15,4 @@ namespace ReviewApplication.Data.Repository
         public CompanyIndustryRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
         { }
     }
-
-
 }
