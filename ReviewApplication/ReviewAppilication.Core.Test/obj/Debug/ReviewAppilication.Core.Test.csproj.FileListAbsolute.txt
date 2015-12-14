@@ -1,0 +1,6 @@
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewAppilication.Core.Test\bin\Debug\ReviewAppilication.Core.Test.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewAppilication.Core.Test\bin\Debug\ReviewAppilication.Core.Test.pdb
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewAppilication.Core.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewAppilication.Core.Test\obj\Debug\ReviewAppilication.Core.Test.csprojResolveAssemblyReference.cache
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewAppilication.Core.Test\obj\Debug\ReviewAppilication.Core.Test.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewAppilication.Core.Test\obj\Debug\ReviewAppilication.Core.Test.pdb

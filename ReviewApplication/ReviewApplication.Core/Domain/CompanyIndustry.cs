@@ -14,7 +14,7 @@ namespace ReviewApplication.Core.Domain
 {
     public class CompanyIndustry
     {
-         public int CompanyID { get; set; }
+        public int CompanyID { get; set; }
         public int IndustryID { get; set; }
 
         public virtual Company Company { get; set; }

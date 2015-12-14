@@ -136,8 +136,8 @@ namespace ReviewApplication.Data.Infrastructure
 
             //TODO: fix dependency errors here
 
-            modelBuilder.Entity<CompanyIndustry>().HasKey(ci => ci.CompanyID);
-            modelBuilder.Entity<InsuranceAgentIndustry>().HasKey(iai => iai.InsuranceAgentID);
+            modelBuilder.Entity<CompanyIndustry>().HasKey(ci => new { ci.CompanyID, ci.IndustryID });
+            modelBuilder.Entity<InsuranceAgentIndustry>().HasKey(iai => new { iai.InsuranceAgentID, iai.IndustryID });
 
             //Map External Login
             modelBuilder.Entity<ExternalLogin>().HasKey(u => u.ExternalLoginID);

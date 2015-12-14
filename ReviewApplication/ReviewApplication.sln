@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewApplication.Core", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewApplication.Data", "ReviewApplication.Data\ReviewApplication.Data.csproj", "{433B9074-529D-4FF3-9977-1EFE7B2F2488}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewAppilication.Core.Test", "ReviewAppilication.Core.Test\ReviewAppilication.Core.Test.csproj", "{22EBEDDA-6EA6-4DDF-A3FD-342652734FBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewApplication.API.Test", "ReviewApplication.API.Test\ReviewApplication.API.Test.csproj", "{D68AE6BA-CCAE-4136-A6F8-981FD1923416}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{433B9074-529D-4FF3-9977-1EFE7B2F2488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{433B9074-529D-4FF3-9977-1EFE7B2F2488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{433B9074-529D-4FF3-9977-1EFE7B2F2488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22EBEDDA-6EA6-4DDF-A3FD-342652734FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22EBEDDA-6EA6-4DDF-A3FD-342652734FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22EBEDDA-6EA6-4DDF-A3FD-342652734FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22EBEDDA-6EA6-4DDF-A3FD-342652734FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D68AE6BA-CCAE-4136-A6F8-981FD1923416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D68AE6BA-CCAE-4136-A6F8-981FD1923416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D68AE6BA-CCAE-4136-A6F8-981FD1923416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D68AE6BA-CCAE-4136-A6F8-981FD1923416}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

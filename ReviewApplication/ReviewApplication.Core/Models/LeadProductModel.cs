@@ -10,7 +10,6 @@ namespace ReviewApplication.Core.Models
     {
         public int LeadProductID { get; set; } //Primary Key
         public int CompanyID { get; set; } //Forign Key
-        public List<int> ReviewPostID { get; set; } //Foriegn Key
 
         public bool IsArchived { get; set; } //Archived State
 
