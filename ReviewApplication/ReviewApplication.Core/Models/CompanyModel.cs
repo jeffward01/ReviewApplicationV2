@@ -14,8 +14,6 @@ namespace ReviewApplication.Core.Models
         public int UserID { get; set; }  // Foreign Key
         public bool IsArchived { get; set; } //Archived State
 
-        public int IndustryID { get; set; } // ForignKey
-
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }

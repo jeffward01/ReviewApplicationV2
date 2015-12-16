@@ -31,7 +31,7 @@ namespace ReviewApplication.API.Controllers
 
         //GET: Api/LeadProduct || [0]
         [EnableQuery]
-        public IQueryable<LeadProductModel> GetLeadProducts()
+        public IQueryable<LeadProductModel> GetAllLeadProducts()
         {
             return _leadProductRepository.Where(lp => lp.IsArchived == false).ProjectTo<LeadProductModel>();
         }

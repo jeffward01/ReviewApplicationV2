@@ -7,6 +7,11 @@ using ReviewApplication.Core.Infrastructure;
 using ReviewApplication.Core.Repository;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Web.Http;
+using System.Web.Http.Results;
+using ReviewApplication.Core.Models;
+using System.Net;
+using System.Linq.Expressions;
 
 namespace ReviewApplication.API.Test.ReviewApplication
 {
@@ -14,13 +19,20 @@ namespace ReviewApplication.API.Test.ReviewApplication
     public class CompaniesControllerTests
     {
         private Mock<ICompanyRepository> _companyRepositoryMock;
+        private Mock<IIndustryRepository> _industryRepositoryMock;
         private Mock<IReviewPostRepository> _reviewPostRepositoryMock;
         private Mock<ILeadProductRepository> _leadProductRepositoryMock;
-        private Mock<IUnitOfWork> _unitOfWork;
+        private Mock<ICompanyIndustryRepository> _companyIndustryRepositoryMock;
+        private Mock<IUnitOfWork> _unitOfWorkMock;
         private CompaniesController _controller;
         private Company[] _companies;
         private ReviewPost[] _reviewPosts;
         private LeadProduct[] _leadProducts;
+        private Industry[] _industries;
+        private CompanyIndustry[] _companyIndustries;
+
+        //Numbers for Tests
+        public int _numberOfMockCompanies = 2;
 
 
         [TestInitialize]
@@ -33,7 +45,8 @@ namespace ReviewApplication.API.Test.ReviewApplication
             _companyRepositoryMock = new Mock<ICompanyRepository>();
             _reviewPostRepositoryMock = new Mock<IReviewPostRepository>();
             _leadProductRepositoryMock = new Mock<ILeadProductRepository>();
-
+            _industryRepositoryMock = new Mock<IIndustryRepository>();
+            _companyIndustryRepositoryMock = new Mock<ICompanyIndustryRepository>();
 
             //Set Data in Repositories
 
@@ -219,6 +232,102 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             };
 
+            _industries = new[]
+            {
+                new Industry
+                {
+                    Id = 0,
+                    IsArchived = false,
+                    Description = "Life Insurance"
+                },
+
+                new Industry
+                {
+                    Id = 1,
+                    IsArchived = false,
+                    Description = "Health Insurance"
+                },
+
+                new Industry
+                {
+                    Id = 2,
+                    IsArchived = false,
+                    Description = "Property and Casualty"
+                },
+
+                new Industry
+                {
+                    Id = 3,
+                    IsArchived = false,
+                    Description = "Medicare"
+                },
+
+                new Industry
+                {
+                    Id = 4,
+                    IsArchived = false,
+                    Description = "Annuities"
+                }
+
+            };
+
+            _companyIndustries = new[]
+            {
+                //Industry for Company 1
+                new CompanyIndustry
+                {
+                CompanyID = 1,
+                IndustryID = 0
+                },
+
+                //Industry for Company 1
+                new CompanyIndustry
+                {
+                    CompanyID = 1,
+                    IndustryID = 1
+                },
+
+                 //Industry for Company 1
+                new CompanyIndustry
+                {
+                    CompanyID = 1,
+                    IndustryID = 3
+                },
+
+                 //Industry for Company 2
+                new CompanyIndustry
+                {
+                CompanyID = 1,
+                IndustryID = 0
+                },
+
+                //Industry for Company 2
+                new CompanyIndustry
+                {
+                    CompanyID = 1,
+                    IndustryID = 1
+                },
+
+                 //Industry for Company 2
+                new CompanyIndustry
+                {
+                    CompanyID = 1,
+                    IndustryID = 3
+                },
+                  //Industry for Company 2
+                new CompanyIndustry
+                {
+                    CompanyID = 1,
+                    IndustryID = 4
+                }
+
+
+
+            };
+
+
+
+
             _companies = new[]
             {
                 //Test Company 1
@@ -227,7 +336,6 @@ namespace ReviewApplication.API.Test.ReviewApplication
                      CompanyID = 1,
                      UserID = 1,
                      IsArchived = false,
-                     IndustryID = 1,
                      CompanyName = "Joe Schmoes Lead Company",
                      Address1 = "101 Wonder Way",
                      Address2 = "Suite: 290",
@@ -269,8 +377,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
                 {
                      CompanyID = 3,
                      UserID = 3,
-                     IsArchived = false,
-                     IndustryID = 1,
+                     IsArchived = false,                
                      CompanyName = "All Star Leads Company",
                      Address1 = "111 Hollwood Blvd",
                      Address2 = "Suite: 880",
@@ -301,16 +408,201 @@ namespace ReviewApplication.API.Test.ReviewApplication
                      MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
                      AcceptsVenmo = true,
                      VenmoComments = "We accept Venmo!",
-                     VenmoHandle = "ALlStarLeads",
+                     VenmoHandle = "AllStarLeads",
 
                      ReviewPosts = _reviewPosts.Where(rp => rp.CompanyID == 3).ToArray(),
                      LeadProducts = _leadProducts.Where(lp => lp.CompanyID == 3).ToArray()
                  }
             };
 
-            //Mock Controller Methods
+            
+        
+            //Setup Mock LeadProduct Repository
+            _leadProductRepositoryMock.Setup(lp => lp.GetAll()).Returns(_leadProducts.AsQueryable());
+            _leadProductRepositoryMock.Setup(lp => lp.GetByID(0)).Returns(_leadProducts[0]);
+            _leadProductRepositoryMock.Setup(lp => lp.GetByID(1)).Returns(_leadProducts[1]);
+            _leadProductRepositoryMock.Setup(lp => lp.GetByID(2)).Returns(_leadProducts[2]);
+            _leadProductRepositoryMock.Setup(lp => lp.GetByID(3)).Returns(_leadProducts[3]);
+
+            //Setup Mock ReviewPost Repository
+            _reviewPostRepositoryMock.Setup(rp => rp.GetAll()).Returns(_reviewPosts.AsQueryable());
+            _reviewPostRepositoryMock.Setup(rp => rp.GetByID(0)).Returns(_reviewPosts[0]);
+            _reviewPostRepositoryMock.Setup(rp => rp.GetByID(1)).Returns(_reviewPosts[1]);
+            _reviewPostRepositoryMock.Setup(rp => rp.GetByID(2)).Returns(_reviewPosts[2]);
+            _reviewPostRepositoryMock.Setup(rp => rp.GetByID(3)).Returns(_reviewPosts[3]);
+            _reviewPostRepositoryMock.Setup(rp => rp.GetByID(4)).Returns(_reviewPosts[4]);
+            _reviewPostRepositoryMock.Setup(rp => rp.GetByID(5)).Returns(_reviewPosts[5]);
+
+
+            //Setup Mock Industry Repository
+            _industryRepositoryMock.Setup(ir => ir.GetAll()).Returns(_industries.AsQueryable());
+            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[0]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[1]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[2]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[3]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[4]);
+
+
+
+            //Setup Mock Company Repository
             _companyRepositoryMock.Setup(cr => cr.GetAll()).Returns(_companies.AsQueryable());
             _companyRepositoryMock.Setup(cr => cr.GetByID(1)).Returns(_companies[0]);
+            _companyRepositoryMock.Setup(cr => cr.GetByID(3)).Returns(_companies[1]);
+
+            // Set up unit of work and controller
+            _unitOfWorkMock = new Mock<IUnitOfWork>();
+          //  _companyRepositoryMock = new Mock<IBlogService>();
+
+
+            _controller = new CompaniesController( _companyRepositoryMock.Object, _companyIndustryRepositoryMock.Object,
+                                                _unitOfWorkMock.Object);
+
         }
+
+     
+
+
+        [TestMethod] // [0]
+        public void GetCompaniesReturnCompanies()
+        {
+            //Arrange
+
+            //Act
+            var companies = _controller.GetCompanies();
+
+            //Assert
+            // Verify GetCompanies() is called (1) time.  Verify Correct number is returned
+           _companyRepositoryMock.Verify(c => c.GetAll(), Times.Once);
+            Assert.AreEqual(companies.Count(), _numberOfMockCompanies); 
+        }
+
+
+
+        [TestMethod] //[1]
+        public void GetCompanyReturnsSameID()
+        {
+            //Arrange
+
+            //Act: Grab first company
+            IHttpActionResult actionResult = _controller.GetCompany(1);
+
+
+            // Assert
+            // Verify that GetByID is called just once
+            // Verify that HTTP status code is Ok, with object of correct type
+            _companyRepositoryMock.Verify(p => p.GetByID(1), Times.Once);
+            Assert.IsInstanceOfType(actionResult, typeof(OkNegotiatedContentResult<CompanyModel>));
+
+
+            // Extract the content from the HTTP result
+            // Verify the content is not null, and the IDs match
+            var contentResult = actionResult as OkNegotiatedContentResult<CompanyModel>;
+            Assert.IsNotNull(contentResult.Content);
+            Assert.AreEqual(contentResult.Content.CompanyID, 1);
+        }
+
+        [TestMethod]  // [5]
+        public void GetCompaniesByIndustryReturnsCompanies()
+        {
+            //Arrange
+            _companyRepositoryMock.Setup(r => r.Where(It.IsAny < Expression < Func<Company, bool>>>()))
+                                  .Returns(_companies.Where(r => r.Industries.Any(i => i.IndustryID == 1)).AsQueryable());
+
+            //Act : Grab Companies
+            var companiesQuery = _controller.GetCompaniesByIndustry(1);
+
+            //Assert
+            _companyIndustryRepositoryMock.Verify(ci => ci.GetAll(), Times.Once);
+            Assert.AreEqual(companiesQuery.Count(), 2);
+        }
+
+
+        [TestMethod] // [Action]
+        public void GetNonExistentCompaniesReturnsNotFOund()
+        {
+            //Arrange
+
+            //Act
+            IHttpActionResult actionResult = _controller.GetCompany(-99999999);
+
+            //Assert
+            _companyRepositoryMock.Verify(Cr => Cr.GetByID(-99999999), Times.Once);
+            Assert.IsInstanceOfType(actionResult, typeof(NotFoundResult));
+        }
+
+        [TestMethod]  //[2]
+        public void PutCompanyReturnCompany()
+        {
+            //Arrange
+
+            //Act
+            IHttpActionResult actionResult =
+                _controller.PutCompany(
+                    0,
+                    new CompanyModel
+                    {
+                        CompanyID = 0,
+                        UserID = 0,
+                        IsArchived = false
+                    });
+            var statusCodeResult = actionResult as StatusCodeResult;
+            //Assert
+            _companyRepositoryMock.Verify(cr => cr.GetByID(0), Times.Once);
+            _companyRepositoryMock.Verify(cr => cr.Update(It.IsAny<Company>()), Times.Once);
+            _unitOfWorkMock.Verify(uow => uow.Commit(), Times.Once);
+            Assert.IsNotNull(actionResult);
+            Assert.IsNotNull(statusCodeResult);
+            Assert.AreEqual(statusCodeResult.StatusCode, HttpStatusCode.NoContent);
+
+        }
+
+        [TestMethod] // [3]
+        public void PostCompanyReturnPost()
+        {
+            //Arrange
+
+            //Act
+            IHttpActionResult actionResult =
+                _controller.PostCompany(
+                    new CompanyModel
+                    {
+                        CompanyID = 2,
+                        UserID = 2,
+                        IsArchived = false
+                    });
+            var statusCodeResult = actionResult as StatusCodeResult;
+
+            //Assert
+            _companyRepositoryMock.Verify(c => c.Add(It.IsAny<Company>()), Times.Once);
+            _unitOfWorkMock.Verify(uow => uow.Commit(), Times.AtLeastOnce);
+            Assert.IsInstanceOfType
+                (actionResult, typeof(CreatedAtRouteNegotiatedContentResult<CompanyModel>));
+            var createdResult = actionResult as CreatedAtRouteNegotiatedContentResult<CompanyModel>;
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual(createdResult.RouteName, "DefaultApi");
+        }
+
+        [TestMethod] // [4]
+        public void DeleteCompanyReturnsOk()
+        {
+            //Arrange
+
+            //Act
+            IHttpActionResult actionResult = _controller.DeleteCompany(1);
+
+            //Assert
+            _companyRepositoryMock.Verify(c => c.GetByID(1), Times.Once);
+            _companyRepositoryMock.Verify(c => c.Update(It.IsAny<Company>()), Times.Once);
+            _unitOfWorkMock.Verify(uow => uow.Commit(), Times.Once);
+            Assert.IsInstanceOfType(actionResult, typeof(OkNegotiatedContentResult<CompanyModel>));
+            var contentResult = actionResult as OkNegotiatedContentResult<CompanyModel>;
+            Assert.IsNotNull(contentResult);
+            Assert.IsNotNull(contentResult.Content);
+            Assert.IsTrue(contentResult.Content.CompanyID == 1);
+
+
+        }
+
+
     }
 }

@@ -20,12 +20,14 @@ namespace ReviewApplication.API.Controllers
     {
         private readonly ICompanyRepository _companyRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ICompanyIndustryRepository _companyIndustryRepository;
 
         //Constructor
-        public CompaniesController(ICompanyRepository companyProfileRepository, IUnitOfWork unitOfWork)
+        public CompaniesController(ICompanyRepository companyProfileRepository, ICompanyIndustryRepository companyIndustryRepository,IUnitOfWork unitOfWork)
         {
             _companyRepository = companyProfileRepository;
             _unitOfWork = unitOfWork;
+            _companyIndustryRepository = companyIndustryRepository;
         }
 
 
@@ -33,7 +35,7 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery] 
         public IQueryable<CompanyModel> GetCompanies()
         {
-            return _companyRepository.Where(c => c.IsArchived == false).ProjectTo<CompanyModel>();
+            return _companyRepository.Where(c => !c.IsArchived).ProjectTo<CompanyModel>();
         }
 
         // GET: api/Companies/5 || [1]
@@ -161,11 +163,16 @@ namespace ReviewApplication.API.Controllers
             return Ok(Mapper.Map<CompanyModel>(dbCompany));
         }
 
-        //GET: api/Companies/5
+
+
+
+        //GET: api/Companies/5 || [5]
         [EnableQuery]
         public IQueryable<CompanyModel> GetCompaniesByIndustry(int industryID)
         {
-            return _companyRepository.Where(ia => ia.IsArchived == false && ia.IndustryID == industryID).ProjectTo<CompanyModel>();
+            var companies = _companyRepository.Where(ia => !ia.IsArchived && ia.Industries.Any(i => i.IndustryID == industryID));
+
+            return companies.ProjectTo<CompanyModel>();
 
         }
 

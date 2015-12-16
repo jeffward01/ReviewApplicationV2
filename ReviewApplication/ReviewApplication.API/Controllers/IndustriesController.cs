@@ -30,7 +30,7 @@ namespace ReviewApplication.API.Controllers
 
         //GET: api/Industry || [0]
         [EnableQuery]
-        public IQueryable<IndustryModel> GetIndustry()
+        public IQueryable<IndustryModel> GetIndustries()
         {
             return _industryRepository.Where(i => i.IsArchived == false).ProjectTo<IndustryModel>();
         }

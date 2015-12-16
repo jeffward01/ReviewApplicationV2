@@ -95,6 +95,8 @@
     <Compile Include="Repository\ILeadTransactionRepository.cs" />
     <Compile Include="Repository\IReviewPostRepository.cs" />
     <Compile Include="Repository\IUserRepository.cs" />
+    <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\ICompanyService.cs" />
     <Compile Include="Services\StringExtensions.cs" />
     <Compile Include="Services\WebData.cs" />
   </ItemGroup>

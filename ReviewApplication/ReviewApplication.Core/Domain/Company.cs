@@ -16,7 +16,6 @@ namespace ReviewApplication.Core.Domain
 
         public bool IsArchived { get; set; } //Archived State
 
-        public int IndustryID { get; set; }  // Foreign Key
 
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
@@ -80,7 +79,6 @@ namespace ReviewApplication.Core.Domain
             CompanyID = companyProfile.CompanyID;
             UserID = companyProfile.UserID;
             CompanyName = companyProfile.CompanyName;
-            IndustryID = companyProfile.IndustryID;
             Address1 = companyProfile.Address1;
             Address2 = companyProfile.Address2;
             State = companyProfile.State;
