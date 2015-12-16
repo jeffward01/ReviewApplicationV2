@@ -101,7 +101,41 @@ namespace ReviewApplication.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        //Delete: api/LeadProducts || [4]
+
+        //POST: api/LeadProducts || [4]
+        [ResponseType(typeof(LeadProduct))]
+        public IHttpActionResult PostLeadProduct(LeadProductModel leadProduct)
+        {
+            //Check Model State
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            //Grab DB leadProduct
+            var dbLeadProduct = new LeadProduct();
+            dbLeadProduct.Update(leadProduct);
+
+            //add the new leadProduct Objet populared from the input
+            _leadProductRepository.Add(dbLeadProduct);
+
+            //Save the changes to the database
+            try
+            {
+                _unitOfWork.Commit();
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Unable to add LeadProduct to the Database");
+            }
+
+            //return the created leadProduct Record
+            return CreatedAtRoute("DefaultApi", new { id = leadProduct.LeadProductID }, leadProduct);
+        }
+
+
+
+
+        //Delete: api/LeadProducts || [5]
         [ResponseType(typeof(ReviewPostModel))]
         public IHttpActionResult DeleteLeadProduct(int id)
         {

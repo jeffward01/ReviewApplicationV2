@@ -141,21 +141,24 @@ namespace ReviewApplication.API.Test.ReviewApplication
             //Setup Mock Industry Repository
             _industryRepositoryMock.Setup(ir => ir.GetAll()).Returns(_industries.AsQueryable());
             _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[0]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[1]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[2]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[3]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[4]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(1)).Returns(_industries[1]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(2)).Returns(_industries[2]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(3)).Returns(_industries[3]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(4)).Returns(_industries[4]);
 
-
+            //TODO: setup as Composite 'Mock'       ?????????
             //Setup Mock InsuranceAgentIndustry Repository
-
-            //TODO: BUIILD!
+            _insuranceAgentIndustryRepositoryMock.Setup(iai => iai.GetAll()).Returns(_insuranceAgentIndustries.AsQueryable());
+            _insuranceAgentIndustryRepositoryMock.Setup(iai => iai.GetByID(0)).Returns(_insuranceAgentIndustries[0]);
 
             //Setup Mock InsuranceAgent Repository
+            _insuranceAgentRepositoryMock.Setup(iar => iar.GetAll()).Returns(_insuranceAgents.AsQueryable());
+            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(1)).Returns(_insuranceAgents[1]);
+            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(2)).Returns(_insuranceAgents[2]);
 
 
-            //Setup Mock InsuranceAgentTransations Repository
-
+            //Setup Mock InsuranceAgentTransations Repository ||| <--- NOT NEEDED?
+          
 
             // Set up unit of work and controller
             _unitOfWorkMock = new Mock<IUnitOfWork>();
@@ -165,23 +168,116 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
         }
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        [TestMethod]
-        public void TestMethod1()
+        [TestMethod] // [0]
+        public void GetAllInsuranceAgentsReturnAllInsuranceAgents()
         {
+            //Arrange
+
+            //Act
+            var insuranceAgents = _controller.GetInsuranceAgents();
+
+            //Assert
+            _insuranceAgentRepositoryMock.Verify(iar => iar.GetAll(), Times.Once);
+            Assert.AreEqual(insuranceAgents.Count(), 2);
+        }
+        
+        [TestMethod] //[1]
+        public void GetInsuranceAgentByIDReturnInsuranceAgent()
+        {
+            //Arrange
+
+            //Act
+            IHttpActionResult insuranceAgents = _controller.GetInsuranceAgent(1);
+
+            //Assert
+            _insuranceAgentRepositoryMock.Verify(iar => iar.GetByID(1), Times.Once);
+            Assert.IsInstanceOfType(insuranceAgents, typeof(OkNegotiatedContentResult<InsuranceAgentModel>));
+            
+        }
+
+        [TestMethod] //[2]
+        public void GetInsuranceAgentsByIndustryReturnInsuranceAgent()
+        {
+            //Arrange
+            _insuranceAgentRepositoryMock.Setup(iar => iar.Where(It.IsAny<Expression<Func<InsuranceAgent, bool>>>()))
+                                    .Returns(_insuranceAgents.Where(ia => ia.Industries.Any(i => i.IndustryID == 1)).AsQueryable());
+
+
+            //Act
+            var insuranceAgents = _controller.GetAllInsuranceAgentsByIndustry(1);
+
+            //Assert
+            _insuranceAgentRepositoryMock.Verify(iar => iar.GetAll(), Times.Once);
+            Assert.AreEqual(insuranceAgents.Count(), 2);
+
+        }
+
+        [TestMethod] //[3]
+        public void PutInsuranceAgentReturnInsuranceAgent()
+        {
+            //Arrange
+
+            //Act
+            IHttpActionResult actionResult =
+                _controller.PutInsuranceAgent(
+                    1,
+                    new InsuranceAgentModel
+                    {
+                        InsuranceAgentID = 1,
+                        IsArchived = false
+                    });
+            var statusCodeResult = actionResult as StatusCodeResult;
+
+            //Assert
+            _insuranceAgentRepositoryMock.Verify(iar => iar.GetByID(1), Times.Once);
+            _insuranceAgentRepositoryMock.Verify(iar => iar.Update(It.IsAny<InsuranceAgent>()), Times.Once);
+        }
+
+        [TestMethod] //[4]
+        public void PostInsuranceAgentReturnInsuranceAgent()
+        {
+            //Arrange
+
+            //Act
+            IHttpActionResult actionResult =
+                _controller.PostInsurnaceAgent(
+                    new InsuranceAgentModel
+                    {
+                        InsuranceAgentID = 3,
+                        IsArchived = false
+                    });
+            var statusCodeResult = actionResult as StatusCodeResult;
+            //Assert
+            _insuranceAgentRepositoryMock.Verify(iar => iar.Add(It.IsAny<InsuranceAgent>()), Times.Once);
+            _unitOfWorkMock.Verify(uow => uow.Commit(), Times.Once);
+            Assert.IsInstanceOfType
+                (actionResult, typeof(OkNegotiatedContentResult<InsuranceAgentModel>));
+            var createdResult = actionResult as CreatedAtRouteNegotiatedContentResult<InsuranceAgentModel>;
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual(createdResult.RouteName, "DefaultApi");
+        }
+
+        [TestMethod] // [5]
+        public void DeleteinsuranceAgentReturnInsurnaceAgent()
+        {
+            //Arrange
+
+            //Act
+            IHttpActionResult actionResult = _controller.DeleteInsuranceAgent(1);
+
+
+            //Assert
+            _insuranceAgentRepositoryMock.Verify(iar => iar.GetByID(1), Times.Once);
+            _insuranceAgentRepositoryMock.Verify(iar => iar.Update(It.IsAny<InsuranceAgent>()), Times.Once);
+            _unitOfWorkMock.Verify(uow => uow.Commit(), Times.Once);
+            Assert.IsInstanceOfType
+                (actionResult, typeof(OkNegotiatedContentResult<InsuranceAgentModel>));
+            var contentResult = actionResult as OkNegotiatedContentResult<InsuranceAgentModel>;
+            Assert.IsNotNull(contentResult);
+            Assert.IsNotNull(contentResult.Content);
+            Assert.IsTrue(contentResult.Content.InsuranceAgentID == 1);
         }
     }
 }

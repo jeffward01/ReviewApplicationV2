@@ -108,11 +108,13 @@ namespace ReviewApplication.API.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            //make DB industry
             var dbIndustry = new Industry();
 
             dbIndustry.Update(industry);
 
-            //add the new Industry object populated from the input Comment
+            //add the new Industry object populated from the input 
             _industryRepository.Add(dbIndustry);
 
             //Save the changes in the Database
@@ -125,7 +127,7 @@ namespace ReviewApplication.API.Controllers
                 throw new Exception("Unable to add Industry to the database");
             }
 
-            //Return the created comment record
+            //Return the created Insustry record
             return CreatedAtRoute("DefaultApi", new { id = industry.Id }, industry);
         }
 

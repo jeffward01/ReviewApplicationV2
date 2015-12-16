@@ -141,7 +141,7 @@ namespace ReviewApplication.API.Controllers
             }
             catch (Exception e)
             {
-                throw new Exception("Unable to archive the InsuranceAgent to the Database");
+                throw new Exception("Unable to archive the Lead Transaction to the Database");
             }
             return Ok(Mapper.Map<LeadTransactionModel>(dbLeadTransaction));
         }

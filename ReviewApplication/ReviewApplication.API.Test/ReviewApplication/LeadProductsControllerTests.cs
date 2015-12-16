@@ -194,7 +194,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             Assert.AreEqual(leadProductsQuery.Count(), 2);         
         }
 
-        [TestMethod]
+        [TestMethod] //[3]
         public void PutLeadProductReturnLeadProduct()
         {
             //Arrange
@@ -216,15 +216,14 @@ namespace ReviewApplication.API.Test.ReviewApplication
             _leadProductRepositoryMock.Verify(lp => lp.Update(It.IsAny<LeadProduct>()), Times.Once);
         }
 
-        [TestMethod]
+        [TestMethod] //[4]
         public void PostLeadProductReturnLeadProduct()
         {
             //Arrange
 
             //Act
             IHttpActionResult actionResult =
-                _controller.PutLeadProduct(
-                    1,
+                _controller.PostLeadProduct(              
                     new LeadProductModel
                     {
                         LeadProductID = 1,
@@ -245,7 +244,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
         }
 
-        [TestMethod]
+        [TestMethod] //[5]
         public void DeleteCompanyReturnsOk()
         {
             //Arrange

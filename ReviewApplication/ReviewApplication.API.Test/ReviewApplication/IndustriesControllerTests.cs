@@ -77,10 +77,10 @@ namespace ReviewApplication.API.Test.ReviewApplication
             //Setup Mock Industry Repository
             _industryRepositoryMock.Setup(ir => ir.GetAll()).Returns(_industries.AsQueryable());
             _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[0]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[1]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[2]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[3]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[4]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(1)).Returns(_industries[1]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(2)).Returns(_industries[2]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(3)).Returns(_industries[3]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(4)).Returns(_industries[4]);
 
             // Set up unit of work and controller
             _unitOfWorkMock = new Mock<IUnitOfWork>();

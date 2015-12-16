@@ -102,7 +102,43 @@ namespace ReviewApplication.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        //Delete: api/InsuranceAgents || [4]
+        //POST: api/InsurnaceAgents || [4]
+        [ResponseType(typeof(InsuranceAgentModel))]
+        public IHttpActionResult PostInsurnaceAgent(InsuranceAgentModel insuranceAgent)
+        {
+            //Check the Model state
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            //make the DB Insurnace Agent
+            var dbInsuranceAgent = new InsuranceAgent();
+
+            dbInsuranceAgent.Update(insuranceAgent);
+
+            //add the new Insurnace Agent Object populated from the input
+            _insuranceAgentRepository.Add(dbInsuranceAgent);
+
+            //Save the changes in the Database
+            try
+            {
+                _unitOfWork.Commit();
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Unable to add Insurance Agent to the Database");
+
+            }
+
+            //Return the created Insurnace agent Record
+            return CreatedAtRoute("DefaultApi", new { id = insuranceAgent.InsuranceAgentID }, insuranceAgent);
+        }
+
+
+
+
+        //Delete: api/InsuranceAgents || [5]
         [ResponseType(typeof(InsuranceAgentModel))]
         public IHttpActionResult DeleteInsuranceAgent(int id)
         {
