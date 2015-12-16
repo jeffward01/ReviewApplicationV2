@@ -47,6 +47,8 @@ namespace ReviewApplication.API.Test.ReviewApplication
             _leadProductRepositoryMock = new Mock<ILeadProductRepository>();
             _industryRepositoryMock = new Mock<IIndustryRepository>();
             _companyIndustryRepositoryMock = new Mock<ICompanyIndustryRepository>();
+            _unitOfWorkMock = new Mock<IUnitOfWork>();
+
 
             //Set Data in Repositories
 

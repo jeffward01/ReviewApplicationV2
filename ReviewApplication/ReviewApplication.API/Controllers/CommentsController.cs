@@ -21,7 +21,7 @@ namespace ReviewApplication.API.Controllers
     {
         private readonly ICommentRepository _commentRepository;
         private readonly IUnitOfWork _unitOfWork;
-        
+
 
         //Constructor
         public CommentsController(ICommentRepository commentRepository, IUnitOfWork unitOfWork)
@@ -48,10 +48,38 @@ namespace ReviewApplication.API.Controllers
                 return Ok(Mapper.Map<CommentModel>(dbComment));
             }
             else
-            { 
+            {
                 return NotFound();
             }
         }
+
+        //GET: api/Comment/5 || [5]
+        [EnableQuery]
+        public IQueryable<CommentModel> GetAllCommentForInsuranceAgent(int insuranceAgentID)
+        {
+            return _commentRepository.Where(c => !c.IsArchived && c.InsuranceAgentProfileID == insuranceAgentID).ProjectTo<CommentModel>();
+        }
+
+        //GET: api/Comment/5 || [6]
+        [EnableQuery]
+        public IQueryable<CommentModel> GetAllCommentsForCompany(int companyID)
+        {
+            return _commentRepository.Where(c => !c.IsArchived && c.CompanyID == companyID).ProjectTo<CommentModel>();
+        }
+
+        //GET api/comment/5 || [7]
+        [EnableQuery]
+        public IQueryable<CommentModel> GetAllCommentsForReviewPost(int reviewPostId)
+        {
+            return _commentRepository.Where(c => !c.IsArchived && c.ReviewID == reviewPostId).ProjectTo<CommentModel>();
+        }
+
+        //GET: api/comment/5 || [8]
+        public IQueryable<CommentModel> GetAllCommentsForParentComment(int parentComment)
+        {
+            return _commentRepository.Where(c => !c.IsArchived && c.ParentCommentID == parentComment).ProjectTo<CommentModel>();
+        }
+
 
         // PUT: api/Comment/5 || [2]
         [ResponseType(typeof(void))]
