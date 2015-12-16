@@ -91,7 +91,6 @@ namespace ReviewApplication.API.Test.ReviewApplication
                      VenmoHandle = "JoesLeadsNow",
 
                      ReviewPosts = _reviewPosts.Where(rp => rp.CompanyID == 1).ToArray(),
-                     LeadProducts = _leadProducts.Where(lp => lp.CompanyID == 1).ToArray()
                 },
 
                 //Test Company 2
