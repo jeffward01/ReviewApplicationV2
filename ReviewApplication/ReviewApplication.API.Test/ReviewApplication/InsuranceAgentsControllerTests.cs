@@ -21,6 +21,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
     {
         private Mock<IInsuranceAgentRepository> _insuranceAgentRepositoryMock;
         private Mock<IInsuranceAgentIndustryRepository> _insuranceAgentIndustryRepositoryMock;
+        private Mock<ILeadTransactionRepository> _leadTransactionRepositoryMock;
         private Mock<IIndustryRepository> _industryRepositoryMock;
         private Mock<IUnitOfWork> _unitOfWorkMock;
 
@@ -28,6 +29,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
         private InsuranceAgent[] _insuranceAgents;
         private Industry[] _industries;
         private InsuranceAgentIndustry[] _insuranceAgentIndustries;
+        private LeadTransaction[] _leadTransactions;
 
 
 
@@ -40,6 +42,10 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             //Set up Repositories
             _industryRepositoryMock = new Mock<IIndustryRepository>();
+            _insuranceAgentRepositoryMock = new Mock<IInsuranceAgentRepository>();
+            _insuranceAgentIndustryRepositoryMock = new Mock<IInsuranceAgentIndustryRepository>();
+            _leadTransactionRepositoryMock = new Mock<ILeadTransactionRepository>();
+
 
             //Build Industries
             _industries = new[]
@@ -138,6 +144,45 @@ namespace ReviewApplication.API.Test.ReviewApplication
             };
 
 
+            _leadTransactions = new[]
+            {
+                new LeadTransaction
+                {
+                    LeadTransactionID = 0,
+                    CompanyID = 0,
+                    LeadProductID = 0,
+                    InsuranceAgentProfileID = 1,
+                    IsArchived = false
+
+                },
+                 new LeadTransaction
+                {
+                    LeadTransactionID = 1,
+                    CompanyID = 0,
+                    LeadProductID = 0,
+                    InsuranceAgentProfileID = 1,
+                    IsArchived = false
+
+                },
+                  new LeadTransaction
+                {
+                    LeadTransactionID = 2,
+                    CompanyID = 1,
+                    LeadProductID = 5,
+                    InsuranceAgentProfileID = 2,
+                    IsArchived = false
+
+                }
+
+
+
+            };
+
+
+
+
+
+
             //Setup Mock Industry Repository
             _industryRepositoryMock.Setup(ir => ir.GetAll()).Returns(_industries.AsQueryable());
             _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[0]);
@@ -157,8 +202,16 @@ namespace ReviewApplication.API.Test.ReviewApplication
             _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(2)).Returns(_insuranceAgents[2]);
 
 
-            //Setup Mock InsuranceAgentTransations Repository ||| <--- NOT NEEDED?
-          
+            //Setup Mock LeadTransations Repository ||| <--- NOT NEEDED?
+            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetAll()).Returns(_leadTransactions.AsQueryable());
+            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(0)).Returns(_leadTransactions[0]);
+            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(1)).Returns(_leadTransactions[1]);
+            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(2)).Returns(_leadTransactions[2]);
+            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(3)).Returns(_leadTransactions[3]);
+            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(4)).Returns(_leadTransactions[4]);
+
+
+
 
             // Set up unit of work and controller
             _unitOfWorkMock = new Mock<IUnitOfWork>();

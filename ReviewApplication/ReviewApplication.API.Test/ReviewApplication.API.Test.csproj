@@ -78,6 +78,8 @@
     <Compile Include="ReviewApplication\IndustriesControllerTests.cs" />
     <Compile Include="ReviewApplication\InsuranceAgentsControllerTests.cs" />
     <Compile Include="ReviewApplication\LeadProductsControllerTests.cs" />
+    <Compile Include="ReviewApplication\LeadTransactionsControllerTests.cs" />
+    <Compile Include="ReviewApplication\ReviewPostsControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -116,7 +116,44 @@ namespace ReviewApplication.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        //Delete: api/LeadTransactions || [4]
+
+        //POST : api/LeadTransactions || [6]
+        [ResponseType(typeof(LeadTransactionModel))]
+        public IHttpActionResult PostLeadTranscation(LeadTransactionModel leadTransaction)
+        {
+            //Check the ModelState
+            if(!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+
+            //Create the DB LeadTransaction
+            var dbLeadTransaction = new LeadTransaction();
+
+            dbLeadTransaction.Update(leadTransaction);
+
+            //Add the new LeadTransaction populated from the input
+            _leadTransactionRepository.Add(dbLeadTransaction);
+
+            //Save the changes to the database
+            try
+            {
+                _unitOfWork.Commit();
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Unable to add Lead Transaction to Database");
+            }
+
+
+            //Return the Created LeadTransaction record
+            return CreatedAtRoute("DefaultApi", new { id = leadTransaction.LeadTransactionID }, leadTransaction);
+        }
+
+
+
+
+        //Delete: api/LeadTransactions || [5]
         [ResponseType(typeof(LeadTransactionModel))]
         public IHttpActionResult DeleteLeadTransaction(int id)
         {

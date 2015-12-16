@@ -115,6 +115,40 @@ namespace ReviewApplication.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        //POST: api/ReviewPosts || [7]
+        [ResponseType(typeof(ReviewPostModel))]
+        public IHttpActionResult PostReviewPost(ReviewPostModel reviewPost)
+        {
+            //Check the ModelState
+            if(!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+
+            //Create the DB ReviewPost
+            var dbReviewPost = new ReviewPost();
+
+            dbReviewPost.Update(reviewPost);
+
+            //Add the new review Post populated from the input
+            _reviewPostRepository.Add(dbReviewPost);
+
+            //Save the changes to the Database
+            try
+            {
+                _unitOfWork.Commit();
+            }
+            catch(Exception e )
+            {
+                throw new Exception("Unable to add review post to the Database");
+
+            }
+
+            //Return the created review post record
+            return CreatedAtRoute("DefaultApi", new { id = reviewPost.ReviewPostID }, reviewPost);
+        }
+
+
         //Delete: api/ReviewPosts || [6]
         [ResponseType(typeof(ReviewPostModel))]
         public IHttpActionResult DeleteReviewPost(int id)
