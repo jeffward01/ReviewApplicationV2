@@ -60,12 +60,10 @@ C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\EntityFramework.xml
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\obj\Debug\ReviewApplication.API.dll
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\obj\Debug\ReviewApplication.API.pdb
-C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\EntityFramework.SqlServer.dll
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\Microsoft.Data.Edm.dll
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\Microsoft.Data.OData.dll
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\System.Spatial.dll
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\System.Web.Http.OData.dll
-C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\EntityFramework.SqlServer.xml
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\Microsoft.Data.Edm.xml
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\Microsoft.Data.OData.xml
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\System.Spatial.xml
@@ -97,3 +95,7 @@ C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\ru\System.Spatial.resources.dll
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\zh-Hans\System.Spatial.resources.dll
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\zh-Hant\System.Spatial.resources.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\EntityFramework.SqlServer.dll
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.API\bin\EntityFramework.SqlServer.xml

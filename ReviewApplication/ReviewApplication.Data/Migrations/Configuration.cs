@@ -12,6 +12,7 @@ namespace ReviewApplication.Data.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
+        //TODO: add data to database here using C#
         protected override void Seed(ReviewApplication.Data.Infrastructure.ReviewApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.

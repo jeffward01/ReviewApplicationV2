@@ -73,6 +73,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ReviewApplication\CommentsControllerTests.cs" />
     <Compile Include="ReviewApplication\CompaniesControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReviewApplication\IndustriesControllerTests.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="ReviewApplication\ReviewPostsControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

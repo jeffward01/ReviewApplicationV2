@@ -34,7 +34,7 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery]
         public IQueryable<CommentModel> GetComments()
         {
-            return _commentRepository.Where(c => c.IsArchived == false).ProjectTo<CommentModel>();
+            return _commentRepository.GetAll().ProjectTo<CommentModel>();
         }
 
         // GET: api/Comment/5 || [1]

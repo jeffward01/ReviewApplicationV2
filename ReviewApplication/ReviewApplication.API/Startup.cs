@@ -19,6 +19,8 @@ namespace ReviewApplication.API
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+
             Container container = ConfigureSimpleInjector(app);
 
             HttpConfiguration config = new HttpConfiguration
@@ -27,7 +29,7 @@ namespace ReviewApplication.API
             };
 
             WebApiConfig.Register(config);
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            
             app.UseWebApi(config);
         }
 
@@ -44,7 +46,7 @@ namespace ReviewApplication.API
 
             container.Register<IUnitOfWork, UnitOfWork>();
 
-            container.Register<IAuthRepository, AuthRepository>();
+            container.Register<IAuthRepository, AuthRepository>(Lifestyle.Scoped);
             container.Register<ICommentRepository, CommentRepository>();
             container.Register<IUserRepository, UserRepository>();
             container.Register<ICompanyRepository, CompanyRepository>();

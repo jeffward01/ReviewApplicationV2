@@ -192,10 +192,9 @@ namespace ReviewApplication.API.Test.ReviewApplication
             _industryRepositoryMock.Setup(ir => ir.GetByID(4)).Returns(_industries[4]);
 
             //TODO: setup as Composite 'Mock'       ?????????
-            //Setup Mock InsuranceAgentIndustry Repository
             _insuranceAgentIndustryRepositoryMock.Setup(iai => iai.GetAll()).Returns(_insuranceAgentIndustries.AsQueryable());
-            _insuranceAgentIndustryRepositoryMock.Setup(iai => iai.GetByID(0)).Returns(_insuranceAgentIndustries[0]);
-
+            _insuranceAgentIndustryRepositoryMock.Setup(iai => iai.GetByID(1, 0)).Returns(_insuranceAgentIndustries[0]);
+            
             //Setup Mock InsuranceAgent Repository
             _insuranceAgentRepositoryMock.Setup(iar => iar.GetAll()).Returns(_insuranceAgents.AsQueryable());
             _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(1)).Returns(_insuranceAgents[1]);

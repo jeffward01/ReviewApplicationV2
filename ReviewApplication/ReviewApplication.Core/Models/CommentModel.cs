@@ -18,7 +18,7 @@ namespace ReviewApplication.Core.Models
         public string PostBody { get; set; }
         public int NumberOfLikes { get; set; }
 
-        public IList<CommentModel> Comments { get; set; }
+        //public IEnumerable<CommentModel> Comments { get; set; }
       
 
     }

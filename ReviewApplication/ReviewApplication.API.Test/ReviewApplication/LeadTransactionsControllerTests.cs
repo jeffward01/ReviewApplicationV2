@@ -386,10 +386,9 @@ namespace ReviewApplication.API.Test.ReviewApplication
         [TestMethod] // [4]
         public void GetLeadTransactionForLeadProduct()
         {
-            //TODO: Check Arrange Statement Here
             //Arrange
             _leadTransactionRepositoryMock.Setup(lt => lt.Where(It.IsAny<Expression<Func<LeadTransaction, bool>>>()))
-                        .Returns(_leadTransactions.Where(lt => lt.LeadProduct.LeadProductID.Equals(0)).AsQueryable());
+                        .Returns(_leadTransactions.Where(lt => lt.LeadProductID.Equals(0)).AsQueryable());
 
             //Act
             var leadTransactionQuery = _controller.GetLeadTransactionsForLeadProduct(0);

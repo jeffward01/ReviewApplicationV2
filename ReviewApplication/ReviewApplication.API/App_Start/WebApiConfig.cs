@@ -13,14 +13,6 @@ namespace ReviewApplication.API
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-            // Enable cross origin requests to API
-            var cors = new EnableCorsAttribute(
-                origins: "*",
-                headers: "*",
-                methods: "*"
-            );
-            config.EnableCors(cors);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

@@ -8,7 +8,7 @@ namespace ReviewApplication.Data.Infrastructure
     {
         public ReviewApplicationDbContext() : base("ReviewApplication")
         {
-
+            var ensureDllIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         public IDbSet<Comment> Comments { get; set; }
@@ -134,7 +134,7 @@ namespace ReviewApplication.Data.Infrastructure
                                             .HasForeignKey(ci => ci.IndustryID)
                                             .WillCascadeOnDelete(false);
 
-            //TODO: fix dependency errors here
+            
 
             modelBuilder.Entity<CompanyIndustry>().HasKey(ci => new { ci.CompanyID, ci.IndustryID });
             modelBuilder.Entity<InsuranceAgentIndustry>().HasKey(iai => new { iai.InsuranceAgentID, iai.IndustryID });

@@ -14,3 +14,4 @@ C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\obj\Debug\ReviewApplication.Data.pdb
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\obj\Debug\ReviewApplication.Data.Migrations.InitialCreate.resources
 C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\obj\Debug\ReviewApplication.Data.csproj.GenerateResource.Cache
+C:\Dev\github\jeffward01\ReviewApplicationV3\ReviewApplication\ReviewApplication.Data\obj\Debug\ReviewApplication.Data.Migrations.AddNewFields.resources

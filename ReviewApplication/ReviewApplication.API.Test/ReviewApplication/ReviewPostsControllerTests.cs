@@ -417,10 +417,9 @@ namespace ReviewApplication.API.Test.ReviewApplication
         [TestMethod] // [4]
         public void GetAllReviewPostsByLeadProductID()
         {
-            //TODO: Check Logic Here
             //Arrange
             _reviewPostRepositoryMock.Setup(rp => rp.Where(It.IsAny<Expression<Func<ReviewPost, bool>>>()))
-                            .Returns(_reviewPosts.Where(rp => rp.LeadProduct.LeadProductID.Equals(1)).AsQueryable());
+                            .Returns(_reviewPosts.Where(rp => rp.LeadProductID.Equals(1)).AsQueryable());
 
             //Act
             var reviewPostQuery = _controller.GetAllReviewPostsForLeadProduct(0);
