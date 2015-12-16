@@ -133,7 +133,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             var statusCodeResult = actionResult as StatusCodeResult;
             //Assert
             _industryRepositoryMock.Verify(i => i.GetByID(0), Times.Once);
-            _industryRepositoryMock.Verify(i => i.Update(It.IsAny<Industry>), Times.Once);
+            _industryRepositoryMock.Verify(i => i.Update(It.IsAny<Industry>()), Times.Once);
             _unitOfWorkMock.Verify(uow => uow.Commit(), Times.Once);
             Assert.IsNotNull(actionResult);
             Assert.IsNotNull(statusCodeResult);
