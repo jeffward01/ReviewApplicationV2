@@ -152,7 +152,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             var leadProducts = _controller.GetAllLeadProducts();
 
             //Assert
-            _leadProductRepositoryMock.Verify(lp => lp.GetAll(), Times.Once);
+            _leadProductRepositoryMock.Verify(lp => lp.Where(It.IsAny<Expression<Func<LeadProduct, bool>>>()), Times.Once);
             Assert.AreEqual(leadProducts.Count(), 4);
 
 
@@ -190,7 +190,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
 
             //Assert
-            _leadProductRepositoryMock.Verify(lpr => lpr.GetAll(), Times.Once);
+            _leadProductRepositoryMock.Verify(lpr => lpr.Where(It.IsAny<Expression<Func<LeadProduct, bool>>>()), Times.Once);
             Assert.AreEqual(leadProductsQuery.Count(), 2);         
         }
 
@@ -202,17 +202,17 @@ namespace ReviewApplication.API.Test.ReviewApplication
             //Act
             IHttpActionResult actionResult =
                 _controller.PutLeadProduct(
-                   0,
+                   3,
                    new LeadProductModel
                    {
-                       LeadProductID = 5,
+                       LeadProductID = 3,
                        CompanyID = 1,
                        IsArchived = false
                    });
 
             var statusCodeResult = actionResult as StatusCodeResult;
             //Assert
-            _leadProductRepositoryMock.Verify(lp => lp.GetByID(5), Times.Once);
+            _leadProductRepositoryMock.Verify(lp => lp.GetByID(3), Times.Once);
             _leadProductRepositoryMock.Verify(lp => lp.Update(It.IsAny<LeadProduct>()), Times.Once);
         }
 

@@ -106,6 +106,7 @@ namespace ReviewApplication.API.Controllers
             //Update the Db Comment according to the input CommentModel object,
             // and the update the comment in the DB
             dbComment.Update(comment);
+
             _commentRepository.Update(dbComment);
 
             //Save Database Changes

@@ -1,0 +1,19 @@
+{
+  "name": "ReviewApplication",
+  "homepage": "https://github.com/jeffward01/ReviewApplicationV2",
+  "authors": [
+    "jeffward01 <jeffwardcoding@gmail.com>"
+  ],
+  "description": "An insurance lead generation marketplace/review platform",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

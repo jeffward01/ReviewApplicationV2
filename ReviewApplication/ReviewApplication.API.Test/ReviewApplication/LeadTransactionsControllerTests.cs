@@ -46,7 +46,92 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
 
             //Build Lead Transaction Objects Below
+            _leadProducts = new[]
+        {
+                //Lead Product for Test Company 1
+                new LeadProduct
+                {
+                    LeadProductID = 0,
+                    CompanyID = 1,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is per telemarketing lead generated",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 2 weeks of order date",
+                    MailLead = false,
+                    MailLeadLeadNotes = "",
+                    Press1Lead = false,
+                    Press1LeadNotes = "",
+                    InternetLead = false,
+                    InternetLeadNotes = "",
+                    ColdCallPhoneNumberList = false,
+                    ColdCallPhoneNumberListLeadNotes = ""
+                },
 
+                //Lead Product for Test Company 1
+                new LeadProduct
+                {
+                     LeadProductID = 1,
+                     CompanyID = 1,
+                     IsArchived = false,
+                     Price = 15,
+                     ProductNotes = "Price is per Press-1 Lead Generated",
+                     OrderLink = "http://wwww.google.com",
+                     TelemarketingLead = false,
+                     TelemarketingLeadNotes = "",
+                     MailLead = false,
+                     MailLeadLeadNotes = "",
+                     Press1Lead = true,
+                     Press1LeadNotes = "Leads will be generated within 2 weeks of Order date",
+                     InternetLead = false,
+                     InternetLeadNotes = "",
+                     ColdCallPhoneNumberList = false,
+                     ColdCallPhoneNumberListLeadNotes = ""
+                },
+
+                //Lead Product for Test Company 2
+                new LeadProduct
+                {
+                     LeadProductID = 2,
+                     CompanyID = 3,
+                     IsArchived = false,
+                     Price = 25,
+                     ProductNotes = "Price per Telemarketing Lead Generated",
+                     OrderLink = "http://wwww.google.com",
+                     TelemarketingLead = true,
+                     Press1LeadNotes = "",
+                     MailLead = false,
+                     MailLeadLeadNotes = "",
+                     Press1Lead = true,
+                     TelemarketingLeadNotes = "Leads will be generated within 2 weeks of Order date",
+                     InternetLead = false,
+                     InternetLeadNotes = "",
+                     ColdCallPhoneNumberList = false,
+                     ColdCallPhoneNumberListLeadNotes = ""
+                },
+
+                //Lead Product for Test Company 2
+                new LeadProduct
+                {
+                     LeadProductID = 3,
+                     CompanyID = 3,
+                     IsArchived = false,
+                     Price = 15,
+                     ProductNotes = "Price is per Press-1 Lead Generated",
+                     OrderLink = "http://wwww.google.com",
+                     TelemarketingLead = false,
+                     TelemarketingLeadNotes = "",
+                     MailLead = false,
+                     MailLeadLeadNotes = "",
+                     Press1Lead = true,
+                     Press1LeadNotes = "Leads will be generated within 2 weeks of Order date",
+                     InternetLead = false,
+                     InternetLeadNotes = "",
+                     ColdCallPhoneNumberList = false,
+                     ColdCallPhoneNumberListLeadNotes = ""
+                }
+            };
 
             _companies = new[]
             {
@@ -151,92 +236,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             };
 
-            _leadProducts = new[]
-         {
-                //Lead Product for Test Company 1
-                new LeadProduct
-                {
-                    LeadProductID = 0,
-                    CompanyID = 1,
-                    IsArchived = false,
-                    Price = 20,
-                    ProductNotes = "Price is per telemarketing lead generated",
-                    OrderLink = "http://www.google.com",
-                    TelemarketingLead = true,
-                    TelemarketingLeadNotes = "Leads will be generated within 2 weeks of order date",
-                    MailLead = false,
-                    MailLeadLeadNotes = "",
-                    Press1Lead = false,
-                    Press1LeadNotes = "",
-                    InternetLead = false,
-                    InternetLeadNotes = "",
-                    ColdCallPhoneNumberList = false,
-                    ColdCallPhoneNumberListLeadNotes = ""
-                },
-
-                //Lead Product for Test Company 1
-                new LeadProduct
-                {
-                     LeadProductID = 1,
-                     CompanyID = 1,
-                     IsArchived = false,
-                     Price = 15,
-                     ProductNotes = "Price is per Press-1 Lead Generated",
-                     OrderLink = "http://wwww.google.com",
-                     TelemarketingLead = false,
-                     TelemarketingLeadNotes = "",
-                     MailLead = false,
-                     MailLeadLeadNotes = "",
-                     Press1Lead = true,
-                     Press1LeadNotes = "Leads will be generated within 2 weeks of Order date",
-                     InternetLead = false,
-                     InternetLeadNotes = "",
-                     ColdCallPhoneNumberList = false,
-                     ColdCallPhoneNumberListLeadNotes = ""
-                },
-
-                //Lead Product for Test Company 2
-                new LeadProduct
-                {
-                     LeadProductID = 2,
-                     CompanyID = 3,
-                     IsArchived = false,
-                     Price = 25,
-                     ProductNotes = "Price per Telemarketing Lead Generated",
-                     OrderLink = "http://wwww.google.com",
-                     TelemarketingLead = true,
-                     Press1LeadNotes = "",
-                     MailLead = false,
-                     MailLeadLeadNotes = "",
-                     Press1Lead = true,
-                     TelemarketingLeadNotes = "Leads will be generated within 2 weeks of Order date",
-                     InternetLead = false,
-                     InternetLeadNotes = "",
-                     ColdCallPhoneNumberList = false,
-                     ColdCallPhoneNumberListLeadNotes = ""
-                },
-
-                //Lead Product for Test Company 2
-                new LeadProduct
-                {
-                     LeadProductID = 3,
-                     CompanyID = 3,
-                     IsArchived = false,
-                     Price = 15,
-                     ProductNotes = "Price is per Press-1 Lead Generated",
-                     OrderLink = "http://wwww.google.com",
-                     TelemarketingLead = false,
-                     TelemarketingLeadNotes = "",
-                     MailLead = false,
-                     MailLeadLeadNotes = "",
-                     Press1Lead = true,
-                     Press1LeadNotes = "Leads will be generated within 2 weeks of Order date",
-                     InternetLead = false,
-                     InternetLeadNotes = "",
-                     ColdCallPhoneNumberList = false,
-                     ColdCallPhoneNumberListLeadNotes = ""
-                }
-            };
+           
 
 
 
@@ -294,16 +294,14 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             //Setup Mock InsuranceAgent Repository
             _insuranceAgentRepositoryMock.Setup(iar => iar.GetAll()).Returns(_insuranceAgents.AsQueryable());
-            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(1)).Returns(_insuranceAgents[1]);
-            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(2)).Returns(_insuranceAgents[2]);
+            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(1)).Returns(_insuranceAgents[0]);
+            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(2)).Returns(_insuranceAgents[1]);
 
             //Setup Mock LeadTransations Repository 
             _leadTransactionRepositoryMock.Setup(ltr => ltr.GetAll()).Returns(_leadTransactions.AsQueryable());
             _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(0)).Returns(_leadTransactions[0]);
             _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(1)).Returns(_leadTransactions[1]);
             _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(2)).Returns(_leadTransactions[2]);
-            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(3)).Returns(_leadTransactions[3]);
-            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(4)).Returns(_leadTransactions[4]);
 
 
 
@@ -394,7 +392,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             var leadTransactionQuery = _controller.GetLeadTransactionsForLeadProduct(0);
 
             //Assert
-            _leadTransactionRepositoryMock.Verify(lt => lt.GetAll(), Times.Once);
+            _leadTransactionRepositoryMock.Verify(lt => lt.Where(It.IsAny<Expression<Func<LeadTransaction, bool>>>()), Times.Once);
             Assert.AreEqual(leadTransactionQuery.Count(), 2);
         }
 

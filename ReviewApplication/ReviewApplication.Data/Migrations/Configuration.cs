@@ -27,6 +27,18 @@ namespace ReviewApplication.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
+            //http://www.asp.net/web-api/overview/data/using-web-api-with-entity-framework/part-3
+            // http://www.entityframeworktutorial.net/code-first/seed-database-in-code-first.aspx
+
+
+
+
+
+
+
+
         }
     }
 }

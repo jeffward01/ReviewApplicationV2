@@ -1,4 +1,5 @@
 ﻿using ReviewApplication.Core.Domain;
+using ReviewApplication.Data.Migrations;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -12,13 +13,13 @@ namespace ReviewApplication.Data.Infrastructure
         }
 
         public IDbSet<Comment> Comments { get; set; }
-        public IDbSet<Company> CompanyProfiles { get; set; }
-        public IDbSet<InsuranceAgent> InsuranceAgentProfiles { get; set; }
+        public IDbSet<Company> Companies { get; set; }
+        public IDbSet<InsuranceAgent> InsuranceAgents { get; set; }
         public IDbSet<LeadProduct> LeadProducts { get; set; }
         public IDbSet<LeadTransaction> LeadTransactions { get; set; }
         public IDbSet<ReviewPost> ReviewPosts { get; set; }
-        public IDbSet<User> UserProfiles { get; set; }
-        public IDbSet<ExternalLogin> ExternalLigins { get; set; }
+        public IDbSet<User> Users { get; set; }
+        public IDbSet<ExternalLogin> ExternalLogins { get; set; }
         public IDbSet<Industry> Industries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

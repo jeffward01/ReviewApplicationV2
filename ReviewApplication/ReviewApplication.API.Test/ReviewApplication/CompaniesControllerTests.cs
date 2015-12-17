@@ -439,10 +439,10 @@ namespace ReviewApplication.API.Test.ReviewApplication
             //Setup Mock Industry Repository
             _industryRepositoryMock.Setup(ir => ir.GetAll()).Returns(_industries.AsQueryable());
             _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[0]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[1]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[2]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[3]);
-            _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[4]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(1)).Returns(_industries[1]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(2)).Returns(_industries[2]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(3)).Returns(_industries[3]);
+            _industryRepositoryMock.Setup(ir => ir.GetByID(4)).Returns(_industries[4]);
 
 
 
@@ -474,7 +474,9 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             //Assert
             // Verify GetCompanies() is called (1) time.  Verify Correct number is returned
-           _companyRepositoryMock.Verify(c => c.GetAll(), Times.Once);
+
+
+           _companyRepositoryMock.Verify(c => c.Where(It.IsAny<Expression<Func<Company, bool>>>()), Times.Once);
             Assert.AreEqual(companies.Count(), _numberOfMockCompanies); 
         }
 
@@ -514,7 +516,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             var companiesQuery = _controller.GetCompaniesByIndustry(1);
 
             //Assert
-            _companyIndustryRepositoryMock.Verify(ci => ci.GetAll(), Times.Once);
+            _companyRepositoryMock.Verify(ci => ci.Where(It.IsAny<Expression<Func<Company, bool>>>()), Times.Once);
             Assert.AreEqual(companiesQuery.Count(), 2);
         }
 
@@ -540,16 +542,16 @@ namespace ReviewApplication.API.Test.ReviewApplication
             //Act
             IHttpActionResult actionResult =
                 _controller.PutCompany(
-                    0,
+                    1,
                     new CompanyModel
                     {
-                        CompanyID = 0,
+                        CompanyID = 1,
                         UserID = 0,
                         IsArchived = false
                     });
             var statusCodeResult = actionResult as StatusCodeResult;
             //Assert
-            _companyRepositoryMock.Verify(cr => cr.GetByID(0), Times.Once);
+            _companyRepositoryMock.Verify(cr => cr.GetByID(1), Times.Once);
             _companyRepositoryMock.Verify(cr => cr.Update(It.IsAny<Company>()), Times.Once);
             _unitOfWorkMock.Verify(uow => uow.Commit(), Times.Once);
             Assert.IsNotNull(actionResult);

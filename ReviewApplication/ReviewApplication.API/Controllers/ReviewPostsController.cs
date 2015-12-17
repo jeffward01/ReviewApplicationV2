@@ -55,7 +55,7 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery]
         public IQueryable<ReviewPostModel> GetAllReviewPostsForCompany(int companyID)
         {
-            return _reviewPostRepository.Where(rp => rp.IsArchived == false && rp.CompanyID == companyID).ProjectTo<ReviewPostModel>();
+            return _reviewPostRepository.Where(rp => !rp.IsArchived && rp.CompanyID == companyID).ProjectTo<ReviewPostModel>();
         }
 
 

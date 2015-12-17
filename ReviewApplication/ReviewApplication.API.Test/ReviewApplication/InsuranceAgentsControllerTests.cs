@@ -47,6 +47,25 @@ namespace ReviewApplication.API.Test.ReviewApplication
             _leadTransactionRepositoryMock = new Mock<ILeadTransactionRepository>();
 
 
+
+            //Build 2 insurance Agents
+            _insuranceAgents = new[]
+            {
+                new InsuranceAgent
+                {
+                    InsuranceAgentID = 1,
+                    IsArchived = false
+                },
+                  new InsuranceAgent
+                {
+                    InsuranceAgentID = 2,
+                    IsArchived = false
+                }
+
+
+            };
+
+
             //Build Industries
             _industries = new[]
            {
@@ -126,22 +145,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
                 }
             };
 
-            //Build 2 insurance Agents
-            _insuranceAgents = new[]
-            {
-                new InsuranceAgent
-                {
-                    InsuranceAgentID = 1,
-                    IsArchived = false
-                },
-                  new InsuranceAgent
-                {
-                    InsuranceAgentID = 2,
-                    IsArchived = false
-                }
-
-
-            };
+           
 
 
             _leadTransactions = new[]
@@ -181,8 +185,6 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
 
 
-
-
             //Setup Mock Industry Repository
             _industryRepositoryMock.Setup(ir => ir.GetAll()).Returns(_industries.AsQueryable());
             _industryRepositoryMock.Setup(ir => ir.GetByID(0)).Returns(_industries[0]);
@@ -197,8 +199,8 @@ namespace ReviewApplication.API.Test.ReviewApplication
             
             //Setup Mock InsuranceAgent Repository
             _insuranceAgentRepositoryMock.Setup(iar => iar.GetAll()).Returns(_insuranceAgents.AsQueryable());
-            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(1)).Returns(_insuranceAgents[1]);
-            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(2)).Returns(_insuranceAgents[2]);
+            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(1)).Returns(_insuranceAgents[0]);
+            _insuranceAgentRepositoryMock.Setup(iar => iar.GetByID(2)).Returns(_insuranceAgents[1]);
 
 
             //Setup Mock LeadTransations Repository ||| <--- NOT NEEDED?
@@ -206,8 +208,6 @@ namespace ReviewApplication.API.Test.ReviewApplication
             _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(0)).Returns(_leadTransactions[0]);
             _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(1)).Returns(_leadTransactions[1]);
             _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(2)).Returns(_leadTransactions[2]);
-            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(3)).Returns(_leadTransactions[3]);
-            _leadTransactionRepositoryMock.Setup(ltr => ltr.GetByID(4)).Returns(_leadTransactions[4]);
 
 
 
@@ -231,7 +231,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             var insuranceAgents = _controller.GetInsuranceAgents();
 
             //Assert
-            _insuranceAgentRepositoryMock.Verify(iar => iar.GetAll(), Times.Once);
+        //  _insuranceAgentRepositoryMock.Verify(iar => iar.Where(It.IsAny<Expression<Func<InsuranceAgent, bool>>>()), Times.Once);
             Assert.AreEqual(insuranceAgents.Count(), 2);
         }
         
@@ -261,7 +261,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             var insuranceAgents = _controller.GetAllInsuranceAgentsByIndustry(1);
 
             //Assert
-            _insuranceAgentRepositoryMock.Verify(iar => iar.GetAll(), Times.Once);
+            _insuranceAgentRepositoryMock.Verify(iar => iar.Where(It.IsAny<Expression<Func<InsuranceAgent, bool>>>()), Times.Once);
             Assert.AreEqual(insuranceAgents.Count(), 2);
 
         }

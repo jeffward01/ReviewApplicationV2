@@ -250,6 +250,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
                     InsuranceAgentProfileID = 1,
                     CompanyID =1,
                     ReviewID = 1
+                    
                 
                 },
                  new Comment
@@ -279,6 +280,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             //Setup Mock Comment Repository
             _commentRepositoryMock.Setup(crm => crm.GetAll()).Returns(_comments.AsQueryable());
+            _commentRepositoryMock.Setup(c => c.GetByID(0)).Returns(_comments[0]);
             _commentRepositoryMock.Setup(c => c.GetByID(1)).Returns(_comments[1]);
             _commentRepositoryMock.Setup(c => c.GetByID(2)).Returns(_comments[2]);
             _commentRepositoryMock.Setup(c => c.GetByID(3)).Returns(_comments[3]);
@@ -301,7 +303,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             //assert
             _commentRepositoryMock.Verify(c => c.GetAll(), Times.Once);
-            Assert.AreEqual(comments, 4);
+            Assert.AreEqual(comments.Count(), 4);
 
         }
 
@@ -350,7 +352,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             //assert
             _commentRepositoryMock.Verify(c => c.Where(It.IsAny<Expression<Func<Comment, bool>>>()), Times.Once);
-            Assert.AreEqual(commentQuery, 1);
+            Assert.AreEqual(commentQuery.Count(), 1);
         }
 
 
@@ -366,7 +368,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             //assert
             _commentRepositoryMock.Verify(c => c.Where(It.IsAny<Expression<Func<Comment, bool>>>()), Times.Once);
-            Assert.AreEqual(commentQuery, 2);
+            Assert.AreEqual(commentQuery.Count(), 2);
         }
 
         [TestMethod] // [8]
@@ -381,7 +383,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
             //Assert
             _commentRepositoryMock.Verify(c => c.Where(It.IsAny<Expression<Func<Comment, bool>>>()), Times.Once);
-            Assert.AreEqual(commentQuery, 1);
+            Assert.AreEqual(commentQuery.Count(), 1);
         }
 
         [TestMethod] // [2]
@@ -392,16 +394,16 @@ namespace ReviewApplication.API.Test.ReviewApplication
             //Act
             IHttpActionResult actionResult =
                 _controller.PutComment(
-                    0,
+                    1,
                     new CommentModel
                     {
-                        CommentID = 0,
+                        CommentID = 1,
                         PostBody = "abc"
                     });
             var statusCodeResult = actionResult as StatusCodeResult;
 
             //Assert
-            _commentRepositoryMock.Verify(c => c.GetByID(0), Times.Once);
+            _commentRepositoryMock.Verify(c => c.GetByID(1), Times.Once);
             _commentRepositoryMock.Verify(c => c.Update(It.IsAny<Comment>()), Times.Once);
 
             _unitOfWorkMock.Verify(uow => uow.Commit(), Times.Once);

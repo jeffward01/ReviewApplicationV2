@@ -40,7 +40,7 @@ namespace ReviewApplication.Data.Infrastructure
 
             return Task.Factory.StartNew(() =>
             {
-                DataContext.UserProfiles.Add(user);
+                DataContext.Users.Add(user);
                 DataContext.SaveChanges();
             });
         }
@@ -54,14 +54,14 @@ namespace ReviewApplication.Data.Infrastructure
 
             return Task.Factory.StartNew(() =>
             {
-                DataContext.UserProfiles.Remove(user);
+                DataContext.Users.Remove(user);
                 DataContext.SaveChanges();
             });
         }
 
         public Task<User> FindByIdAsync(int userId)
         {
-            return Task.Factory.StartNew(() => DataContext.UserProfiles.Find(userId));
+            return Task.Factory.StartNew(() => DataContext.Users.Find(userId));
         }
 
         public Task<User> FindByNameAsync(string userName)
@@ -72,7 +72,7 @@ namespace ReviewApplication.Data.Infrastructure
             }
 
             return Task.Factory.StartNew(() =>
-                        DataContext.UserProfiles.FirstOrDefault
+                        DataContext.Users.FirstOrDefault
                             (u => u.UserName.ToLower() == userName.ToLower()));
         }
 
@@ -85,7 +85,7 @@ namespace ReviewApplication.Data.Infrastructure
 
             return Task.Factory.StartNew(() =>
             {
-                DataContext.UserProfiles.Attach(user);
+                DataContext.Users.Attach(user);
                 DataContext.Entry(user).State = EntityState.Modified;
                 DataContext.SaveChanges();
             });

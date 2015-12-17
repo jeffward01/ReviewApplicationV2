@@ -33,7 +33,7 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery]
         public IQueryable<InsuranceAgentModel> GetInsuranceAgents()
         {
-            return _insuranceAgentRepository.Where(ia => ia.IsArchived == false).ProjectTo<InsuranceAgentModel>();
+            return _insuranceAgentRepository.Where(ia => !ia.IsArchived).ProjectTo<InsuranceAgentModel>();
         }
 
         //GET: Api/InsurnaceAgent || [1]

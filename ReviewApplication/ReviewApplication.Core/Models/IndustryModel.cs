@@ -14,7 +14,20 @@ namespace ReviewApplication.Core.Models
         public string Description { get; set; }
         public bool IsArchived { get; set; } //Archived State
 
-        public List<CompanyModel> Companies { get; set; }
-        public List<InsuranceAgentModel> InsuranceAgents { get; set; }
+        public string CompaniesUrl
+        {
+            get
+            {
+                return "/api/industry/" + Id + "/companies";
+            }
+        }
+
+        public string InsuranceAgents
+        {
+            get
+            {
+                return "/api/industry/" + Id + "/agents";
+            }
+        }
     }
 }

@@ -36,10 +36,14 @@ namespace ReviewApplication.API
         {   
             Mapper.CreateMap<Comment, CommentModel>();
             Mapper.CreateMap<Company, CompanyModel>();
+            Mapper.CreateMap<Industry, IndustryModel>();
+            Mapper.CreateMap<CompanyIndustry, CompanyIndustryModel>();
+            Mapper.CreateMap<InsuranceAgentIndustry, InsuranceAgentIndustryModel>();
             Mapper.CreateMap<InsuranceAgent, InsuranceAgentModel>();
             Mapper.CreateMap<LeadProduct, LeadProductModel>();
             Mapper.CreateMap<LeadTransaction, LeadTransactionModel>();
             Mapper.CreateMap<ReviewPost, ReviewPostModel>();
+            Mapper.CreateMap<ExternalLogin, ExternalLoginModel>();
             Mapper.CreateMap<User, UserModel>();
             
         }

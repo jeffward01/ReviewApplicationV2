@@ -49,6 +49,9 @@ namespace ReviewApplication.API
             container.Register<IAuthRepository, AuthRepository>(Lifestyle.Scoped);
             container.Register<ICommentRepository, CommentRepository>();
             container.Register<IUserRepository, UserRepository>();
+            container.Register<IIndustryRepository, IndustryRepository>();
+            container.Register<IInsuranceAgentIndustryRepository, InsuranceAgentIndustryRepository>();
+            container.Register<ICompanyIndustryRepository, CompanyIndustryRepository>();
             container.Register<ICompanyRepository, CompanyRepository>();
             container.Register<IInsuranceAgentRepository, InsuranceAgentProfileRepository>();
             container.Register<ILeadProductRepository, LeadProductRepository>();
