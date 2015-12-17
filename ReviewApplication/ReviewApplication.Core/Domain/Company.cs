@@ -19,6 +19,7 @@ namespace ReviewApplication.Core.Domain
 
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
+        public bool Verified { get; set; }
         public string Address2 { get; set; }
         public string State { get; set; }
         public string City { get; set; }
@@ -80,6 +81,7 @@ namespace ReviewApplication.Core.Domain
             UserID = companyProfile.UserID;
             CompanyName = companyProfile.CompanyName;
             Address1 = companyProfile.Address1;
+            Verified = companyProfile.Verified;
             Address2 = companyProfile.Address2;
             State = companyProfile.State;
             City = companyProfile.State;

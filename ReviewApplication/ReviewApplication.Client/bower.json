@@ -15,5 +15,20 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-loading-bar": "~0.8.0",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~0.14.3",
+    "angular-ui": "~0.4.0",
+    "angular-ui-select3": "ui-select#*",
+    "font-awesome": "~4.5.0",
+    "angular-sanitize": "~1.4.8",
+    "angular-spinner": "~0.8.0",
+    "toastr": "~2.1.2",
+    "moment": "~2.10.6",
+    "angular-filter-count-to": "~0.0.3"
+  }
 }

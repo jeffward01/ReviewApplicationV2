@@ -12,7 +12,6 @@ namespace ReviewApplication.Data.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        //TODO: add data to database here using C#
         protected override void Seed(ReviewApplication.Data.Infrastructure.ReviewApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
@@ -27,18 +26,6 @@ namespace ReviewApplication.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-
-            //http://www.asp.net/web-api/overview/data/using-web-api-with-entity-framework/part-3
-            // http://www.entityframeworktutorial.net/code-first/seed-database-in-code-first.aspx
-
-
-
-
-
-
-
-
         }
     }
 }

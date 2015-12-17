@@ -34,6 +34,7 @@ namespace ReviewApplication.Core.Models
         //Gravatar? Something special?
         public string Gravatar { get; set; }
         public string TwitterHandle { get; set; }
+        public bool Verified { get; set; }
         public string AgentWebsiteURL { get; set; }
         public string InsuranceForumsHandle { get; set; }
         public int NumberOfReviewPosts { get; set; }

@@ -24,6 +24,7 @@ namespace ReviewApplication.Core.Models
         public string OtherTelephoneNumber { get; set; }
         public string EmailAddress { get; set; }
         public string SkypeHandle { get; set; }
+        public bool Verified { get; set; }
         public string WebsiteURL { get; set; }
         public string PictureLogoURL { get; set; }
         public int CompanyRating { get; set; }

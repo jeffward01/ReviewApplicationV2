@@ -48,6 +48,7 @@ namespace ReviewApplication.Core.Domain
         //Gravatar? Something special?
         public string Gravatar { get; set; }
         public string TwitterHandle { get; set; }
+        public bool Verified { get; set; }
         public string AgentWebsiteURL { get; set; }
         public string InsuranceForumsHandle { get; set; }
         public int NumberOfReviewPosts { get; set; }
@@ -123,7 +124,7 @@ namespace ReviewApplication.Core.Domain
 
             Press1Leads = insuranceProfileAgent.Press1Leads;
             Press1LeadNotes = insuranceProfileAgent.Press1LeadNotes;
-
+            Verified = insuranceProfileAgent.Verified;
             InternetLeads = insuranceProfileAgent.InternetLeads;
             InternetLeadNotes = insuranceProfileAgent.InternetLeadNotes;
 

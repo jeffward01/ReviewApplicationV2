@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201512162306392_AddNewFields.Designer.cs">
       <DependentUpon>201512162306392_AddNewFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512170800023_AddVerification.cs" />
+    <Compile Include="Migrations\201512170800023_AddVerification.Designer.cs">
+      <DependentUpon>201512170800023_AddVerification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AuthRepository.cs" />
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512162306392_AddNewFields.resx">
       <DependentUpon>201512162306392_AddNewFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512170800023_AddVerification.resx">
+      <DependentUpon>201512170800023_AddVerification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
