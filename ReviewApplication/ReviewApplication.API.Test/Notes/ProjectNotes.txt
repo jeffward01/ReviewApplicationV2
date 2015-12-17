@@ -1,3 +1,10 @@
 ﻿1. 100% Code-Coverage
 2. Add Verification methods to [Controller] and [Tests]
 3.
+
+
+
+
+
+--Eventually--
+- Condense Templates/ctrl.js Edit and Post Templates into the same.
