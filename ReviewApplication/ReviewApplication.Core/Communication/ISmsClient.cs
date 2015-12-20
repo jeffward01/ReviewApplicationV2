@@ -11,3 +11,6 @@ namespace ReviewApplication.Core.Communication
         void SendText(string to, string from, string message);
     }
 }
+
+
+//TODO: ask about Twilio SMS client Again
