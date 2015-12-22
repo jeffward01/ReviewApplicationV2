@@ -47,7 +47,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-A",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -59,7 +59,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-A",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -71,7 +71,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-B",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -83,7 +83,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-C",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -95,7 +95,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-D",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -107,7 +107,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-E",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -119,7 +119,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-F",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -131,7 +131,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-G",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -143,7 +143,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-H",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -155,7 +155,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-I",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -167,7 +167,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "Company-J",
                     PasswordHash = "Password",
                     AccountType = "Company",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 },
                 new User
@@ -179,7 +179,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-A",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -190,7 +190,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-B",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -201,7 +201,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-C",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -212,7 +212,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-D",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -223,7 +223,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-E",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -234,7 +234,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-F",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -245,7 +245,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-G",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -256,7 +256,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-H",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -267,7 +267,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-I",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
                 },
                 new User
                 {
@@ -278,7 +278,7 @@ namespace ReviewApplication.Data.Migrations
                     UserName = "InsuranceAgent-J",
                     PasswordHash = "Password",
                     AccountType = "InsuranceAgent",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DateTime.Parse("01/01/2015")
 
                 });
 
@@ -1505,7 +1505,8 @@ namespace ReviewApplication.Data.Migrations
                     ProductNotes = "Price is PER Telemarket Generated Lead",
                     OrderLink = "http://www.google.com",
                     TelemarketingLead = true,
-                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase",
+                    
                 },
                 new LeadProduct
                 {
@@ -1997,13 +1998,389 @@ namespace ReviewApplication.Data.Migrations
 
             #endregion
 
-
+            //TODO: Add more Lead Transactions
             //Build LeadTransactions
+            context.LeadTransactions.AddOrUpdate(x => x.LeadTransactionID,
+            #region
+                //Insurance Agent 1 Lead Transaction -> Company 1 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 0,
+                    LeadProductID = 1,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("02/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 1 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 1,
+                    LeadProductID = 1,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("02/14/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 1 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 2,
+                    LeadProductID = 1,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("03/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 1 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 3,
+                    LeadProductID = 1,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("03/14/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 1 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 4,
+                    LeadProductID = 1,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("04/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 2 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 5,
+                    LeadProductID = 6,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("04/20/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 2 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 6,
+                    LeadProductID = 6,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("05/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 2 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 7,
+                    LeadProductID = 6,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("05/20/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 3
+                new LeadTransaction
+                {
+                    LeadTransactionID = 8,
+                    LeadProductID = 11,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("06/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 3
+                new LeadTransaction
+                {
+                    LeadTransactionID = 9,
+                    LeadProductID = 11,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("06/20/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 4
+                new LeadTransaction
+                {
+                    LeadTransactionID = 10,
+                    LeadProductID = 16,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("07/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 4
+                new LeadTransaction
+                {
+                    LeadTransactionID = 11,
+                    LeadProductID = 16,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("07/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 4
+                new LeadTransaction
+                {
+                    LeadTransactionID = 12,
+                    LeadProductID = 16,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("07/20/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 5
+                new LeadTransaction
+                {
+                    LeadTransactionID = 13,
+                    LeadProductID = 21,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("07/25/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 5
+                new LeadTransaction
+                {
+                    LeadTransactionID = 14,
+                    LeadProductID = 21,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("08/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 6
+                new LeadTransaction
+                {
+                    LeadTransactionID = 15,
+                    LeadProductID = 26,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("08/20/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 6
+                new LeadTransaction
+                {
+                    LeadTransactionID = 16,
+                    LeadProductID = 26,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("08/25/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 6
+                new LeadTransaction
+                {
+                    LeadTransactionID = 17,
+                    LeadProductID = 26,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("09/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 10
+                new LeadTransaction
+                {
+                    LeadTransactionID = 18,
+                    LeadProductID = 37,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("09/05/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 10
+                new LeadTransaction
+                {
+                    LeadTransactionID = 19,
+                    LeadProductID = 37,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("09/20/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 10
+                new LeadTransaction
+                {
+                    LeadTransactionID = 20,
+                    LeadProductID = 37,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("10/01/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+                //Insurance Agent 1 Lead Transaction -> Company 10
+                new LeadTransaction
+                {
+                    LeadTransactionID = 21,
+                    LeadProductID = 37,
+                    InsuranceAgentID = 0,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("10/20/2015"),
+                    TransactionPrice = 2100,
+                    TransactionNotes = "150 Mail Leads at $14 each."
+                },
+
+                //----------------------------------------------------
 
 
+                //Insurance Agent 2 Lead Transaction -> Company 1 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 22,
+                    LeadProductID = 0,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("02/01/2015"),
+                    TransactionPrice = 625,
+                    TransactionNotes = "25 Tele Leads at $25 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 1 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 23,
+                    LeadProductID = 0,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("02/20/2015"),
+                    TransactionPrice = 625,
+                    TransactionNotes = "25 Tele Leads at $25 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 1 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 24,
+                    LeadProductID = 0,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("03/01/2015"),
+                    TransactionPrice = 625,
+                    TransactionNotes = "25 Tele Leads at $25 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 7 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 25,
+                    LeadProductID = 28,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("03/20/2015"),
+                    TransactionPrice = 625,
+                    TransactionNotes = "25 Tele Leads at $25 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 7 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 26,
+                    LeadProductID = 28,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("03/25/2015"),
+                    TransactionPrice = 625,
+                    TransactionNotes = "25 Tele Leads at $25 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 7 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 27,
+                    LeadProductID = 28,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("04/01/2015"),
+                    TransactionPrice = 625,
+                    TransactionNotes = "25 Tele Leads at $25 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 7 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 28,
+                    LeadProductID = 29,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("04/10/2015"),
+                    TransactionPrice = 500,
+                    TransactionNotes = "25 Press1 Leads at $20 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 7 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 29,
+                    LeadProductID = 29,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("04/20/2015"),
+                    TransactionPrice = 500,
+                    TransactionNotes = "25 Press1 Leads at $20 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 7 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 30,
+                    LeadProductID = 29,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("05/01/2015"),
+                    TransactionPrice = 500,
+                    TransactionNotes = "25 Press1 Leads at $20 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 7 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 31,
+                    LeadProductID = 29,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("05/20/2015"),
+                    TransactionPrice = 500,
+                    TransactionNotes = "25 Press1 Leads at $20 each."
+                },
+                //Insurance Agent 2 Lead Transaction -> Company 7 
+                new LeadTransaction
+                {
+                    LeadTransactionID = 29,
+                    LeadProductID = 29,
+                    InsuranceAgentID = 1,
+                    IsArchived = false,
+                    TransactionDate = DateTime.Parse("05/25/2015"),
+                    TransactionPrice = 500,
+                    TransactionNotes = "25 Press1 Leads at $20 each."
+                });
+
+            #endregion
 
             //Build ReviewPosts
+            context.ReviewPosts.AddOrUpdate(x => x.ReviewPostID,
 
+                #region
+                //Build Review Posts
+
+
+
+                );
 
 
             //Build Comments
