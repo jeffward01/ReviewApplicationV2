@@ -2372,12 +2372,12 @@ namespace ReviewApplication.Data.Migrations
 
             #endregion
 
-            //Build ReviewPosts
+            //Build ReviewPosts || LeadProducts have Reviews AND Companies have Reviews
             context.ReviewPosts.AddOrUpdate(x => x.ReviewPostID,
 
                 #region
                 //Build Review Posts
-
+                new ReviewPost
 
 
                 );

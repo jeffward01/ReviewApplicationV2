@@ -15,8 +15,11 @@ namespace ReviewApplication.Core.Models
         public bool IsArchived { get; set; } //Archived State
         public DateTime ReviewPostDate { get; set; }
 
-        public int CompanyRating { get; set; }
-        public int? AgentRating { get; set; }
+        public int? CompanyRating { get; set; }
+        public double? AgentRating { get; set; }
+        public double? LeadProductRating { get; set; }
+        
+
         public string PostTitle { get; set; }
         public string PostBody { get; set; }
         public int NumberOfLikes { get; set; }

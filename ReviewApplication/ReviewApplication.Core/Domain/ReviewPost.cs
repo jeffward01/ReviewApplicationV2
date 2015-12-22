@@ -10,15 +10,17 @@ namespace ReviewApplication.Core.Domain
     public class ReviewPost
     {
         public int ReviewPostID { get; set; } //Primary Key
-        public int CompanyID { get; set; } // Foriegn Key
+        public int? CompanyID { get; set; } // Foriegn Key
         public int InsuranceAgentID { get; set; } // Foriegn Key
-        public int LeadProductID { get; set; } //Foriegn Key
+        public int? LeadProductID { get; set; } //Foriegn Key
         public bool IsArchived { get; set; } //Archived State
 
         public DateTime ReviewPostDate { get; set; }
 
-        public int CompanyRating { get; set; }
-        public int? AgentRating { get; set; }
+        public double? CompanyRating { get; set; }
+        public double? LeadProductRating { get; set; }
+        public double? AgentRating { get; set; }
+
         public string PostTitle { get; set; }
         public string PostBody { get; set; }
         public int NumberOfLikes { get; set; }
@@ -36,6 +38,7 @@ namespace ReviewApplication.Core.Domain
             InsuranceAgentID = reviewPost.InsuranceAgentID;
             LeadProductID = reviewPost.LeadProductID;
             ReviewPostDate = reviewPost.ReviewPostDate;
+            LeadProductRating = reviewPost.LeadProductRating;
             CompanyRating = reviewPost.CompanyRating;
             AgentRating = reviewPost.AgentRating;
             PostBody = reviewPost.PostBody;
