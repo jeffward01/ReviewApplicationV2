@@ -61,7 +61,7 @@ namespace ReviewApplication.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            if(id != industry.Id)
+            if(id != industry.IndustryID)
             {
                 return BadRequest();
             }
@@ -128,7 +128,7 @@ namespace ReviewApplication.API.Controllers
             }
 
             //Return the created Insustry record
-            return CreatedAtRoute("DefaultApi", new { id = industry.Id }, industry);
+            return CreatedAtRoute("DefaultApi", new { id = industry.IndustryID }, industry);
         }
 
 
@@ -166,7 +166,7 @@ namespace ReviewApplication.API.Controllers
 
         private bool IndustryExists(int id)
         {
-            return _industryRepository.Count(i => i.Id == id) > 0;
+            return _industryRepository.Count(i => i.IndustryID == id) > 0;
         }
 
         protected override void Dispose(bool disposing)

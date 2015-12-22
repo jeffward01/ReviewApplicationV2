@@ -9,9 +9,8 @@ namespace ReviewApplication.Core.Domain
 {
    public class Industry
     {
-        public int Id { get; set; } //Primary Key
-        public int? InsuranceAgentID { get; set; }//ForiegnKey
-        public int? CompanyID { get; set; } //ForiegnKey
+        public int IndustryID { get; set; } //Primary Key
+
         public bool IsArchived { get; set; } //Archived State
         public string Description { get; set; }
 
@@ -23,10 +22,9 @@ namespace ReviewApplication.Core.Domain
         //Add Methods (update)
         public void Update(IndustryModel industry)
         {
-            Id = industry.Id;
+            IndustryID = industry.IndustryID;
             IsArchived = industry.IsArchived;
-            InsuranceAgentID = industry.InsuranceAgentID;
-            CompanyID = industry.CompanyID;
+       
             Description = industry.Description;
         }
     }

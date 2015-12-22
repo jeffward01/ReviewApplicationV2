@@ -15,6 +15,8 @@ namespace ReviewApplication.Data.Infrastructure
         public IDbSet<Comment> Comments { get; set; }
         public IDbSet<Company> Companies { get; set; }
         public IDbSet<InsuranceAgent> InsuranceAgents { get; set; }
+        public IDbSet<InsuranceAgentIndustry> InsuranceAgentIndustries { get; set; }
+        public IDbSet<CompanyIndustry> CompanyIndustries { get; set; }
         public IDbSet<LeadProduct> LeadProducts { get; set; }
         public IDbSet<LeadTransaction> LeadTransactions { get; set; }
         public IDbSet<ReviewPost> ReviewPosts { get; set; }

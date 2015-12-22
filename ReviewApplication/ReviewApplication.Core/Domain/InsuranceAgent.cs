@@ -16,8 +16,6 @@ namespace ReviewApplication.Core.Domain
 
         public int UserID { get; set; } // Forign Key
 
-        public int IndustryID { get; set; } //Forign Key
-
         public bool IsArchived { get; set; } //Archived State
 
         public string ProfileName { get; set; }
@@ -29,7 +27,7 @@ namespace ReviewApplication.Core.Domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public Industry Insustry { get; set; }
+
 
         //Set Full Name
         public string FullName
@@ -51,8 +49,20 @@ namespace ReviewApplication.Core.Domain
         public bool Verified { get; set; }
         public string AgentWebsiteURL { get; set; }
         public string InsuranceForumsHandle { get; set; }
-        public int NumberOfReviewPosts { get; set; }
-        public int NumberOfLikesRecieved { get; set; }
+        public int NumberOfReviewPosts
+        {
+            get
+            {
+                return ReviewPosts.Count();
+            }
+        }
+        public int NumberOfLikesRecieved
+        {
+            get
+            {
+                return ReviewPosts.Sum(rp => rp.NumberOfLikes);
+            }
+        }
         public int AverageQuanitityOfLeadsTransactiondPerWeek { get; set; }
         public int AverageQuanitityOfLeadsTransactiondPerMonth { get; set; }
 
@@ -110,8 +120,7 @@ namespace ReviewApplication.Core.Domain
             Gravatar = insuranceProfileAgent.Gravatar;
             TwitterHandle = insuranceProfileAgent.TwitterHandle;
             AgentWebsiteURL = insuranceProfileAgent.AgentWebsiteURL;
-            NumberOfReviewPosts = insuranceProfileAgent.NumberOfReviewPosts;
-            NumberOfLikesRecieved = insuranceProfileAgent.NumberOfLikesRecieved;
+   
             AverageQuanitityOfLeadsTransactiondPerWeek = insuranceProfileAgent.AverageQuanitityOfLeadsTransactiondPerWeek;
             AverageQuanitityOfLeadsTransactiondPerMonth = insuranceProfileAgent.AverageQuanitityOfLeadsTransactiondPerMonth;
 
@@ -133,7 +142,6 @@ namespace ReviewApplication.Core.Domain
 
             IsArchived = insuranceProfileAgent.IsArchived;
 
-            IndustryID = insuranceProfileAgent.IndustryID;
         }
             
         

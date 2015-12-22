@@ -14,8 +14,6 @@ namespace ReviewApplication.Core.Models
         public int UserID { get; set; } // Forign Key
         public bool IsArchived { get; set; } //Archived State
 
-        public int IndustryID { get; set; }// Foriegn Key
-
         public string ProfileName { get; set; }
 
         // Change Terrortiory to list in the future

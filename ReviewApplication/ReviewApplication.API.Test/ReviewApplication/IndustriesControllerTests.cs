@@ -39,7 +39,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
            {
                 new Industry
                 {
-                    Id = 0,
+                    IndustryID = 0,
                     IsArchived = false,
                     Description = "Life Insurance",
                    
@@ -47,28 +47,28 @@ namespace ReviewApplication.API.Test.ReviewApplication
 
                 new Industry
                 {
-                    Id = 1,
+                    IndustryID = 1,
                     IsArchived = false,
                     Description = "Health Insurance"
                 },
 
                 new Industry
                 {
-                    Id = 2,
+                    IndustryID = 2,
                     IsArchived = false,
                     Description = "Property and Casualty"
                 },
 
                 new Industry
                 {
-                    Id = 3,
+                    IndustryID = 3,
                     IsArchived = false,
                     Description = "Medicare"
                 },
 
                 new Industry
                 {
-                    Id = 4,
+                    IndustryID = 4,
                     IsArchived = false,
                     Description = "Annuities"
                 }
@@ -130,7 +130,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
                     0,
                     new IndustryModel
                     {
-                        Id = 0,
+                        IndustryID = 0,
                         Description = ""
                     });
             var statusCodeResult = actionResult as StatusCodeResult;
@@ -154,7 +154,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
                 _controller.PostIndustry(
                     new IndustryModel
                     {
-                        Id = 5,
+                        IndustryID = 5,
                         IsArchived = false
                     });
 
@@ -185,7 +185,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             var contentResult = actionResult as OkNegotiatedContentResult<IndustryModel>;
             Assert.IsNotNull(contentResult);
             Assert.IsNotNull(contentResult.Content);
-            Assert.IsTrue(contentResult.Content.Id == 1);
+            Assert.IsTrue(contentResult.Content.IndustryID == 1);
         }
 
     }

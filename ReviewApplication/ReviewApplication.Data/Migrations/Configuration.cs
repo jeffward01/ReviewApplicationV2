@@ -723,76 +723,404 @@ namespace ReviewApplication.Data.Migrations
 
             #region
 
-                //InsuranceAgent 1
+                //InsuranceAgent 1 || Un-Verified
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 0,
+                    UserID = 10,
+                    IsArchived = false,
+                    ProfileName = "BossSales123",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "James",
+                    LastName = "Marsden",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = false,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
+
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
 
                 },
 
-                //InsuranceAgent2
+                //InsuranceAgent 2 || Un-Verified
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 1,
+                    UserID = 11,
+                    IsArchived = false,
+                    ProfileName = "Lucky777",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "Greg",
+                    LastName = "Maverson",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = false,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 },
-                //InsuranceAgent 3
+                //InsuranceAgent 3 || Un-Verified
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 2,
+                    UserID = 12,
+                    IsArchived = false,
+                    ProfileName = "EliteSales",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "Edward",
+                    LastName = "Cullen",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = false,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 },
-                //InsuranceAgent 4
+                //InsuranceAgent 4 || Un-Verified
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 3,
+                    UserID = 13,
+                    IsArchived = false,
+                    ProfileName = "TotallyAwesome",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "Suesan",
+                    LastName = "Thomas",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = false,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 },
-                //InsuranceAgent 5
+                //InsuranceAgent 5 || Un-Verified
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 4,
+                    UserID = 14,
+                    IsArchived = false,
+                    ProfileName = "GameOnSales",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "Todd",
+                    LastName = "Mills",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = true,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 },
-                //InsuranceAgent 6 
+                //InsuranceAgent 6 || Verified 
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 5,
+                    UserID = 15,
+                    IsArchived = false,
+                    ProfileName = "SleekSales",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "Steven",
+                    LastName = "Smith",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = true,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 },
-                //InsuranceAgent 7
+                //InsuranceAgent 7 || Verified 
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 6,
+                    UserID = 16,
+                    IsArchived = false,
+                    ProfileName = "TeleSalesAwesome",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "Kevin",
+                    LastName = "Miller",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = true,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 },
-                //InsuranceAgent 8
+                //InsuranceAgent 8 || Verified 
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 7,
+                    UserID = 17,
+                    IsArchived = false,
+                    ProfileName = "BrookeSanden123",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "Brooke",
+                    LastName = "Sanden",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = true,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 },
-                //InsuranceAgent 9
+                //InsuranceAgent 9 || Verified 
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 8,
+                    UserID = 18,
+                    IsArchived = false,
+                    ProfileName = "Jward01",
+                    Territory = "Southern California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life Insurnace",
+                    FirstName = "Jeff",
+                    LastName = "Ward",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = false,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = true,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 },
 
-                //InsuranceAgent 10
+                //InsuranceAgent 10 || Verified 
                 new InsuranceAgent
                 {
+                    InsuranceAgentID = 9,
+                    UserID = 19,
+                    IsArchived = false,
+                    ProfileName = "LifeSales",
+                    Territory = "California",
+                    YearsOfExperience = 5,
+                    TypeOfAgent = "Life and Health Insurnace",
+                    FirstName = "Phillip",
+                    LastName = "Knopp",
+                    Bio = "This is a short Bio... Yada Yada Yada",
+                    RecommendedLeadCompanies = "Amazing Leads Co",
+                    TypesOfLeadsUsed = "Telemarketer Leads",
+                    ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mr._Smiley_Face.svg/2000px-Mr._Smiley_Face.svg.png",
+                    Gravatar = "YestGravatarUser",
+                    TwitterHandle = "TwitterExampleHandle",
+                    Verified = true,
+                    InsuranceForumsHandle = "InsuranceForumsHandle",
+                    AverageQuanitityOfLeadsTransactiondPerMonth = 100,
+                    AverageQuanitityOfLeadsTransactiondPerWeek = 25,
 
+                    TelemarketerLeads = true,
+                    TelemarketingLeadNotes = "Telemarketer Leads are the best",
+                    MailLeads = true,
+                    MailLeadLeadNotes = "Mailers are my Bread and Butter",
+                    Press1Leads = true,
+                    Press1LeadNotes = "Great supplement to any week of leads",
+                    InternetLeads = false,
+                    InternetLeadNotes = "Not worth the money",
+                    ColdCallPhoneNumberLists = false,
+                    ColdCallPhoneNumberListLeadNotes = "Just invest Extra for the better leads.  Time is money"
                 }
 
 
 #endregion
                 );
-    
 
 
-            //Build Industries
 
+            //Build Industries || 5 Total
+            context.Industries.AddOrUpdate(x => x.IndustryID,
+
+            #region
+                new Industry
+                {
+                    IndustryID = 0,
+                    IsArchived = false,
+                    Description = "Life Insurance"
+                },
+
+                new Industry
+                {
+                    IndustryID = 1,
+                    IsArchived = false,
+                    Description = "Health Insurance"
+                },
+                new Industry
+                {
+                    IndustryID = 2,
+                    IsArchived = false,
+                    Description = "Property and Casualty Insurance"
+                },
+                new Industry
+                {
+                    IndustryID = 3,
+                    IsArchived = false,
+                    Description = "Medicare Insurance"
+                },
+                new Industry
+                {
+                    IndustryID = 4,
+                    IsArchived = false,
+                    Description = "Annuities"
+                });
+            #endregion
 
             //Build CompanyIndustries
+            context.
+
+
 
 
             //Build InsuranceAgentIndustries
 
 
             //Build LeadProducts
-            
+
             //Build LeadTransactions
 
             //Build Comments

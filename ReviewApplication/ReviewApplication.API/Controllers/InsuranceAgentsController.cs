@@ -52,15 +52,20 @@ namespace ReviewApplication.API.Controllers
             }
         }
 
-        //GET: API/InsuranceAgent || [2]
+       
+        //GET: api/Companies/5 || [2]
         [EnableQuery]
         public IQueryable<InsuranceAgentModel> GetAllInsuranceAgentsByIndustry(int industryID)
         {
             //Grab all insurance agents with matching industry ID
-            return _insuranceAgentRepository.Where(ia => ia.IsArchived == false && ia.IndustryID == industryID).ProjectTo<InsuranceAgentModel>();    
+            var insuranceAgents = _insuranceAgentRepository.Where(ia => !ia.IsArchived && ia.Industries.Any(i => i.IndustryID == industryID));
+
+            return insuranceAgents.ProjectTo<InsuranceAgentModel>();
+
         }
 
-       
+
+
         //PUT: api/InsuranceAgents  || [3]
         [ResponseType(typeof(void))]  
         public IHttpActionResult PutInsuranceAgent(int id, InsuranceAgentModel insuranceAgent)

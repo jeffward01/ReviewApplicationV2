@@ -8,9 +8,8 @@ namespace ReviewApplication.Core.Models
 {
     public class IndustryModel
     {
-        public int Id { get; set; }
-        public int? InsuranceAgentID { get; set; }//ForiegnKey
-        public int? CompanyID { get; set; } //ForiegnKey
+        public int IndustryID { get; set; }
+  
         public string Description { get; set; }
         public bool IsArchived { get; set; } //Archived State
 
@@ -18,7 +17,7 @@ namespace ReviewApplication.Core.Models
         {
             get
             {
-                return "/api/industry/" + Id + "/companies";
+                return "/api/industry/" + IndustryID + "/companies";
             }
         }
 
@@ -26,7 +25,7 @@ namespace ReviewApplication.Core.Models
         {
             get
             {
-                return "/api/industry/" + Id + "/agents";
+                return "/api/industry/" + IndustryID + "/agents";
             }
         }
     }
