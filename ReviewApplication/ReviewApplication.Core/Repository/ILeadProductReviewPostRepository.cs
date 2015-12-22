@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 
 namespace ReviewApplication.Core.Repository
 {
-    public interface IInsuranceAgentIndustryRepository : IRepository<InsuranceAgentReviewPost>
-    {
-
-    }
+    public interface ILeadProductReviewPostRepository : IRepository<LeadProductReviewPost>
+    { }
 }

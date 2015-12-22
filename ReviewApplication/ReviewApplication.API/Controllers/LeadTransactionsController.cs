@@ -64,7 +64,7 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery]
         public IQueryable<LeadTransactionModel> GetLeadTransactionforInsuranceAgent(int insuranceAgentID)
         {
-            return _leadTransactionRepository.Where(lt => !lt.IsArchived && lt.InsuranceAgentProfileID == insuranceAgentID).ProjectTo<LeadTransactionModel>();
+            return _leadTransactionRepository.Where(lt => !lt.IsArchived && lt.InsuranceAgentID == insuranceAgentID).ProjectTo<LeadTransactionModel>();
         }
 
         //GET api/LeadTransaction || [4]

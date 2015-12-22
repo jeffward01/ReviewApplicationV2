@@ -55,7 +55,7 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery]
         public IQueryable<ReviewPostModel> GetAllReviewPostsForCompany(int companyID)
         {
-            return _reviewPostRepository.Where(rp => !rp.IsArchived && rp.CompanyID == companyID).ProjectTo<ReviewPostModel>();
+            return _reviewPostRepository.Where(rp => !rp.IsArchived && rp.CompanyReviewPosts.Any(crp => crp.CompanyID == companyID)).ProjectTo<ReviewPostModel>();
         }
 
 
@@ -63,14 +63,14 @@ namespace ReviewApplication.API.Controllers
         [EnableQuery]
         public IQueryable<ReviewPostModel> GetAllReviewPostsForInsuranceAgent(int insuranceAgentID)
         {
-            return _reviewPostRepository.Where(rp => rp.IsArchived == false && rp.InsuranceAgentID == insuranceAgentID).ProjectTo<ReviewPostModel>();
+            return _reviewPostRepository.Where(rp => !rp.IsArchived && rp.InsuranceAgentReviewPosts.Any(iarp => iarp.InsuranceAgentID == insuranceAgentID)).ProjectTo<ReviewPostModel>();
         }
 
         //GET Api/ReviewPost || [4]
         [EnableQuery]
         public IQueryable<ReviewPostModel> GetAllReviewPostsForLeadProduct(int leadProductID)
         {
-            return _reviewPostRepository.Where(rp => rp.IsArchived == false && rp.LeadProductID == leadProductID).ProjectTo<ReviewPostModel>();
+            return _reviewPostRepository.Where(rp => !rp.IsArchived && rp.LeadProductReviewPosts.Any(lprp => lprp.LeadProductID == leadProductID)).ProjectTo<ReviewPostModel>();
         }
 
         //PUT: api/ReviewPosts || [5]

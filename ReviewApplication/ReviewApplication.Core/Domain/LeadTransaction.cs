@@ -14,6 +14,7 @@ namespace ReviewApplication.Core.Domain
         public int LeadTransactionID { get; set; } // Primary Key
         public int LeadProductID { get; set; } //Foreign Key
         public int InsuranceAgentID { get; set; } //Foreign Key
+        public int CompanyID { get; set; } //Foreign Key
         public bool IsArchived { get; set; } //Archived State
 
 
@@ -38,6 +39,7 @@ namespace ReviewApplication.Core.Domain
             LeadProductID = leadTransactionModel.LeadProductID;
         
             LeadProductID = leadTransactionModel.LeadProductID;
+            CompanyID = leadTransactionModel.CompanyID;
             InsuranceAgentID = leadTransactionModel.InsuranceAgentID;
             TransactionPrice = leadTransactionModel.TransactionPrice;
             TransactionNotes = leadTransactionModel.TransactionNotes;

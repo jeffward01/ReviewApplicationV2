@@ -2378,10 +2378,11 @@ namespace ReviewApplication.Data.Migrations
                 #region
                 //Build Review Posts
                 new ReviewPost
+                { }
 
-
+                //TODO: Build REview posts => then Comments => then run API
                 );
-
+            #endregion
 
             //Build Comments
 

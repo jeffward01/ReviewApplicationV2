@@ -20,6 +20,9 @@ namespace ReviewApplication.Data.Infrastructure
         public IDbSet<LeadProduct> LeadProducts { get; set; }
         public IDbSet<LeadTransaction> LeadTransactions { get; set; }
         public IDbSet<ReviewPost> ReviewPosts { get; set; }
+        public IDbSet<CompanyReviewPost> CompanyReviewPosts { get; set; }
+        public IDbSet<LeadProductReviewPost> LeadProductReviewPosts { get; set; }
+        public IDbSet<InsuranceAgentReviewPost> InsuranceAgentReviewPosts { get; set; }
         public IDbSet<User> Users { get; set; }
         public IDbSet<ExternalLogin> ExternalLogins { get; set; }
         public IDbSet<Industry> Industries { get; set; }
@@ -28,30 +31,41 @@ namespace ReviewApplication.Data.Infrastructure
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
-            //Map Review post to Comapny
+
+            modelBuilder.Entity<CompanyReviewPost>().HasKey(ci => new { ci.CompanyID, ci.ReviewPostID });
+            modelBuilder.Entity<InsuranceAgentReviewPost>().HasKey(iai => new { iai.InsuranceAgentID, iai.ReviewPostID });
+            modelBuilder.Entity<LeadProductReviewPost>().HasKey(ci => new { ci.LeadProductID, ci.ReviewPostID });
+
+
+            //Map Company to ReviewPosts
             modelBuilder.Entity<ReviewPost>().HasKey(rp => rp.ReviewPostID);
-            modelBuilder.Entity<ReviewPost>().HasRequired(c => c.Company)
-                                             .WithMany(rp => rp.ReviewPosts)
+            modelBuilder.Entity<ReviewPost>().HasMany(c => c.CompanyReviewPosts)
+                                             .WithRequired(rp => rp.ReviewPost)
                                              .HasForeignKey(c => c.CompanyID)
                                              .WillCascadeOnDelete(false);
 
-            //Map Review post to Agent
-            modelBuilder.Entity<ReviewPost>().HasRequired(a => a.InsuranceAgent)
-                                             .WithMany(rp => rp.ReviewPosts)
-                                             .HasForeignKey(a => a.InsuranceAgentID)
-                                             .WillCascadeOnDelete(false); 
+            //Map Company to LeadProducts
+            modelBuilder.Entity<ReviewPost>().HasKey(rp => rp.ReviewPostID);
+            modelBuilder.Entity<ReviewPost>().HasMany(c => c.LeadProductReviewPosts)
+                                             .WithRequired(rp => rp.ReviewPost)
+                                             .HasForeignKey(c => c.LeadProductID)
+                                             .WillCascadeOnDelete(false);
+
+            //Map Company to InsuranceAgents
+            modelBuilder.Entity<ReviewPost>().HasKey(rp => rp.ReviewPostID);
+            modelBuilder.Entity<ReviewPost>().HasMany(c => c.InsuranceAgentReviewPosts)
+                                             .WithRequired(rp => rp.ReviewPost)
+                                             .HasForeignKey(c => c.InsuranceAgentID)
+                                             .WillCascadeOnDelete(false);
+
+
 
             //Map Review Post to Comments
             modelBuilder.Entity<ReviewPost>().HasMany(c => c.Comments)
                                              .WithRequired(c => c.ReviewPost)
                                              .HasForeignKey(rp => rp.ReviewID)
                                              .WillCascadeOnDelete(false);
-
-            //Map ReviewPost to LeadProduct
-            modelBuilder.Entity<ReviewPost>().HasRequired(a => a.LeadProduct)
-                                              .WithMany(lp => lp.ReviewPosts)
-                                              .HasForeignKey(rp => rp.LeadProductID)
-                                              .WillCascadeOnDelete(false);
+            
 
             //Map Comments to Comments
             modelBuilder.Entity<Comment>().HasKey(c => c.CommentID);
@@ -72,7 +86,7 @@ namespace ReviewApplication.Data.Infrastructure
             //Map InsuranceAgent to Transactions
             modelBuilder.Entity<LeadTransaction>().HasRequired(a => a.Agent)
                                                 .WithMany(lt => lt.Transactions)
-                                                .HasForeignKey(a => a.InsuranceAgentProfileID)
+                                                .HasForeignKey(a => a.InsuranceAgentID)
                                                 .WillCascadeOnDelete(false);
 
             //Map Company to LeadProduct

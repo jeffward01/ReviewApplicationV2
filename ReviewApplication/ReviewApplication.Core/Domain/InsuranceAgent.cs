@@ -53,14 +53,14 @@ namespace ReviewApplication.Core.Domain
         {
             get
             {
-                return ReviewPosts.Count();
+                return InsuranceAgentReviewPosts.Count();
             }
         }
         public int NumberOfLikesRecieved
         {
             get
             {
-                return ReviewPosts.Sum(rp => rp.NumberOfLikes);
+                return InsuranceAgentReviewPosts.Sum(rp => rp.ReviewPost.NumberOfLikes);
             }
         }
         public int AverageQuanitityOfLeadsTransactiondPerWeek { get; set; }
@@ -85,7 +85,7 @@ namespace ReviewApplication.Core.Domain
 
 
             //Can have many reviewPosts, Comments, Transaction
-        public virtual ICollection<ReviewPost> ReviewPosts { get; set; }
+        public virtual ICollection<InsuranceAgentReviewPost> InsuranceAgentReviewPosts { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<LeadTransaction> Transactions { get; set; }
         public virtual ICollection<InsuranceAgentIndustry> Industries { get; set; }

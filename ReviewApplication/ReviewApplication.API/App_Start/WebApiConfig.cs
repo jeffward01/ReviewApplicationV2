@@ -43,6 +43,11 @@ namespace ReviewApplication.API
             Mapper.CreateMap<LeadProduct, LeadProductModel>();
             Mapper.CreateMap<LeadTransaction, LeadTransactionModel>();
             Mapper.CreateMap<ReviewPost, ReviewPostModel>();
+            Mapper.CreateMap<CompanyReviewPost, CompanyReviewPostModel>();
+            Mapper.CreateMap<LeadProductReviewPost, LeadProductReviewPostModel>();
+            Mapper.CreateMap<InsuranceAgentReviewPost, InsuranceAgentReviewPostModel>();
+
+
             Mapper.CreateMap<ExternalLogin, ExternalLoginModel>();
             Mapper.CreateMap<User, UserModel>();
             

@@ -40,7 +40,7 @@ namespace ReviewApplication.Core.Domain
 
         //Add Virtual Varibles
         public virtual Company Company { get; set; }
-        public virtual ICollection<ReviewPost> ReviewPosts { get; set; }
+        public virtual ICollection<LeadProductReviewPost> LeadProductReviewPosts { get; set; }
 
         //Add methods if any (update)
         public void Update(LeadProductModel leadProduct)

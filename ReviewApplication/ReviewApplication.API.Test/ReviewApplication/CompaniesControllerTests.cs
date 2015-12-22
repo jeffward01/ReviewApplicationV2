@@ -12,6 +12,7 @@ using System.Web.Http.Results;
 using ReviewApplication.Core.Models;
 using System.Net;
 using System.Linq.Expressions;
+using ReviewApplication.Data.Repository;
 
 namespace ReviewApplication.API.Test.ReviewApplication
 {
@@ -21,7 +22,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
         private Mock<ICompanyRepository> _companyRepositoryMock;
         private Mock<IIndustryRepository> _industryRepositoryMock;
         private Mock<IReviewPostRepository> _reviewPostRepositoryMock;
-        private Mock<ILeadProductRepository> _leadProductRepositoryMock;
+        private Mock<LeadProductRepository> _leadProductRepositoryMock;
         private Mock<ICompanyIndustryRepository> _companyIndustryRepositoryMock;
         private Mock<IUnitOfWork> _unitOfWorkMock;
         private CompaniesController _controller;
@@ -44,7 +45,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             //Set up Repositories
             _companyRepositoryMock = new Mock<ICompanyRepository>();
             _reviewPostRepositoryMock = new Mock<IReviewPostRepository>();
-            _leadProductRepositoryMock = new Mock<ILeadProductRepository>();
+            _leadProductRepositoryMock = new Mock<LeadProductRepository>();
             _industryRepositoryMock = new Mock<IIndustryRepository>();
             _companyIndustryRepositoryMock = new Mock<ICompanyIndustryRepository>();
             _unitOfWorkMock = new Mock<IUnitOfWork>();

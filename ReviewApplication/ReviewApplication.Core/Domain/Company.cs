@@ -54,7 +54,7 @@ namespace ReviewApplication.Core.Domain
         {
             get
             {
-                return (int)Math.Round(ReviewPosts.Average(rp => rp.CompanyRating), 0);
+                return (int)Math.Round(CompanyReviewPosts.Average(crp => crp.ReviewPost.Rating), 0);
               
             }
         }
@@ -64,8 +64,8 @@ namespace ReviewApplication.Core.Domain
         //Add Virtual Properties
         //Can have many products, reviewposts, comments, transactions
         public virtual ICollection<LeadProduct> LeadProducts { get; set; }
-        public virtual ICollection<ReviewPost> ReviewPosts { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<CompanyReviewPost> CompanyReviewPosts { get; set; }
+      
         public virtual ICollection<LeadTransaction> Transactions { get; set; }
         public virtual ICollection<CompanyIndustry> Industries { get; set; }
 

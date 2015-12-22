@@ -12,13 +12,14 @@ using System.Web.Http.Results;
 using ReviewApplication.Core.Models;
 using System.Net;
 using System.Linq.Expressions;
+using ReviewApplication.Data.Repository;
 
 namespace ReviewApplication.API.Test.ReviewApplication
 {
     [TestClass]
     public class LeadProductsControllerTests
     {
-        private Mock<ILeadProductRepository> _leadProductRepositoryMock;
+        private Mock<LeadProductRepository> _leadProductRepositoryMock;
         private Mock<IUnitOfWork> _unitOfWorkMock;
 
         private LeadProductsController _controller;
@@ -33,7 +34,7 @@ namespace ReviewApplication.API.Test.ReviewApplication
             WebApiConfig.SetupAutomapper();
 
             //Set up Repositories
-            _leadProductRepositoryMock = new Mock<ILeadProductRepository>();
+            _leadProductRepositoryMock = new Mock<LeadProductRepository>();
 
 
             //Build Lead Products Below

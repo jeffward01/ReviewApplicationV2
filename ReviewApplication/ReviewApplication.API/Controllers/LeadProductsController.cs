@@ -4,6 +4,7 @@ using ReviewApplication.Core.Domain;
 using ReviewApplication.Core.Infrastructure;
 using ReviewApplication.Core.Models;
 using ReviewApplication.Core.Repository;
+using ReviewApplication.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,12 +19,12 @@ namespace ReviewApplication.API.Controllers
 {
     public class LeadProductsController : ApiController
     {
-        private readonly ILeadProductRepository _leadProductRepository;
+        private readonly LeadProductRepository _leadProductRepository;
         private readonly IUnitOfWork _unitOfWork;
 
 
         //Constructor
-        public LeadProductsController(ILeadProductRepository leadProductRepository, IUnitOfWork unitOfWork)
+        public LeadProductsController(LeadProductRepository leadProductRepository, IUnitOfWork unitOfWork)
         {
             _leadProductRepository = leadProductRepository;
             _unitOfWork = unitOfWork;
