@@ -36,6 +36,8 @@ namespace ReviewApplication.Data.Migrations
 
             //Build 20 Users
             context.Users.AddOrUpdate(x => x.Id,
+
+            #region
                 new User
                 {
                     Id = 0,
@@ -48,11 +50,239 @@ namespace ReviewApplication.Data.Migrations
                     CreatedDate = DateTime.Now,
 
                 },
+                new User
+                {
+                    Id = 1,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-A",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
 
+                },
+                new User
+                {
+                    Id = 2,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-B",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
 
+                },
+                new User
+                {
+                    Id = 3,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-C",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
 
+                },
+                new User
+                {
+                    Id = 4,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-D",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
 
-                );
+                },
+                new User
+                {
+                    Id = 5,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-E",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
+
+                },
+                new User
+                {
+                    Id = 3,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-F",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
+
+                },
+                new User
+                {
+                    Id = 6,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-G",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
+
+                },
+                new User
+                {
+                    Id = 7,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-H",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
+
+                },
+                new User
+                {
+                    Id = 8,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-I",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
+
+                },
+                new User
+                {
+                    Id = 9,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-J",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
+
+                },
+                new User
+                {
+                    Id = 10,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-A",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 11,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-B",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 12,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-C",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 13,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-D",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 14,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-E",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 15,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-F",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 16,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-G",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 17,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-H",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 18,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-I",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+                },
+                new User
+                {
+                    Id = 19,
+                    IsArchived = false,
+                    Email = "test@example.com",
+                    ResetEmail = "resetEmail@example.com",
+                    UserName = "InsuranceAgent-J",
+                    PasswordHash = "Password",
+                    AccountType = "InsuranceAgent",
+                    CreatedDate = DateTime.Now,
+
+                });
+
+            #endregion
 
             //Build 10 companies || => 7 Verified, 3 Un-Verified
             context.Companies.AddOrUpdate(x => x.CompanyID,
@@ -60,11 +290,11 @@ namespace ReviewApplication.Data.Migrations
 
             #region
 
-                //Company 1
+                //Company 1 || Unverified 
                 new Company
                 {
-                    CompanyID = 1,
-                    UserID = 1,
+                    CompanyID = 0,
+                    UserID = 0,
                     IsArchived = false,
                     Verified = false,
                     CompanyName = "Joe Schmoes Lead Company",
@@ -105,8 +335,8 @@ namespace ReviewApplication.Data.Migrations
                  //Company 2 || Unverified
                  new Company
                  {
-                     CompanyID = 2,
-                     UserID = 3,
+                     CompanyID = 1,
+                     UserID = 1,
                      IsArchived = false,
                      Verified = false,
                      CompanyName = "All Star Leads Company",
@@ -144,52 +374,344 @@ namespace ReviewApplication.Data.Migrations
                      //Company Rating Depends on ReviewPosts
                  },
 
-                 //Company 3
+                 //Company 3 || Unverified
                  new Company
                  {
+                     CompanyID = 2,
+                     UserID = 2,
+                     IsArchived = false,
+                     Verified = false,
+                     CompanyName = "Amazing Leads Inc",
+                     Address1 = "111 Hollwood Blvd",
+                     Address2 = "Suite: 880",
+                     State = "CA",
+                     City = "Los Angeles",
+                     Zip = "90036",
+                     TelephoneNumber = "5556667894",
+                     OtherTelephoneNumber = "5557891234",
+                     EmailAddress = "leads@allstarleads.com",
+                     SkypeHandle = "AllStarLeads",
+                     WebsiteURL = "http://www.AllStarleads.com",
+                     PictureLogoURL = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png",
+                     Bio = "All Star Leads Company.  Our leads are 5-star!",
+                     LeadNotes = "All of our leads are organic and come with a contact gurantee!",
+                     PaymentNotes = "Please wait 2 days for payment to clear before lead generation begins",
 
+                     //Payment Area  || Stripe?
+                     AcceptsCredit = true,
+                     CreditComments = "We accept Credit",
+                     AcceptsDebit = true,
+                     DebitComments = "We accept Debit",
+                     AcceceptsAmericanExpress = true,
+                     AmericanExpressComments = "We accept American Express",
+                     AcceptsPaypal = true,
+                     PaypalEmailAddress = "leads@allstarleads.com",
+                     PaypalComments = "We accept Paypal",
+                     AcceptsMoneyOrder = true,
+                     MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
+                     AcceptsVenmo = true,
+                     VenmoComments = "We accept Venmo!",
+                     VenmoHandle = "AllStarLeads",
+
+                     //Company Rating Depends on ReviewPosts
                  },
 
-                 //Company 4
+                 //Company 4 || Verified
                  new Company
                  {
+                     CompanyID = 3,
+                     UserID = 3,
+                     IsArchived = false,
+                     Verified = true,
+                     CompanyName = "Precision Lead Co.",
+                     Address1 = "111 Hollwood Blvd",
+                     Address2 = "Suite: 880",
+                     State = "CA",
+                     City = "Los Angeles",
+                     Zip = "90036",
+                     TelephoneNumber = "5556667894",
+                     OtherTelephoneNumber = "5557891234",
+                     EmailAddress = "leads@allstarleads.com",
+                     SkypeHandle = "AllStarLeads",
+                     WebsiteURL = "http://www.AllStarleads.com",
+                     PictureLogoURL = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png",
+                     Bio = "All Star Leads Company.  Our leads are 5-star!",
+                     LeadNotes = "All of our leads are organic and come with a contact gurantee!",
+                     PaymentNotes = "Please wait 2 days for payment to clear before lead generation begins",
 
+                     //Payment Area  || Stripe?
+                     AcceptsCredit = true,
+                     CreditComments = "We accept Credit",
+                     AcceptsDebit = true,
+                     DebitComments = "We accept Debit",
+                     AcceceptsAmericanExpress = true,
+                     AmericanExpressComments = "We accept American Express",
+                     AcceptsPaypal = true,
+                     PaypalEmailAddress = "leads@allstarleads.com",
+                     PaypalComments = "We accept Paypal",
+                     AcceptsMoneyOrder = true,
+                     MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
+                     AcceptsVenmo = true,
+                     VenmoComments = "We accept Venmo!",
+                     VenmoHandle = "AllStarLeads",
+
+                     //Company Rating Depends on ReviewPosts
                  },
 
-                 //Company 5
+                 //Company 5 || Verified
                  new Company
                  {
+                     CompanyID = 4,
+                     UserID = 4,
+                     IsArchived = false,
+                     Verified = true,
+                     CompanyName = "Best Leads Ever.",
+                     Address1 = "111 Hollwood Blvd",
+                     Address2 = "Suite: 880",
+                     State = "CA",
+                     City = "Los Angeles",
+                     Zip = "90036",
+                     TelephoneNumber = "5556667894",
+                     OtherTelephoneNumber = "5557891234",
+                     EmailAddress = "leads@allstarleads.com",
+                     SkypeHandle = "AllStarLeads",
+                     WebsiteURL = "http://www.AllStarleads.com",
+                     PictureLogoURL = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png",
+                     Bio = "All Star Leads Company.  Our leads are 5-star!",
+                     LeadNotes = "All of our leads are organic and come with a contact gurantee!",
+                     PaymentNotes = "Please wait 2 days for payment to clear before lead generation begins",
 
+                     //Payment Area  || Stripe?
+                     AcceptsCredit = true,
+                     CreditComments = "We accept Credit",
+                     AcceptsDebit = true,
+                     DebitComments = "We accept Debit",
+                     AcceceptsAmericanExpress = true,
+                     AmericanExpressComments = "We accept American Express",
+                     AcceptsPaypal = true,
+                     PaypalEmailAddress = "leads@allstarleads.com",
+                     PaypalComments = "We accept Paypal",
+                     AcceptsMoneyOrder = true,
+                     MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
+                     AcceptsVenmo = true,
+                     VenmoComments = "We accept Venmo!",
+                     VenmoHandle = "AllStarLeads",
+
+                     //Company Rating Depends on ReviewPosts
                  },
 
-                 //Company 6
+
+                 //Company 6 || Verified
                  new Company
                  {
+                     CompanyID = 5,
+                     UserID = 5,
+                     IsArchived = false,
+                     Verified = true,
+                     CompanyName = "Best Leads Ever.",
+                     Address1 = "111 Hollwood Blvd",
+                     Address2 = "Suite: 880",
+                     State = "CA",
+                     City = "Los Angeles",
+                     Zip = "90036",
+                     TelephoneNumber = "5556667894",
+                     OtherTelephoneNumber = "5557891234",
+                     EmailAddress = "leads@allstarleads.com",
+                     SkypeHandle = "AllStarLeads",
+                     WebsiteURL = "http://www.AllStarleads.com",
+                     PictureLogoURL = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png",
+                     Bio = "All Star Leads Company.  Our leads are 5-star!",
+                     LeadNotes = "All of our leads are organic and come with a contact gurantee!",
+                     PaymentNotes = "Please wait 2 days for payment to clear before lead generation begins",
 
+                     //Payment Area  || Stripe?
+                     AcceptsCredit = true,
+                     CreditComments = "We accept Credit",
+                     AcceptsDebit = true,
+                     DebitComments = "We accept Debit",
+                     AcceceptsAmericanExpress = true,
+                     AmericanExpressComments = "We accept American Express",
+                     AcceptsPaypal = true,
+                     PaypalEmailAddress = "leads@allstarleads.com",
+                     PaypalComments = "We accept Paypal",
+                     AcceptsMoneyOrder = true,
+                     MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
+                     AcceptsVenmo = true,
+                     VenmoComments = "We accept Venmo!",
+                     VenmoHandle = "AllStarLeads",
+
+                     //Company Rating Depends on ReviewPosts
                  },
 
-                 //Company 7
+                 //Company 7 || Verified
                  new Company
                  {
+                     CompanyID = 6,
+                     UserID = 6,
+                     IsArchived = false,
+                     Verified = true,
+                     CompanyName = "Lead Generation Services",
+                     Address1 = "111 Hollwood Blvd",
+                     Address2 = "Suite: 880",
+                     State = "CA",
+                     City = "Los Angeles",
+                     Zip = "90036",
+                     TelephoneNumber = "5556667894",
+                     OtherTelephoneNumber = "5557891234",
+                     EmailAddress = "leads@allstarleads.com",
+                     SkypeHandle = "AllStarLeads",
+                     WebsiteURL = "http://www.AllStarleads.com",
+                     PictureLogoURL = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png",
+                     Bio = "All Star Leads Company.  Our leads are 5-star!",
+                     LeadNotes = "All of our leads are organic and come with a contact gurantee!",
+                     PaymentNotes = "Please wait 2 days for payment to clear before lead generation begins",
 
+                     //Payment Area  || Stripe?
+                     AcceptsCredit = true,
+                     CreditComments = "We accept Credit",
+                     AcceptsDebit = true,
+                     DebitComments = "We accept Debit",
+                     AcceceptsAmericanExpress = true,
+                     AmericanExpressComments = "We accept American Express",
+                     AcceptsPaypal = true,
+                     PaypalEmailAddress = "leads@allstarleads.com",
+                     PaypalComments = "We accept Paypal",
+                     AcceptsMoneyOrder = true,
+                     MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
+                     AcceptsVenmo = true,
+                     VenmoComments = "We accept Venmo!",
+                     VenmoHandle = "AllStarLeads",
+
+                     //Company Rating Depends on ReviewPosts
                  },
 
-                 //Company 8
+
+                 //Company 8 || Verified
                  new Company
                  {
+                     CompanyID = 7,
+                     UserID = 7,
+                     IsArchived = false,
+                     Verified = true,
+                     CompanyName = "SOlD! Leads",
+                     Address1 = "111 Hollwood Blvd",
+                     Address2 = "Suite: 880",
+                     State = "CA",
+                     City = "Los Angeles",
+                     Zip = "90036",
+                     TelephoneNumber = "5556667894",
+                     OtherTelephoneNumber = "5557891234",
+                     EmailAddress = "leads@allstarleads.com",
+                     SkypeHandle = "AllStarLeads",
+                     WebsiteURL = "http://www.AllStarleads.com",
+                     PictureLogoURL = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png",
+                     Bio = "All Star Leads Company.  Our leads are 5-star!",
+                     LeadNotes = "All of our leads are organic and come with a contact gurantee!",
+                     PaymentNotes = "Please wait 2 days for payment to clear before lead generation begins",
 
+                     //Payment Area  || Stripe?
+                     AcceptsCredit = true,
+                     CreditComments = "We accept Credit",
+                     AcceptsDebit = true,
+                     DebitComments = "We accept Debit",
+                     AcceceptsAmericanExpress = true,
+                     AmericanExpressComments = "We accept American Express",
+                     AcceptsPaypal = true,
+                     PaypalEmailAddress = "leads@allstarleads.com",
+                     PaypalComments = "We accept Paypal",
+                     AcceptsMoneyOrder = true,
+                     MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
+                     AcceptsVenmo = true,
+                     VenmoComments = "We accept Venmo!",
+                     VenmoHandle = "AllStarLeads",
+
+                     //Company Rating Depends on ReviewPosts
                  },
 
-                 //Company 9
+
+                 //Company 9 || Verified
                  new Company
                  {
+                     CompanyID = 8,
+                     UserID = 8,
+                     IsArchived = false,
+                     Verified = true,
+                     CompanyName = "SouthWest Leads.",
+                     Address1 = "111 Hollwood Blvd",
+                     Address2 = "Suite: 880",
+                     State = "CA",
+                     City = "Los Angeles",
+                     Zip = "90036",
+                     TelephoneNumber = "5556667894",
+                     OtherTelephoneNumber = "5557891234",
+                     EmailAddress = "leads@allstarleads.com",
+                     SkypeHandle = "AllStarLeads",
+                     WebsiteURL = "http://www.AllStarleads.com",
+                     PictureLogoURL = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png",
+                     Bio = "All Star Leads Company.  Our leads are 5-star!",
+                     LeadNotes = "All of our leads are organic and come with a contact gurantee!",
+                     PaymentNotes = "Please wait 2 days for payment to clear before lead generation begins",
 
+                     //Payment Area  || Stripe?
+                     AcceptsCredit = true,
+                     CreditComments = "We accept Credit",
+                     AcceptsDebit = true,
+                     DebitComments = "We accept Debit",
+                     AcceceptsAmericanExpress = true,
+                     AmericanExpressComments = "We accept American Express",
+                     AcceptsPaypal = true,
+                     PaypalEmailAddress = "leads@allstarleads.com",
+                     PaypalComments = "We accept Paypal",
+                     AcceptsMoneyOrder = true,
+                     MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
+                     AcceptsVenmo = true,
+                     VenmoComments = "We accept Venmo!",
+                     VenmoHandle = "AllStarLeads",
+
+                     //Company Rating Depends on ReviewPosts
                  },
 
-                 //Company 10
+
+                 //Company 10 || Verified
                  new Company
                  {
+                     CompanyID = 9,
+                     UserID = 9,
+                     IsArchived = false,
+                     Verified = true,
+                     CompanyName = "NorthEast Leads.",
+                     Address1 = "111 Hollwood Blvd",
+                     Address2 = "Suite: 880",
+                     State = "CA",
+                     City = "Los Angeles",
+                     Zip = "90036",
+                     TelephoneNumber = "5556667894",
+                     OtherTelephoneNumber = "5557891234",
+                     EmailAddress = "leads@allstarleads.com",
+                     SkypeHandle = "AllStarLeads",
+                     WebsiteURL = "http://www.AllStarleads.com",
+                     PictureLogoURL = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png",
+                     Bio = "All Star Leads Company.  Our leads are 5-star!",
+                     LeadNotes = "All of our leads are organic and come with a contact gurantee!",
+                     PaymentNotes = "Please wait 2 days for payment to clear before lead generation begins",
 
+                     //Payment Area  || Stripe?
+                     AcceptsCredit = true,
+                     CreditComments = "We accept Credit",
+                     AcceptsDebit = true,
+                     DebitComments = "We accept Debit",
+                     AcceceptsAmericanExpress = true,
+                     AmericanExpressComments = "We accept American Express",
+                     AcceptsPaypal = true,
+                     PaypalEmailAddress = "leads@allstarleads.com",
+                     PaypalComments = "We accept Paypal",
+                     AcceptsMoneyOrder = true,
+                     MoneyOrderComments = "Please allow 2 weeks for money order to arrive",
+                     AcceptsVenmo = true,
+                     VenmoComments = "We accept Venmo!",
+                     VenmoHandle = "AllStarLeads",
+
+                     //Company Rating Depends on ReviewPosts
                  }
 
 
