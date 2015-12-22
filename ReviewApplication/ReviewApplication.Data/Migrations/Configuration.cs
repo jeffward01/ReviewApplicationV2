@@ -1111,21 +1111,903 @@ namespace ReviewApplication.Data.Migrations
             #endregion
 
             //Build CompanyIndustries
-            context.
+            context.CompanyIndustries.AddOrUpdate(x => x.CompanyID,
 
 
+            #region
+            //Company 1 || Life Insurance(0), Health(1), Medicare (3)
+
+            new CompanyIndustry
+            {
+                IndustryID = 0,
+                CompanyID = 0,
+            },
+
+            new CompanyIndustry
+            {
+                IndustryID = 1,
+                CompanyID = 0
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 3,
+                CompanyID = 0
+            },
+
+            //Company 2 || Life Insurance(0), Health(1), Medicare (3), Annuities(4), P&C(2)
+
+             new CompanyIndustry
+             {
+                 IndustryID = 0,
+                 CompanyID = 1,
+             },
+
+            new CompanyIndustry
+            {
+                IndustryID = 1,
+                CompanyID = 1
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 3,
+                CompanyID = 1
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 4,
+                CompanyID = 1
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 2,
+                CompanyID = 1
+            },
+
+
+            //Company 3 || Life Insurance(0)
+
+            new CompanyIndustry
+            {
+                IndustryID = 0,
+                CompanyID = 2
+            },
+
+
+            //Company 4 || Life Insurance(0), Health(1), Medicare (3),
+            new CompanyIndustry
+            {
+                IndustryID = 0,
+                CompanyID = 3
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 1,
+                CompanyID = 3
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 3,
+                CompanyID = 3
+            },
+
+            //Company 5|| Life Insurance(0), Health(1), Medicare (3),
+            new CompanyIndustry
+            {
+                IndustryID = 0,
+                CompanyID = 4
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 1,
+                CompanyID = 4
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 3,
+                CompanyID = 4
+            },
+
+            //Company 6|| Life Insurance(0), Health(1), Medicare (3),Annuities(4)
+            new CompanyIndustry
+            {
+                IndustryID = 0,
+                CompanyID = 5
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 1,
+                CompanyID = 5
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 3,
+                CompanyID = 5
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 4,
+                CompanyID = 5
+            },
+
+            //Company 7|| Life Insurance(0), Health(1), Medicare (3),Annuities(4)
+            new CompanyIndustry
+            {
+                IndustryID = 0,
+                CompanyID = 6
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 1,
+                CompanyID = 6
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 3,
+                CompanyID = 6
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 4,
+                CompanyID = 6
+            },
+
+            //Company 8 || P&C(2)
+            new CompanyIndustry
+            {
+                IndustryID = 2,
+                CompanyID = 7
+            },
+
+
+            //Company 9|| Life Insurance(0), Health(1), Medicare (3),Annuities(4)
+            new CompanyIndustry
+            {
+                IndustryID = 0,
+                CompanyID = 8
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 1,
+                CompanyID = 8
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 3,
+                CompanyID = 8
+            },
+            new CompanyIndustry
+            {
+                IndustryID = 4,
+                CompanyID = 8
+            },
+
+            //Company 10 || P&C(2)
+            new CompanyIndustry
+            {
+                IndustryID = 2,
+                CompanyID = 9
+            });
+
+            #endregion
 
 
             //Build InsuranceAgentIndustries
+            context.InsuranceAgentIndustries.AddOrUpdate(x => x.InsuranceAgentID,
+            #region
+           //Insurance Agent 1  || Life Insurance(0), Health(1), Medicare (3), Annuities(4), P&C(2)
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 0,
+               InsuranceAgentID = 0
+           },
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 1,
+                InsuranceAgentID = 0
+            },
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 3,
+                InsuranceAgentID = 0
+            },
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 4,
+                InsuranceAgentID = 0
+            },
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 2,
+                InsuranceAgentID = 1
+            },
 
+            //Insurance Agent 2 || LifeInsurance(0)
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 0,
+                InsuranceAgentID = 1
+            },
+
+            //Insurance Agent 3 || Life Insurance(0), Health(1)
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 0,
+                InsuranceAgentID = 2
+            },
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 1,
+                InsuranceAgentID = 2
+            },
+
+            //Insurance Agent 4 || LifeInsurance(0) , Annuities(4)
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 0,
+                InsuranceAgentID = 3
+            },
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 4,
+                InsuranceAgentID = 3
+            },
+
+            //Insurance Agent 5 || Life Insurance(0), Health(1), Annuities(4)
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 0,
+                InsuranceAgentID = 4
+            },
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 1,
+                InsuranceAgentID = 4
+            },
+            new InsuranceAgentIndustry
+            {
+                IndustryID = 4,
+                InsuranceAgentID = 4
+            },
+
+           //Insurance Agent 6  || Life Insurance(0), Health(1), Medicare (3), Annuities(4), P&C(2)
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 0,
+               InsuranceAgentID = 5
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 1,
+               InsuranceAgentID = 5
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 3,
+               InsuranceAgentID = 5
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 4,
+               InsuranceAgentID = 5
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 2,
+               InsuranceAgentID = 5
+           },
+           //Insurance Agent 7  || Life Insurance(0), Health(1), Medicare (3), Annuities(4), P&C(2)
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 0,
+               InsuranceAgentID = 6
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 1,
+               InsuranceAgentID = 6
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 3,
+               InsuranceAgentID = 6
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 4,
+               InsuranceAgentID = 6
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 2,
+               InsuranceAgentID = 6
+           },
+           //Insurance Agent 8  || Life Insurance(0), Health(1), Medicare (3), Annuities(4), P&C(2)
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 0,
+               InsuranceAgentID = 7
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 1,
+               InsuranceAgentID = 7
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 3,
+               InsuranceAgentID = 7
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 4,
+               InsuranceAgentID = 7
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 2,
+               InsuranceAgentID = 7
+           },
+
+           //Insurance Agent 9 || Annutitues(4)
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 4,
+               InsuranceAgentID = 8
+           },
+
+           //Insurance Agent 10 || Life Insurance (0), Health(1), Medicare(3), Annutitues(4), P&C(2)
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 0,
+               InsuranceAgentID = 7
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 1,
+               InsuranceAgentID = 7
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 3,
+               InsuranceAgentID = 7
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 4,
+               InsuranceAgentID = 7
+           },
+           new InsuranceAgentIndustry
+           {
+               IndustryID = 2,
+               InsuranceAgentID = 7
+           });
+
+            #endregion
 
             //Build LeadProducts
+            context.LeadProducts.AddOrUpdate(x => x.LeadProductID,
+
+            #region
+                //Company 1 Lead Products
+                /*
+                Telemarketer Product
+                Mail Lead Product
+                Press 1 Product
+                Cold Call List Product
+                Internet Lead Product 
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 0,
+                    CompanyID = 0,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 1,
+                    CompanyID = 0,
+                    IsArchived = false,
+                    Price = 14,
+                    ProductNotes = "Price is PER Mail Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 30 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 2,
+                    CompanyID = 0,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is PER Press1 Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 3,
+                    CompanyID = 0,
+                    IsArchived = false,
+                    Price = 5,
+                    ProductNotes = "Price is PER Internet Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 min of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 4,
+                    CompanyID = 0,
+                    IsArchived = false,
+                    Price = 5.50,
+                    ProductNotes = "Price is PER individual Name Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+
+                //Company 2 Lead Products
+                /*
+                Telemarketer Product
+                Mail Lead Product
+                Press 1 Product
+                Cold Call List Product
+                Internet Lead Product 
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 5,
+                    CompanyID = 1,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 6,
+                    CompanyID = 1,
+                    IsArchived = false,
+                    Price = 14,
+                    ProductNotes = "Price is PER Mail Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 30 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 7,
+                    CompanyID = 1,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is PER Press1 Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 8,
+                    CompanyID = 1,
+                    IsArchived = false,
+                    Price = 5,
+                    ProductNotes = "Price is PER Internet Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 min of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 9,
+                    CompanyID = 1,
+                    IsArchived = false,
+                    Price = 5.50,
+                    ProductNotes = "Price is PER individual Name Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                //Company 3 Lead Products
+                /*
+                Telemarketer Product
+                Mail Lead Product
+                Press 1 Product
+                Cold Call List Product
+                Internet Lead Product 
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 10,
+                    CompanyID = 2,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 11,
+                    CompanyID = 2,
+                    IsArchived = false,
+                    Price = 14,
+                    ProductNotes = "Price is PER Mail Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 30 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 12,
+                    CompanyID = 2,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is PER Press1 Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 13,
+                    CompanyID = 2,
+                    IsArchived = false,
+                    Price = 5,
+                    ProductNotes = "Price is PER Internet Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 min of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 14,
+                    CompanyID = 2,
+                    IsArchived = false,
+                    Price = 5.50,
+                    ProductNotes = "Price is PER individual Name Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                //Company 4 Lead Products
+                /*
+                Telemarketer Product
+                Mail Lead Product
+                Press 1 Product
+                Cold Call List Product
+                Internet Lead Product 
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 15,
+                    CompanyID = 3,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 16,
+                    CompanyID = 3,
+                    IsArchived = false,
+                    Price = 14,
+                    ProductNotes = "Price is PER Mail Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 30 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 17,
+                    CompanyID = 3,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is PER Press1 Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 18,
+                    CompanyID = 3,
+                    IsArchived = false,
+                    Price = 5,
+                    ProductNotes = "Price is PER Internet Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 min of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 19,
+                    CompanyID = 3,
+                    IsArchived = false,
+                    Price = 5.50,
+                    ProductNotes = "Price is PER individual Name Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                //Company 5 Lead Products
+                /*
+                Telemarketer Product
+                Mail Lead Product
+                Press 1 Product
+                Cold Call List Product
+                Internet Lead Product 
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 20,
+                    CompanyID = 4,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 21,
+                    CompanyID = 4,
+                    IsArchived = false,
+                    Price = 14,
+                    ProductNotes = "Price is PER Mail Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 30 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 22,
+                    CompanyID = 4,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is PER Press1 Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 23,
+                    CompanyID = 4,
+                    IsArchived = false,
+                    Price = 5,
+                    ProductNotes = "Price is PER Internet Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 min of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 24,
+                    CompanyID = 4,
+                    IsArchived = false,
+                    Price = 5.50,
+                    ProductNotes = "Price is PER individual Name Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+
+                //Company 6 Lead Products
+                /*
+                Telemarketer Product
+                Mail Lead Product
+                Press 1 Product
+           
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 25,
+                    CompanyID = 5,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 26,
+                    CompanyID = 5,
+                    IsArchived = false,
+                    Price = 14,
+                    ProductNotes = "Price is PER Mail Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 30 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 27,
+                    CompanyID = 5,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is PER Press1 Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                //Company 7 Lead Products
+                /*
+                Telemarketer Product         
+                Press 1 Product         
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 28,
+                    CompanyID = 6,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+
+                new LeadProduct
+                {
+                    LeadProductID = 29,
+                    CompanyID = 6,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is PER Press1 Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                //Company 8 Lead Products
+                /*
+                Cold Call List Product
+                Internet Lead Product 
+                */
+
+                new LeadProduct
+                {
+                    LeadProductID = 30,
+                    CompanyID = 7,
+                    IsArchived = false,
+                    Price = 5,
+                    ProductNotes = "Price is PER Internet Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 min of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 31,
+                    CompanyID = 7,
+                    IsArchived = false,
+                    Price = 5.50,
+                    ProductNotes = "Price is PER individual Name Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+
+                //Company 9 Lead Products
+                /*
+                Telemarketer Product
+                Mail Lead Product             
+                Cold Call List Product
+                Internet Lead Product 
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 32,
+                    CompanyID = 8,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 33,
+                    CompanyID = 8,
+                    IsArchived = false,
+                    Price = 14,
+                    ProductNotes = "Price is PER Mail Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 30 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 34,
+                    CompanyID = 8,
+                    IsArchived = false,
+                    Price = 5,
+                    ProductNotes = "Price is PER Internet Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 min of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 35,
+                    CompanyID = 8,
+                    IsArchived = false,
+                    Price = 5.50,
+                    ProductNotes = "Price is PER individual Name Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+
+                //Company 10 Lead Products
+                /*
+                Telemarketer Product
+                Mail Lead Product
+                Press 1 Product
+            
+                */
+                new LeadProduct
+                {
+                    LeadProductID = 36,
+                    CompanyID = 0,
+                    IsArchived = false,
+                    Price = 25,
+                    ProductNotes = "Price is PER Telemarket Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 37,
+                    CompanyID = 0,
+                    IsArchived = false,
+                    Price = 14,
+                    ProductNotes = "Price is PER Mail Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 30 days of purchase"
+                },
+                new LeadProduct
+                {
+                    LeadProductID = 38,
+                    CompanyID = 0,
+                    IsArchived = false,
+                    Price = 20,
+                    ProductNotes = "Price is PER Press1 Generated Lead",
+                    OrderLink = "http://www.google.com",
+                    TelemarketingLead = true,
+                    TelemarketingLeadNotes = "Leads will be generated within 10 days of purchase"
+                });
+
+            #endregion
+
 
             //Build LeadTransactions
 
-            //Build Comments
+
 
             //Build ReviewPosts
+
+
+
+            //Build Comments
+
 
 
 

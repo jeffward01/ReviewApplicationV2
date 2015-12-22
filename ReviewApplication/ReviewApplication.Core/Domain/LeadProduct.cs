@@ -16,7 +16,7 @@ namespace ReviewApplication.Core.Domain
 
         public bool IsArchived { get; set; } //Archived State
 
-        public int Price { get; set; }
+        public double Price { get; set; }
         public string ProductNotes { get; set; }
         public string OrderLink { get; set; }
 
