@@ -31,10 +31,28 @@ namespace ReviewApplication.Data.Migrations
             //------------------------------------------------------------------------
 
             //TODO: Set all the proper ID's and Attributes
+            //TODO: Make a way to 'Programmatically' Create ALL these Tables
 
 
             //Build 20 Users
+            context.Users.AddOrUpdate(x => x.Id,
+                new User
+                {
+                    Id = 0,
+                    IsArchived = false,
+                    Email = "Example@example.com",
+                    ResetEmail = "ResetEmail@example.com",
+                    UserName = "Company-A",
+                    PasswordHash = "Password",
+                    AccountType = "Company",
+                    CreatedDate = DateTime.Now,
 
+                },
+
+
+
+
+                );
 
             //Build 10 companies || => 7 Verified, 3 Un-Verified
             context.Companies.AddOrUpdate(x => x.CompanyID,

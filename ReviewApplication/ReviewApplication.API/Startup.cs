@@ -57,7 +57,6 @@ namespace ReviewApplication.API
             container.Register<ILeadProductRepository, LeadProductRepository>();
             container.Register<ILeadTransactionRepository, LeadTransactionRepository>();
             container.Register<IReviewPostRepository, ReviewPostRepository>();
-            container.Register<IIndustryRepository, IndustryRepository>();
             container.Register<IExternalLoginRepository, ExternalLoginRepository>();
             container.Register<ISmsClient, TwilioSmsClient>();
 

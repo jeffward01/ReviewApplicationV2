@@ -22,7 +22,6 @@ namespace ReviewApplication.Core.Domain
         public string PasswordHash { get; set; }
         public string SecurityStamp { get; set; }
         public string AccountType { get; set; }
-        public string Industry { get; set; }
         public DateTime CreatedDate { get; set; }
 
         //Add Vitrual Varibles
@@ -46,7 +45,6 @@ namespace ReviewApplication.Core.Domain
             UserName = UserProfile.UserName;
             SecurityStamp = UserProfile.SecurityStamp;
             AccountType = UserProfile.AccountType;
-            Industry = UserProfile.Industry;
             CreatedDate = UserProfile.CreatedDate;
             IsArchived = UserProfile.IsArchived;
         }
